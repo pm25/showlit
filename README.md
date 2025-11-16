@@ -74,8 +74,6 @@ This project is primarily built using the following frameworks and libraries:
 
 ## Preview
 
-See how ✨Showlit looks in both light and dark themes:
-
 ### ☀️ Light Mode
 
 ![Light Mode][screenshot-light]
@@ -90,7 +88,7 @@ See how ✨Showlit looks in both light and dark themes:
 
 ## Getting Started
 
-Follow these steps to set up and run the project locally, and deploy it to GitHub Pages.
+Follow these steps to set up the project locally and deploy it to GitHub Pages.
 
 ### ✅ Prerequisites
 
@@ -121,7 +119,7 @@ npm install
 npm run dev
 ```
 
-This will start the Vite development server. Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
+This will start the Vite development server. Open [http://localhost:5173](http://localhost:5173) (or the URL shown in your terminal) to view it in the browser.
 
 ### 🚀 Deployment
 
