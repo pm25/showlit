@@ -23,7 +23,7 @@ author: Pin-Yen Huang
     ·
     <a href="https://github.com/pm25/showlit/issues/new?labels=bug&template=bug-report---.md">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/pm25/showlit/issues/new?labels=enhancement&template=feature-request---.md">💡 Request Feature</a>
+    <a href="https://github.com/pm25/showlit/logs">📄 Update Log</a>
   </p>
 </div>
 
@@ -73,6 +73,8 @@ This project is primarily built using the following frameworks and libraries:
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
 ## Preview
+
+See how ✨Showlit looks in both light and dark themes:
 
 ### ☀️ Light Mode
 
