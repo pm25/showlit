@@ -14,7 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePageTitle } from "@/hooks/use-pagetitle";
-import AllRepoData from "@/data/repos.json";
+import { AllRepoData } from "@/data/repos";
 
 type SortByType = "stars" | "updated" | "created";
 
@@ -236,7 +236,7 @@ function ProjectCard({
                                 {description || "Details unavailable"}
                             </p>
 
-                            {topics.length > 0 && (
+                            {topics?.length ? (
                                 <div className="flex flex-wrap gap-1.5">
                                     {topics.map((topic: string) => (
                                         <Button
@@ -250,7 +250,7 @@ function ProjectCard({
                                         </Button>
                                     ))}
                                 </div>
-                            )}
+                            ) : null}
                         </div>
                     </ScrollArea>
 

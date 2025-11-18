@@ -3,7 +3,7 @@ import { FaWrench, FaGithub, FaGlobe, FaRegStar, FaArrowRight } from "react-icon
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { FeaturedRepoData } from "@/data/featured_repos";
+import { FeaturedRepoData } from "@/data/repos";
 
 export default function Project() {
     return (
@@ -103,7 +103,7 @@ function ProjectCard({ repoData }: { repoData: (typeof FeaturedRepoData)[number]
                         {repoData.description || "Details unavailable"}
                     </p>
 
-                    {repoData.topics.length > 0 && (
+                    {repoData.topics?.length ? (
                         <div className="flex flex-wrap gap-1.5">
                             {repoData.topics.map((topic, idx) => (
                                 <Button
@@ -119,7 +119,7 @@ function ProjectCard({ repoData }: { repoData: (typeof FeaturedRepoData)[number]
                                 </Button>
                             ))}
                         </div>
-                    )}
+                    ) : null}
 
                     <div className="flex flex-row items-center justify-between text-muted-foreground mt-auto pt-2">
                         <div className="flex items-center gap-2">
