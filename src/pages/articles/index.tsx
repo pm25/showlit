@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { FaNewspaper } from "react-icons/fa6";
 import { useSearchParams, useNavigate, Link } from "react-router";
 
@@ -15,16 +14,14 @@ import { Separator } from "@/components/ui/separator";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 import ArticlesData from "@/data/generated/articles.json";
 
-type SortByType = "updated" | "created";
+const validSorts = ["created", "updated"] as const;
+type SortByType = (typeof validSorts)[number];
 
 const allTags = Array.from(
     new Set(Object.values(ArticlesData).flatMap((article) => article.tags ?? []))
 ).sort();
 
 export default function Articles() {
-    const [sortBy, setSortBy] = useState<SortByType>("updated");
-    const [tagFilter, setTagFilter] = useState("all");
-
     usePageTitle("Articles");
 
     const [searchParams] = useSearchParams();
@@ -33,44 +30,19 @@ export default function Articles() {
     const tag = searchParams.get("tag");
     const sort = searchParams.get("sort");
 
-    useEffect(() => {
-        if (tag && allTags.includes(tag)) {
-            setTagFilter(tag);
-        } else if (!tag) {
-            setTagFilter("all");
-        }
-    }, [tag]);
-
-    useEffect(() => {
-        if (sort === "created" || sort === "updated") {
-            setSortBy(sort);
-        } else {
-            const params = new URLSearchParams(searchParams);
-            params.set("sort", "updated");
-            navigate({ search: params.toString() }, { replace: true });
-            setSortBy("updated");
-        }
-    }, [sort, navigate, searchParams]);
+    const tagFilter: string = tag && allTags.includes(tag) ? tag : "all";
+    const sortBy: SortByType = validSorts.find((s) => s === sort) ?? "updated";
 
     const updateTagFilter = (newTag: string) => {
-        setTagFilter(newTag);
-
         const params = new URLSearchParams(searchParams);
-        if (newTag === "all") {
-            params.delete("tag");
-        } else {
-            params.set("tag", newTag);
-        }
-
+        if (newTag === "all") params.delete("tag");
+        else params.set("tag", newTag);
         navigate({ search: params.toString() }, { replace: true });
     };
 
     const updateSortBy = (newSortBy: SortByType) => {
-        setSortBy(newSortBy);
-
         const params = new URLSearchParams(searchParams);
         params.set("sort", newSortBy);
-
         navigate({ search: params.toString() }, { replace: true });
     };
 
