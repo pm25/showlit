@@ -8,41 +8,44 @@ import {
 
 
 export const UserInfo = {
-    name: "Pin-Yen Huang",
+    name: "[Your Name]",
     profile_url: "https://github.com/pm25.png",
-    headline: "Student @ National Taiwan University",
-    email: "pyhuang97@gmail.com",
+    headline: "Student @ [Your University]",
+    email: "your-email@gmail.com",
     links: [
         {
             name: "LinkedIn",
-            url: "https://www.linkedin.com/in/py-huang",
+            url: "https://www.linkedin.com/in/[your-linkedin]",
             icon: FaLinkedin,
         },
         {
             name: "Google Scholar",
-            url: "https://scholar.google.com.tw/citations?user=nQdpH2MAAAAJ",
+            url: "https://scholar.google.com/citations?user=[your-id]",
             icon: FaGoogleScholar,
         },
         {
             name: "Résumé",
-            url: "https://pm25.github.io/static/media/cv_v3.1ac3c71f.pdf",
+            url: "https://example.com/your-cv.pdf",
             icon: FaRegIdBadge,
         },
         {
             name: "Github",
-            url: "https://github.com/pm25",
+            url: "https://github.com/[your-github]",
             icon: FaGithub,
         },
         {
             name: "Facebook",
-            url: "https://www.facebook.com/pyhuang97",
+            url: "https://www.facebook.com/[your-facebook]",
             icon: FaSquareFacebook,
         },
     ],
     // you can use HTML syntax here (e.g. <br/>, <a>, <strong>, ...)
     biography: `
-        Hi! I'm [Your Name], a [Your Title] passionate about [field or topic]. I'm currently working as [current role] at [organization or context], where I [briefly describe your work or mission]. With a background in [academic or professional background], I've developed a strong interest in [key interests or specialties], and have worked on projects like <i>[example project]</i> and <i>[another example]</i>, all centered around [what ties them together or your broader goal].
+        Hi! I'm <strong>[Your Name]</strong>, a <em>[Your Title]</em> passionate about <em>[field or topic]</em>. Currently, I work as <em>[current role]</em> at <em>[organization]</em>, where I <em>[briefly describe your work or mission]</em>. 
+        With a background in <em>[academic or professional background]</em>, I've developed strong interests in <em>[key interests or specialties]</em> and have contributed to projects like <i>[example project]</i> and <i>[another example]</i>, all focused on <em>[broader goal or impact]</em>.
+
         <div class="my-2"></div>
-        Outside of work, I enjoy [hobbies or personal interests], which keep me grounded and spark new ideas. Thanks for visiting! Feel free to <a href="[contact link or email]" target="_blank" rel="noopener noreferrer">get in touch</a> if you'd like to connect.
+
+        Outside of work, I enjoy <em>[hobbies or personal interests]</em>, which inspire creativity and keep me energized. Thanks for visiting! Feel free to <a href="mailto:[your-email@example.com]" target="_blank" rel="noopener noreferrer">reach out</a> to connect.
     `
 }
