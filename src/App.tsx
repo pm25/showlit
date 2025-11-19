@@ -4,6 +4,7 @@ import Layout from "@/layout";
 import { loadLazy } from "@/lib/loadComponent";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/hooks/scroll-to-top";
+import { useGlobalMeta } from "./hooks/use-global-meta";
 
 const About = loadLazy(() => import("@/pages/about"));
 const Movies = loadLazy(() => import("@/pages/movies"));
@@ -15,6 +16,8 @@ const ArticlePage = loadLazy(() => import("@/pages/articles/page"));
 const NotFound = loadLazy(() => import("@/pages/notfound"));
 
 export default function App() {
+    useGlobalMeta();
+
     return (
         <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
             <Router>
