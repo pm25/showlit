@@ -1,18 +1,21 @@
 import fs from "fs";
 import path from "path";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import { ensureDirExists } from "./utils.js";
 
-// load .env file if present (for local development)
-dotenv.config();
+// load environment variables from .env file in local development
+if (!process.env.CI) {
+  const dotenv = await import("dotenv");
+  dotenv.config();
+}
 
-// Load GitHub credentials from environment variables.
+// load GitHub credentials from environment variables.
 // 
-// Usage:
-// - Local development: create a `.env` file in the project root with the following keys:
+// usage:
+// - local development: create a `.env` file in the project root with the following keys:
 //     GITHUB_USERNAME=your-username
 //     GITHUB_TOKEN=your-personal-access-token
-//   The script will read these values via `dotenv`.
+//   the script will read these values via `dotenv`.
 //
 // - CI/CD (GitHub Actions): The script will automatically read them from the environment.
 const username = process.env.GITHUB_USERNAME;
