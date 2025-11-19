@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { useSearchParams, useNavigate } from "react-router";
 import { FaWrench, FaGithub, FaGlobe, FaRegStar } from "react-icons/fa6";
 
@@ -16,41 +15,35 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 import { AllRepoData } from "@/data/repos";
 
-type SortByType = "stars" | "updated" | "created";
+const validSorts = ["stars", "updated", "created"] as const;
+type SortByType = (typeof validSorts)[number];
 
 const allTopics = Array.from(
     new Set(Object.values(AllRepoData).flatMap((repo) => repo.topics ?? []))
 ).sort();
 
 export default function Projects() {
-    const [sortBy, setSortBy] = useState<SortByType>("updated");
-    const [topicFilter, setTopicFilter] = useState("all");
-
     usePageTitle("Projects");
 
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
 
     const topic = searchParams.get("topic");
+    const sort = searchParams.get("sort");
 
-    useEffect(() => {
-        if (topic && allTopics.includes(topic)) {
-            setTopicFilter(topic);
-        } else if (!topic) {
-            setTopicFilter("all");
-        }
-    }, [topic]);
+    const topicFilter: string = topic && allTopics.includes(topic) ? topic : "all";
+    const sortBy: SortByType = validSorts.find((s) => s === sort) ?? "updated";
 
     const updateTopicFilter = (newTopic: string) => {
-        setTopicFilter(newTopic);
-
         const params = new URLSearchParams(searchParams);
-        if (newTopic === "all") {
-            params.delete("topic");
-        } else {
-            params.set("topic", newTopic);
-        }
+        if (newTopic === "all") params.delete("topic");
+        else params.set("topic", newTopic);
+        navigate({ search: params.toString() }, { replace: true });
+    };
 
+    const updateSortBy = (newSortBy: SortByType) => {
+        const params = new URLSearchParams(searchParams);
+        params.set("sort", newSortBy);
         navigate({ search: params.toString() }, { replace: true });
     };
 
@@ -84,7 +77,7 @@ export default function Projects() {
 
                 <div className="flex justify-between flex-wrap gap-2 items-center mx-2 sm:mx-6 my-1 relative -top-2">
                     <TopicFilter topicFilter={topicFilter} setTopicFilter={updateTopicFilter} />
-                    <SortSelector sortBy={sortBy} setSortBy={setSortBy} />
+                    <SortSelector sortBy={sortBy} setSortBy={updateSortBy} />
                 </div>
 
                 <Separator />

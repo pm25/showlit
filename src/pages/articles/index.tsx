@@ -14,7 +14,7 @@ import { Separator } from "@/components/ui/separator";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 import ArticlesData from "@/data/generated/articles.json";
 
-const validSorts = ["created", "updated"] as const;
+const validSorts = ["updated", "created"] as const;
 type SortByType = (typeof validSorts)[number];
 
 const allTags = Array.from(
