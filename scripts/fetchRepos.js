@@ -18,7 +18,7 @@ if (!process.env.CI) {
 //   the script will read these values via `dotenv`.
 //
 // - CI/CD (GitHub Actions): The script will automatically read them from the environment.
-const username = process.env.GITHUB_USERNAME;
+const username = process.env.GITHUB_USERNAME || process.env.GITHUB_REPOSITORY_OWNER;
 const token = process.env.GITHUB_TOKEN;
 
 if (!username) {
