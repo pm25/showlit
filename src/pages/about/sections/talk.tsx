@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MdCoPresent } from "react-icons/md";
 import { FaRegCalendar } from "react-icons/fa6";
 
-import { TalksData } from "@/data/talks";
+import { TalksData } from "@/data/TalksData";
 
 export default function Talk() {
     const [selectedTalk, setSelectedTalk] = useState<number | null>(null);

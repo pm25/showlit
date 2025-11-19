@@ -52,7 +52,7 @@ function writeTS(filename, variable, content) {
         }
         // handle local images
         else if (
-          ["logo", "profile_image", "preview_image"].includes(key) &&
+          ["logo", "image", "profile_image", "preview_image"].includes(key) &&
           typeof value === "string" &&
           !/^https?:\/\//.test(value)
         ) {
