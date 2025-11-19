@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "npm run prebuild && tsc -b && vite build",
     "prebuild": "npm-run-all --parallel generate:articles fetch:repos extract:publications",
+    "build:yaml": "npm run prebuild:yaml && tsc -b && vite build",
+    "prebuild:yaml": "npm-run-all --parallel generate:articles fetch:repos extract:publications generate:data",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
@@ -14,7 +16,8 @@
     "deploy:clean": "rm -rf node_modules/gh-pages/.cache && npm run deploy",
     "fetch:repos": "node scripts/fetchRepos.js",
     "generate:articles": "node scripts/generateArticlesJson.js",
-    "extract:publications": "node scripts/extractFeaturedPublications"
+    "extract:publications": "node scripts/extractFeaturedPublications.js",
+    "generate:data": "node scripts/generateData.js"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

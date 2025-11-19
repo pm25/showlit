@@ -2,7 +2,7 @@ import { FaRegEnvelope } from "react-icons/fa6";
 import { toast } from "sonner";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { UserInfo } from "@/data/profile";
+import { UserInfo } from "@/data/UserInfo";
 
 export default function Introduction() {
     return (
@@ -17,7 +17,7 @@ function Profile() {
     return (
         <div className="flex flex-col items-center gap-y-4 shrink-0">
             <img
-                src={UserInfo.profile_url}
+                src={UserInfo.profile_image}
                 alt="Profile"
                 className="w-60 h-auto rounded-lg object-cover"
             />

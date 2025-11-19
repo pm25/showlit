@@ -3,8 +3,8 @@ import { FaGraduationCap, FaBriefcase } from "react-icons/fa6";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { EduData } from "@/data/education";
-import { WorkData } from "@/data/work";
+import { EduData } from "@/data/EduData";
+import { WorkData } from "@/data/WorkData";
 
 export default function Experience() {
     return (

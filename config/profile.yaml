@@ -1,0 +1,114 @@
+# =====================================================
+# 👤 Personal Information
+# =====================================================
+UserInfo:
+    name: "[Your Name]"
+    headline: "Student @ [Your University]"
+    email: "your-email@gmail.com"
+    location: "[Your City, Country]"
+
+    # Profile image filename placed in /public/images/profile/ or you can use a link
+    profile_image: "https://github.com/pm25.png"
+
+    # Social links show up as icons (optional)
+    links:
+        - name: "LinkedIn"
+          url: "https://www.linkedin.com/in/[your-linkedin]"
+          icon:
+              name: "FaLinkedin"
+              package: "react-icons/fa6"
+
+        - name: "Google Scholar"
+          url: "https://scholar.google.com/citations?user=[your-id]"
+          icon:
+              name: "FaGoogleScholar"
+              package: "react-icons/fa6"
+
+        - name: "Résumé"
+          url: "https://example.com/your-cv.pdf"
+          icon:
+              name: "FaRegIdBadge"
+              package: "react-icons/fa6"
+
+        - name: "Github"
+          url: "https://github.com/[your-github]"
+          icon:
+              name: "FaGithub"
+              package: "react-icons/fa6"
+
+        - name: "Facebook"
+          url: "https://www.facebook.com/[your-facebook]"
+          icon:
+              name: "FaSquareFacebook"
+              package: "react-icons/fa6"
+
+    biography: |
+        Hi! I'm <strong>[Your Name]</strong>, a <em>[Your Title]</em> passionate about <em>[field or topic]</em>. Currently, I work as <em>[current role]</em> at <em>[organization]</em>, where I <em>[briefly describe your work or mission]</em>. 
+        With a background in <em>[academic or professional background]</em>, I've developed strong interests in <em>[key interests or specialties]</em> and have contributed to projects like <i>[example project]</i> and <i>[another example]</i>, all focused on <em>[broader goal or impact]</em>.
+        <div class="my-2"></div>
+        Outside of work, I enjoy <em>[hobbies or personal interests]</em>, which inspire creativity and keep me energized. Thanks for visiting! Feel free to <a href="mailto:[your-email@example.com]" target="_blank" rel="noopener noreferrer">reach out</a> to connect.
+
+# # =====================================================
+# # 🎓 Education Section
+# # =====================================================
+EduData:
+    - degree: "Ph.D. in [Field]"
+      school: "[University Name]"
+      years: "20XX - Present"
+      logo: "https://upload.wikimedia.org/wikipedia/en/a/a1/Arizona_State_University_seal.svg"
+
+    - degree: "M.S. in Computer Science"
+      school: "National Taiwan University"
+      years: "2020 - 2022"
+      logo: "/src/data/images/ntu_logo.svg"
+
+    - degree: "B.S. in Computer Science"
+      school: "National Chengchi University"
+      years: "2018 - 2020"
+      logo: "/src/data/images/nccu_logo.svg"
+
+# # =====================================================
+# # 💼 Work Experience Section
+# # =====================================================
+WorkData:
+    - title: "[Job Title]"
+      company: "[Company Name]"
+      years: "20XX - Present"
+      logo: "/src/data/images/nvidia_logo.webp"
+
+    - title: "Software Engineering Intern"
+      company: "Google"
+      years: "Jul 2022 - Sep 2022"
+      logo: "/src/data/images/google_logo.svg"
+
+    - title: "Research Assistant"
+      company: "University of Illinois Urbana-Champaign"
+      years: "Jul 2019 - Sep 2019"
+      logo: "/src/data/images/uiuc_logo.png"
+# # =====================================================
+# # 🛠 Skills Section
+# # =====================================================
+# skills:
+#     programming:
+#         - "C++"
+#         - "Python"
+#         - "JavaScript"
+#     technologies:
+#         - "React"
+#         - "TailwindCSS"
+#         - "Next.js"
+#         - "AWS"
+
+# # =====================================================
+# # 🌐 Featured Projects Section (Optional)
+# # =====================================================
+# projects:
+#     - name: "Showlit"
+#       description: "A personal showcase website generator."
+#       repo: "https://github.com/pm25/showlit"
+#       preview_image: "showlit.png"
+#       topics:
+#           - "React"
+#           - "GitHub Pages"
+#     # - name: ""
+#     #   description: ""
