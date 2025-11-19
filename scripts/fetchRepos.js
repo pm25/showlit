@@ -8,6 +8,11 @@ dotenv.config();
 const username = process.env.GITHUB_USERNAME;
 const token = process.env.GITHUB_TOKEN;
 
+if (!username) {
+  console.error("❌ GITHUB_USERNAME not set. Exiting.");
+  process.exit(1);
+}
+
 const skipListPath = path.join(process.cwd(), "src", "data", "skip-repos.txt");
 const outputPath = path.join(process.cwd(), "src", "data", "generated", "repos.json");
 
