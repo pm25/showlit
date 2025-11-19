@@ -13,7 +13,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { usePageTitle } from "@/hooks/use-pagetitle";
-import ArticlesData from "@/data/articles.json";
+import ArticlesData from "@/data/generated/articles.json";
 
 type SortByType = "updated" | "created";
 

@@ -1,9 +1,10 @@
 import fs from "fs";
 import path from "path";
 import yaml from "js-yaml";
+import { ensureDirExists } from "./utils.js";
 
 const articlesDir = path.join(process.cwd(), "src", "data", "articles");
-const outputPath = path.join(process.cwd(), "src", "data", "articles.json");
+const outputPath = path.join(process.cwd(), "src", "data", "generated", "articles.json");
 
 function getSlug(filename) {
   return filename.replace(/\.md$/, "");
@@ -67,7 +68,9 @@ function generatePostsJson() {
 
   const sortedArticles = Object.fromEntries(sortedEntries);
 
+  ensureDirExists(outputPath);
   fs.writeFileSync(outputPath, JSON.stringify(sortedArticles, null, 4), "utf-8");
+  
   console.log(`✅ articles.json generated with ${Object.keys(sortedArticles).length} posts`);
 }
 

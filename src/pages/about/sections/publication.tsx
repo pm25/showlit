@@ -13,7 +13,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 
-import FeatPubData from "@/data/featured_publications.json";
+import FeatPubData from "@/data/generated/featured_publications.json";
 
 export default function Publication() {
     return (

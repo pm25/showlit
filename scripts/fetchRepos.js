@@ -1,13 +1,15 @@
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+import { ensureDirExists } from "./utils.js";
 
 dotenv.config();
 
 const username = process.env.GITHUB_USERNAME;
 const token = process.env.GITHUB_TOKEN;
-const outputPath = path.join(process.cwd(), "src", "data", "repos.json");
+
 const skipListPath = path.join(process.cwd(), "src", "data", "skip-repos.txt");
+const outputPath = path.join(process.cwd(), "src", "data", "generated", "repos.json");
 
 async function fetchAllRepos() {
     let page = 1;
@@ -83,8 +85,9 @@ async function fetchRepos() {
                 };
             });
 
-        fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+        ensureDirExists(outputPath);
         fs.writeFileSync(outputPath, JSON.stringify(merged, null, 2));
+        
         console.log(`✅ Repos written to ${outputPath}`);
     } catch (error) {
         console.error("❌ Failed to fetch repos:", error);

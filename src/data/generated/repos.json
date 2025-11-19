@@ -2,7 +2,7 @@
   "showlit": {
     "name": "showlit",
     "display_name": "",
-    "description": "✨Showlit - A modern and clean template for creating a personal website",
+    "description": "✨ Showlit - A modern and clean template for creating a personal website",
     "stargazers_count": 5,
     "topics": [
       "personal-website-template",
@@ -18,15 +18,15 @@
     "homepage": "https://pm25.github.io/showlit/",
     "html_url": "https://github.com/pm25/showlit",
     "created_at": "2024-12-20T10:05:02Z",
-    "updated_at": "2025-11-15T13:58:18Z",
-    "pushed_at": "2025-11-15T13:58:32Z",
-    "preview_image": "https://pm25.github.io/showlit/full_logo.png"
+    "updated_at": "2025-11-18T16:42:03Z",
+    "pushed_at": "2025-11-19T02:09:38Z",
+    "preview_image": ""
   },
   "Semi-Supervised-Regression": {
     "name": "Semi-Supervised-Regression",
-    "display_name": "Semi-Supervised Regression",
+    "display_name": "",
     "description": "🎋 NeurIPS 2024: Official repository for the paper 'RankUp: Boosting Semi-Supervised Regression with an Auxiliary Ranking Classifier'",
-    "stargazers_count": 13,
+    "stargazers_count": 14,
     "topics": [
       "pytorch",
       "regression",
@@ -36,14 +36,14 @@
     "homepage": "",
     "html_url": "https://github.com/pm25/Semi-Supervised-Regression",
     "created_at": "2024-10-22T21:47:31Z",
-    "updated_at": "2025-11-11T09:31:32Z",
+    "updated_at": "2025-11-17T08:49:19Z",
     "pushed_at": "2025-08-22T01:38:11Z",
-    "preview_image": "https://pm25.github.io/research-figures/rankup/figures/rankup-illustration.png"
+    "preview_image": ""
   },
   "Regression-Datasets": {
     "name": "Regression-Datasets",
-    "display_name": "Regression Datasets",
-    "description": "🎛️ A collection of diverse regression datasets, featuring PyTorch-like dataset classes that automatically download and load datasets",
+    "display_name": "",
+    "description": "🎛️ Regsets - A collection of diverse regression datasets, featuring PyTorch-like dataset classes that automatically download and load datasets",
     "stargazers_count": 0,
     "topics": [
       "datasets",
@@ -54,15 +54,15 @@
     "homepage": "https://pypi.org/project/regsets",
     "html_url": "https://github.com/pm25/Regression-Datasets",
     "created_at": "2024-10-15T05:56:02Z",
-    "updated_at": "2025-09-22T13:01:32Z",
+    "updated_at": "2025-11-18T16:42:30Z",
     "pushed_at": "2025-11-04T18:25:30Z",
     "preview_image": ""
   },
   "SimplePlus-BeamerTheme": {
     "name": "SimplePlus-BeamerTheme",
-    "display_name": "SimplePlus Beamer Theme",
-    "description": "🍃SimplePlus - A minimalist and clean LaTeX Beamer theme",
-    "stargazers_count": 232,
+    "display_name": "",
+    "description": "🍃 SimplePlus - A minimalist and clean LaTeX Beamer theme",
+    "stargazers_count": 233,
     "topics": [
       "beamer-template",
       "beamer-theme",
@@ -74,14 +74,14 @@
     "homepage": "",
     "html_url": "https://github.com/pm25/SimplePlus-BeamerTheme",
     "created_at": "2021-12-14T08:33:39Z",
-    "updated_at": "2025-11-15T13:53:48Z",
+    "updated_at": "2025-11-18T16:42:22Z",
     "pushed_at": "2025-01-12T22:50:46Z",
-    "preview_image": "https://raw.githubusercontent.com/pm25/simpleplus-beamerTheme/master/preview/slide-1.webp"
+    "preview_image": ""
   },
   "SimpleDarkBlue-BeamerTheme": {
     "name": "SimpleDarkBlue-BeamerTheme",
-    "display_name": "SimpleDarkBlue Beamer Theme",
-    "description": "🫐SimpleDarkBlue - A simple and clear LaTeX Beamer theme",
+    "display_name": "",
+    "description": "🫐 SimpleDarkBlue - A simple and clear LaTeX Beamer theme",
     "stargazers_count": 88,
     "topics": [
       "beamer-template",
@@ -94,13 +94,13 @@
     "homepage": "",
     "html_url": "https://github.com/pm25/SimpleDarkBlue-BeamerTheme",
     "created_at": "2021-01-12T00:59:09Z",
-    "updated_at": "2025-11-15T13:53:19Z",
+    "updated_at": "2025-11-18T16:42:14Z",
     "pushed_at": "2025-01-14T08:50:14Z",
-    "preview_image": "https://raw.githubusercontent.com/pm25/simpledarkblue-beamertheme/master/preview/slide-1.webp"
+    "preview_image": ""
   },
   "Flappy-Bird": {
     "name": "Flappy-Bird",
-    "display_name": "Flappy Bird",
+    "display_name": "",
     "description": "🐤 Flappy Bird clone, developed with JavaScript.",
     "stargazers_count": 2,
     "topics": [
@@ -136,7 +136,7 @@
   "pm25.github.io": {
     "name": "pm25.github.io",
     "display_name": "",
-    "description": "✨PlusMore - My personal website",
+    "description": "✨ PlusMore - My personal website",
     "stargazers_count": 4,
     "topics": [
       "personal-website",
@@ -150,7 +150,7 @@
     "homepage": "https://pm25.github.io/",
     "html_url": "https://github.com/pm25/pm25.github.io",
     "created_at": "2018-05-24T14:51:50Z",
-    "updated_at": "2025-11-15T14:16:24Z",
+    "updated_at": "2025-11-18T16:42:40Z",
     "pushed_at": "2025-10-21T03:20:53Z",
     "preview_image": ""
   }

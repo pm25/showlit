@@ -1,4 +1,4 @@
-import AllRepoDataImport from "@/data/repos.json";
+import AllRepoDataImport from "@/data/generated/repos.json";
 
 interface RepoData {
     name: string;
