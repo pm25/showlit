@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { SITE } from "@/data/site";
+import { SITE } from "@/data/SITE";
 
 export function useGlobalMeta() {
   useEffect(() => {

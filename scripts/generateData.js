@@ -4,17 +4,28 @@ import yaml from "js-yaml";
 import { toTS, ensureDirExists } from "./utils.js";
 
 // ======================================
-// 1. Load YAML
+// 1. Get YAML file from argument
 // ======================================
-const yamlPath = path.join(process.cwd(), "config/profile.yaml");
-
-if (!fs.existsSync(yamlPath)) {
-  console.error("❌ profile.yaml not found in /config folder");
-  process.exit(1);
+const inputFile = process.argv[2]; // e.g., "config/profile.yaml"
+if (!inputFile) {
+    console.error("❌ Please provide the path to the YAML file.");
+    console.error("Usage: node generate-data.js config/profile.yaml");
+    process.exit(1);
 }
 
+const yamlPath = path.join(process.cwd(), inputFile);
+
+if (!fs.existsSync(yamlPath)) {
+    console.error(`❌ ${inputFile} not found!`);
+    process.exit(1);
+}
+
+// ======================================
+// 2. Load YAML
+// ======================================
 const yamlContent = fs.readFileSync(yamlPath, "utf8");
 const data = yaml.load(yamlContent);
+console.log(`✅ Loaded YAML: ${inputFile}`);
 
 // ======================================
 // 2. Prepare output directory
@@ -98,6 +109,12 @@ function writeTS(filename, variable, content) {
 // 4. Write TS files
 // ======================================
 Object.entries(data).forEach(([key, value]) => {
+  if (key === "SITE" && value.repoUrl) {
+        const repoName = value.repoUrl.replace(/\.git$/, "").split("/").pop() || "";
+        value.repoName = repoName;
+        value.base = `/${repoName}/`;
+    }
+  
   writeTS(`${key}.ts`, key, value);
 });
 

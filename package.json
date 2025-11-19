@@ -17,7 +17,7 @@
     "fetch:repos": "node scripts/fetchRepos.js",
     "generate:articles": "node scripts/generateArticlesJson.js",
     "extract:publications": "node scripts/extractFeaturedPublications.js",
-    "generate:data": "node scripts/generateData.js"
+    "generate:data": "node scripts/generateData.js config/site.yaml config/profile.yaml"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",
