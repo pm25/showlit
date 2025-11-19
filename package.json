@@ -15,7 +15,7 @@
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist",
-    "deploy:clean": "rm -rf node_modules/gh-pages/.cache && npm run deploy",
+    "deploy:clean": "rm -rf node_modules/.cache/gh-pages/ && npm run deploy",
     "deploy:manual": "npm run build:manual && gh-pages -d dist",
     "deploy:dev": "npm run build:manual && gh-pages -d dist",
     "fetch:repos": "node scripts/fetchRepos.js",
