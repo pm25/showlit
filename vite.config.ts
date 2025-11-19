@@ -2,7 +2,7 @@ import path from "path";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { SITE } from "./src/data/config";
+import { SITE } from "./src/data/site";
 
 // https://vite.dev/config/
 export default defineConfig({
