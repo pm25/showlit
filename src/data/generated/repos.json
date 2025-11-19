@@ -18,9 +18,9 @@
     "homepage": "https://pm25.github.io/showlit/",
     "html_url": "https://github.com/pm25/showlit",
     "created_at": "2024-12-20T10:05:02Z",
-    "updated_at": "2025-11-18T16:42:03Z",
-    "pushed_at": "2025-11-19T02:09:38Z",
-    "preview_image": ""
+    "updated_at": "2025-11-19T05:46:14Z",
+    "pushed_at": "2025-11-19T18:36:02Z",
+    "preview_image": "https://pm25.github.io/showlit/images/full_logo.png"
   },
   "Semi-Supervised-Regression": {
     "name": "Semi-Supervised-Regression",
@@ -38,7 +38,7 @@
     "created_at": "2024-10-22T21:47:31Z",
     "updated_at": "2025-11-17T08:49:19Z",
     "pushed_at": "2025-08-22T01:38:11Z",
-    "preview_image": ""
+    "preview_image": "https://pm25.github.io/research-figures/rankup/figures/rankup-illustration.png"
   },
   "Regression-Datasets": {
     "name": "Regression-Datasets",
@@ -76,7 +76,7 @@
     "created_at": "2021-12-14T08:33:39Z",
     "updated_at": "2025-11-18T16:42:22Z",
     "pushed_at": "2025-01-12T22:50:46Z",
-    "preview_image": ""
+    "preview_image": "https://raw.githubusercontent.com/pm25/simpleplus-beamerTheme/master/preview/slide-1.webp"
   },
   "SimpleDarkBlue-BeamerTheme": {
     "name": "SimpleDarkBlue-BeamerTheme",
@@ -96,7 +96,7 @@
     "created_at": "2021-01-12T00:59:09Z",
     "updated_at": "2025-11-18T16:42:14Z",
     "pushed_at": "2025-01-14T08:50:14Z",
-    "preview_image": ""
+    "preview_image": "https://raw.githubusercontent.com/pm25/simpledarkblue-beamertheme/master/preview/slide-1.webp"
   },
   "Flappy-Bird": {
     "name": "Flappy-Bird",
