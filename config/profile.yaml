@@ -1,4 +1,11 @@
 # =====================================================
+# 💡 Tip for Images / Logo:
+# You can use either:
+# 1. A full URL (e.g., https://example.com/logo.png)
+# 2. A local file placed under /public/images/ and referenced with "/" (e.g., "/images/logo.png")
+# =====================================================
+
+# =====================================================
 # 👤 Personal Information
 # =====================================================
 UserInfo:
@@ -7,10 +14,9 @@ UserInfo:
     email: "your-email@gmail.com"
     location: "[Your City, Country]"
 
-    # Profile image filename placed in /public/images/profile/ or you can use a link
+    # Profile image: URL or local file
     profile_image: "https://github.com/pm25.png"
 
-    # Social links show up as icons (optional)
     links:
         - name: "LinkedIn"
           url: "https://www.linkedin.com/in/[your-linkedin]"
@@ -60,12 +66,12 @@ EduData:
     - degree: "M.S. in Computer Science"
       school: "National Taiwan University"
       years: "2020 - 2022"
-      logo: "/src/data/images/ntu_logo.svg"
+      logo: "/images/ntu_logo.svg"
 
     - degree: "B.S. in Computer Science"
       school: "National Chengchi University"
       years: "2018 - 2020"
-      logo: "/src/data/images/nccu_logo.svg"
+      logo: "/images/nccu_logo.svg"
 
 # # =====================================================
 # # 💼 Work Experience Section
@@ -74,17 +80,17 @@ WorkData:
     - title: "[Job Title]"
       company: "[Company Name]"
       years: "20XX - Present"
-      logo: "/src/data/images/nvidia_logo.webp"
+      logo: "/images/nvidia_logo.webp"
 
     - title: "Software Engineering Intern"
       company: "Google"
       years: "Jul 2022 - Sep 2022"
-      logo: "/src/data/images/google_logo.svg"
+      logo: "/images/google_logo.svg"
 
     - title: "Research Assistant"
       company: "University of Illinois Urbana-Champaign"
       years: "Jul 2019 - Sep 2019"
-      logo: "/src/data/images/uiuc_logo.png"
+      logo: "/images/uiuc_logo.png"
 # # =====================================================
 # # 🛠 Skills Section
 # # =====================================================

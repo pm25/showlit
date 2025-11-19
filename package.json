@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "vite",
     "build": "npm run prebuild && tsc -b && vite build",
-    "prebuild": "npm-run-all --parallel generate:articles fetch:repos extract:publications",
-    "build:yaml": "npm run prebuild:yaml && tsc -b && vite build",
-    "prebuild:yaml": "npm-run-all --parallel generate:articles fetch:repos extract:publications generate:data",
+    "prebuild": "npm-run-all --parallel generate:articles fetch:repos extract:publications generate:data",
+    "build:manual": "npm run prebuild:manual && tsc -b && vite build",
+    "prebuild:manual": "npm-run-all --parallel generate:articles fetch:repos extract:publications",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

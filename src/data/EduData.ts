@@ -1,5 +1,5 @@
-import ntu_logo from "/src/data/images/ntu_logo.svg";
-import nccu_logo from "/src/data/images/nccu_logo.svg";
+import ntu_logo from "/images/ntu_logo.svg";
+import nccu_logo from "/images/nccu_logo.svg";
 
 export const EduData = [
   {

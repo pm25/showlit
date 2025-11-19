@@ -1,6 +1,6 @@
-import nvidia_logo from "/src/data/images/nvidia_logo.webp";
-import google_logo from "/src/data/images/google_logo.svg";
-import uiuc_logo from "/src/data/images/uiuc_logo.png";
+import nvidia_logo from "/images/nvidia_logo.webp";
+import google_logo from "/images/google_logo.svg";
+import uiuc_logo from "/images/uiuc_logo.png";
 
 export const WorkData = [
   {
