@@ -1,13 +1,12 @@
 import nccuLogo from "./images/nccu_logo.svg";
 import ntuLogo from "./images/ntu_logo.svg";
-import asuLogo from "./images/asu_logo.svg";
 
 export const EduData = [
   {
-    degree: "Ph.D. in Computer Science",
-    school: "Arizona State University",
-    years: "2022 - Present",
-    logo: asuLogo,
+    degree: "Ph.D. in [Field]",
+    school: "[University Name]",
+    years: "20XX - Present",
+    logo: "https://upload.wikimedia.org/wikipedia/en/a/a1/Arizona_State_University_seal.svg",
   },
   {
     degree: "M.S. in Computer Science",

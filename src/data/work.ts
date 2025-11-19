@@ -4,9 +4,9 @@ import nvidiaLogo from "./images/nvidia_logo.webp";
 
 export const WorkData = [
   {
-    title: "Software Engineer",
-    company: "Nvidia",
-    years: "2022 - Present",
+    title: "[Job Title]",
+    company: "[Company Name]",
+    years: "20XX - Present",
     logo: nvidiaLogo,
   },
   {
