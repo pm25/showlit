@@ -3,14 +3,24 @@ import path from "path";
 import dotenv from "dotenv";
 import { ensureDirExists } from "./utils.js";
 
+// load .env file if present (for local development)
 dotenv.config();
 
+// Load GitHub credentials from environment variables.
+// 
+// Usage:
+// - Local development: create a `.env` file in the project root with the following keys:
+//     GITHUB_USERNAME=your-username
+//     GITHUB_TOKEN=your-personal-access-token
+//   The script will read these values via `dotenv`.
+//
+// - CI/CD (GitHub Actions): The script will automatically read them from the environment.
 const username = process.env.GITHUB_USERNAME;
 const token = process.env.GITHUB_TOKEN;
 
 if (!username) {
-  console.error("❌ GITHUB_USERNAME not set. Exiting.");
-  process.exit(1);
+  console.log("⚠️ GITHUB_USERNAME not set. Skipping fetch:repos");
+  process.exit(0); // exit successfully
 }
 
 const skipListPath = path.join(process.cwd(), "src", "data", "skip-repos.txt");
