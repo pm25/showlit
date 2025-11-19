@@ -3,11 +3,9 @@ sicp_exercises
 8Queens-Genetic-Algorithm
 LeetCode
 Classic-Synchronization-Problems
-Wumpus-World
 Object_Detection
 SOM-K-Anonymity
 Data-Visualization-Taiwan-Population
-ZeroJudge
 Fake-News-Keywords-Highlight
 react-components
 my-articles
@@ -21,6 +19,5 @@ Kaggle-Hotel-Revenue-Prediction
 Medical-Question-Answering-and-Decision-Making-AIdea-Competition
 Information-Retrieval-with-Contrastive-Learning
 Deep-Learning-Projects
-MOS-Datasets
 research-figures
 General-Beamer-Theme
