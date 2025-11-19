@@ -110,7 +110,8 @@ function writeTS(filename, variable, content) {
 // ======================================
 Object.entries(data).forEach(([key, value]) => {
   if (key === "SITE" && value.repoUrl) {
-        const repoName = value.repoUrl.replace(/\.git$/, "").split("/").pop() || "";
+      value.repoUrl = process.env.REPO_URL || value.repoUrl;  
+      const repoName = value.repoUrl.replace(/\.git$/, "").split("/").pop() || "";
         value.repoName = repoName;
         value.base = `/${repoName}/`;
     }
