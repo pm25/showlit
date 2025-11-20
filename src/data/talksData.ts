@@ -1,4 +1,4 @@
-export const TalksData = [
+export const talksData = [
   {
     title: `[Your Talk Title Here]`,
     location: `[Your Talk Location Here]`,

@@ -8,7 +8,7 @@
 # =====================================================
 # 👤 Personal Information
 # =====================================================
-UserInfo:
+userInfo:
   name: "[Your Name]"
   headline: "Student @ [Your University]"
   email: "your-email@gmail.com"
@@ -58,7 +58,7 @@ UserInfo:
 # # =====================================================
 # # 🎓 Education Section
 # # =====================================================
-EduData:
+eduData:
   - degree: "Ph.D. in [Field]"
     school: "[University Name]"
     years: "20XX - Present"
@@ -77,7 +77,7 @@ EduData:
 # # =====================================================
 # # 💼 Work Experience Section
 # # =====================================================
-WorkData:
+workData:
   - title: "[Job Title]"
     company: "[Company Name]"
     years: "20XX - Present"
@@ -96,7 +96,7 @@ WorkData:
 # # =====================================================
 # #  Presentations / Talks Section
 # # =====================================================
-TalksData:
+talksData:
   - title: "[Your Talk Title Here]"
     location: "[Your Talk Location Here]"
     date: "[Month Day, Year]"

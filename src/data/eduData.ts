@@ -1,7 +1,7 @@
 import ntu_logo from "/images/ntu_logo.svg";
 import nccu_logo from "/images/nccu_logo.svg";
 
-export const EduData = [
+export const eduData = [
   {
     degree: `Ph.D. in [Field]`,
     school: `[University Name]`,
