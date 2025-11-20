@@ -12,9 +12,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "npm run build && gh-pages -d dist",
     "deploy:clean": "rm -rf node_modules/.cache/gh-pages/ && npm run deploy",
-    "deploy:manual": "gh-pages -d dist",
+    "deploy:manual": "npm run build:manual && gh-pages -d dist",
     "fetch:repos": "node scripts/fetch-repos.js",
     "build:article-index": "node scripts/build-article-index.js",
     "convert:config": "node scripts/yaml-to-ts.js config/site.yaml && node scripts/yaml-to-ts.js config/profile.yaml && node scripts/yaml-to-ts.js config/publications.yaml"
