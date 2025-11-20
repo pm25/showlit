@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/table";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 
-import { publicationData } from "@/data/publicationData";
+import { publications } from "@/data/publications";
 
 export default function Publications() {
   usePageTitle("Publications");
@@ -33,7 +33,7 @@ export default function Publications() {
               </TableRow>
             </TableHeader>
             <TableBody>
-              {publicationData.items.map((pub, index) => (
+              {publications.items.map((pub, index) => (
                 <TableRow key={index} className="transition-none">
                   <TableCell className="whitespace-normal space-y-1">
                     <a
@@ -51,7 +51,7 @@ export default function Publications() {
                         {pub.authors.split(", ").map((author, i) => (
                           <span
                             key={i}
-                            className={author === publicationData.authorName ? "font-semibold" : ""}
+                            className={author === publications.authorName ? "font-semibold" : ""}
                           >
                             {author}
                             {i < pub.authors.split(", ").length - 1 && ", "}

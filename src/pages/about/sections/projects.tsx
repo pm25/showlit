@@ -3,9 +3,10 @@ import { FaWrench, FaGithub, FaGlobe, FaRegStar, FaArrowRight } from "react-icon
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+
 import { FeaturedRepoData } from "@/data/repos";
 
-export default function Project() {
+export default function ProjectsSection() {
   return (
     <div className="w-full max-w-5xl space-y-6">
       <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">

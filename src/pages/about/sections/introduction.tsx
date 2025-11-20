@@ -2,32 +2,33 @@ import { FaRegEnvelope } from "react-icons/fa6";
 import { toast } from "sonner";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { userInfo } from "@/data/userInfo";
 
-export default function Introduction() {
+import { profile } from "@/data/profile";
+
+export default function IntroductionSection() {
   return (
     <div className="flex flex-col sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 mx-auto">
-      <Profile />
+      <ProfileCard />
       <Biography />
     </div>
   );
 }
 
-function Profile() {
+function ProfileCard() {
   return (
     <div className="flex flex-col items-center gap-y-4 shrink-0">
       <img
-        src={userInfo.profile_image}
+        src={profile.profile_image}
         alt="Profile"
         className="w-60 h-auto rounded-lg object-cover"
       />
       <div className="flex flex-col items-center gap-y-2">
-        <p className="text-2xl font-semibold text-foreground">{userInfo.name}</p>
-        <p className="text-base font-medium text-muted-foreground">{userInfo.headline}</p>
-        <EmailCopy email={userInfo.email} />
+        <p className="text-2xl font-semibold text-foreground">{profile.name}</p>
+        <p className="text-base font-medium text-muted-foreground">{profile.headline}</p>
+        <EmailCopy email={profile.email} />
         <TooltipProvider delayDuration={100}>
           <div className="flex flex-row flex-wrap justify-center gap-y-2 gap-x-4 py-2 text-foreground max-w-64">
-            {userInfo.links.map((item, index) => (
+            {profile.links.map((item, index) => (
               <a
                 key={index}
                 href={item.url}
@@ -59,10 +60,10 @@ function Biography() {
   return (
     <div className="min-w-64 max-w-prose w-full px-4 sm:px-0">
       <div className="text-2xl font-semibold mb-2">About Me</div>
-      {userInfo.biography ? (
+      {profile.biography ? (
         <div
           className="prose dark:prose-invert text-justify text-base/6"
-          dangerouslySetInnerHTML={{ __html: userInfo.biography }}
+          dangerouslySetInnerHTML={{ __html: profile.biography }}
           aria-label="User biography"
         />
       ) : (

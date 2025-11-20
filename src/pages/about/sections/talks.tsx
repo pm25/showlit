@@ -2,9 +2,9 @@ import { useState } from "react";
 import { MdCoPresent } from "react-icons/md";
 import { FaRegCalendar } from "react-icons/fa6";
 
-import { talksData } from "@/data/talksData";
+import { talks } from "@/data/talks";
 
-export default function Talk() {
+export default function TalksSection() {
   const [selectedTalk, setSelectedTalk] = useState<number | null>(null);
 
   const handleTalkClick = (index: number) => {
@@ -19,7 +19,7 @@ export default function Talk() {
       </div>
 
       <div className="px-2 sm:px-6">
-        {talksData.map((talk, index) => (
+        {talks.map((talk, index) => (
           <div
             key={index}
             className={`flex flex-col gap-4 py-2 px-4 rounded-md ${

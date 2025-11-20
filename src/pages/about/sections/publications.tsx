@@ -13,9 +13,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 
-import { publicationDataFeatured } from "@/data/publicationData.featured";
+import { publicationsFeatured } from "@/data/publications.featured";
 
-export default function Publication() {
+export default function PublicationsSection() {
   return (
     <div className="w-full max-w-5xl space-y-6">
       <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
@@ -32,7 +32,7 @@ export default function Publication() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {publicationDataFeatured.items.map((pub, index) => (
+            {publicationsFeatured.items.map((pub, index) => (
               <TableRow key={index} className="transition-none">
                 <TableCell className="whitespace-normal space-y-1">
                   <a
@@ -51,7 +51,7 @@ export default function Publication() {
                         <span
                           key={i}
                           className={
-                            author === publicationDataFeatured.authorName ? "font-semibold" : ""
+                            author === publicationsFeatured.authorName ? "font-semibold" : ""
                           }
                         >
                           {author}

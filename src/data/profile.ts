@@ -1,6 +1,6 @@
 import { FaLinkedin, FaGoogleScholar, FaRegIdBadge, FaGithub, FaSquareFacebook } from "react-icons/fa6";
 
-export const userInfo = {
+export const profile = {
   name: `[Your Name]`,
   headline: `Student @ [Your University]`,
   email: `your-email@gmail.com`,

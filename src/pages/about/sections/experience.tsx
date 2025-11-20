@@ -3,10 +3,10 @@ import { FaGraduationCap, FaBriefcase } from "react-icons/fa6";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
-import { eduData } from "@/data/eduData";
-import { workData } from "@/data/workData";
+import { education } from "@/data/education";
+import { workExperience } from "@/data/workExperience";
 
-export default function Experience() {
+export default function ExperienceSection() {
   return (
     <div className="w-full max-w-5xl">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 px-2 sm:px-6">
@@ -19,7 +19,7 @@ export default function Experience() {
           </CardHeader>
           <ScrollArea className="max-h-96">
             <CardContent className="space-y-4">
-              {eduData.map((edu, index) => (
+              {education.map((edu, index) => (
                 <div key={index} className="flex items-center gap-4">
                   <img
                     src={edu.logo}
@@ -46,7 +46,7 @@ export default function Experience() {
           </CardHeader>
           <ScrollArea className="max-h-96">
             <CardContent className="space-y-4">
-              {workData.map((job, index) => (
+              {workExperience.map((job, index) => (
                 <div key={index} className="flex items-center gap-4">
                   <img
                     src={job.logo}

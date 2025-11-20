@@ -7,7 +7,7 @@ export interface Publication {
   featured: boolean;
 }
 
-export interface PublicationDataType {
+export interface PublicationsType {
   authorName: string;
   items: Publication[];
 }

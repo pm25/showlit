@@ -2,7 +2,7 @@ import nvidia_logo from "/images/nvidia_logo.webp";
 import google_logo from "/images/google_logo.svg";
 import uiuc_logo from "/images/uiuc_logo.png";
 
-export const workData = [
+export const workExperience = [
   {
     title: `[Job Title]`,
     company: `[Company Name]`,

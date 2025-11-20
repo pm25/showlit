@@ -4,7 +4,7 @@ import yaml from "js-yaml";
 import { toTS, ensureDirExists } from "./utils.js";
 
 const TYPE_MAP = {
-  publicationData: "PublicationDataType",
+  publications: "PublicationsType",
 };
 
 // ======================================
