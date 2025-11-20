@@ -12,126 +12,134 @@ import { Button } from "@/components/ui/button";
 import { parseFrontmatter } from "@/utils/parseFrontmatter";
 import type { FrontMatter } from "@/utils/parseFrontmatter";
 
-// import markdown files lazily
-const markdownFiles = import.meta.glob("/src/data/articles/*.md", {
-    query: "?raw",
-    import: "default",
-    eager: false,
-});
+const publicBase = import.meta.env.BASE_URL + "articles";
 
 export default function Article() {
-    const { slug } = useParams<{ slug: string }>();
-    const [content, setContent] = useState<string>("");
-    const [metadata, setMetadata] = useState<FrontMatter>({});
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
+  const { slug } = useParams<{ slug: string }>();
+  const [content, setContent] = useState<string>("");
+  const [metadata, setMetadata] = useState<FrontMatter>({});
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-    usePageTitle(metadata.title ?? slug ?? "");
+  usePageTitle(metadata.title ?? slug ?? "");
 
-    useEffect(() => {
-        if (!slug) return;
+  useEffect(() => {
+    if (!slug) return;
 
-        const loadArticle = async () => {
-            setLoading(true);
-            setError(null);
+    const loadArticle = async () => {
+      setLoading(true);
+      setError(null);
 
-            const path = `/src/data/articles/${slug}.md`;
+      try {
+        const res = await fetch(`${publicBase}/${slug}.md`);
+        const rawContent = await res.text();
 
-            if (markdownFiles[path]) {
-                try {
-                    const rawContent = await markdownFiles[path]();
-                    const { attributes, body } = parseFrontmatter(rawContent as string);
-                    setContent(body);
-                    setMetadata(attributes);
-                } catch (err) {
-                    console.error(err);
-                    setError("Failed to load the article.");
-                    setContent("");
-                    setMetadata({ title: "Error" });
-                }
-            } else {
-                setError(`The article "${slug}" could not be found.`);
-                setContent("");
-                setMetadata({ title: "Not Found" });
-            }
+        if (!res.ok) throw new Error("FETCH_ERROR");
+        // detect GitHub Pages fallback to index.html
+        if (rawContent.startsWith("<!DOCTYPE html>") || rawContent.includes('<div id="'))
+          throw new Error("NOT_FOUND");
 
-            setLoading(false);
-        };
+        try {
+          const { attributes, body } = parseFrontmatter(rawContent);
+          setMetadata(attributes);
+          setContent(body);
+        } catch (e) {
+          console.error("Frontmatter parse error:", e);
+          throw new Error("PARSE_ERROR");
+        }
+      } catch (err) {
+        console.error(err);
+        setContent("");
 
-        loadArticle();
-    }, [slug]);
+        if (err instanceof Error) {
+          if (err.message === "NOT_FOUND") {
+            setError(`The article "${slug}" does not exist.`);
+            setMetadata({ title: "Article Not Found" });
+          } else if (err.message === "PARSE_ERROR") {
+            setError(`The article "${slug}" has invalid formatting.`);
+            setMetadata({ title: "Parse Error" });
+          } else {
+            setError("Unable to load the article. Please try again later.");
+            setMetadata({ title: "Error" });
+          }
+        } else {
+          setError("Unexpected error occurred.");
+          setMetadata({ title: "Error" });
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
 
-    if (error) {
-        return (
-            <div className="flex justify-center">
-                <div className="text-center max-w-6xl w-full bg-muted rounded-lg space-y-4 p-6 sm:p-12 border shadow-sm">
-                    <div className="text-4xl font-semibold">{metadata.title || "Error"}</div>
-                    <p>{error}</p>
-                    <Button asChild variant="outline" className="mt-2 gap-1">
-                        <Link to="/articles">
-                            <FaArrowLeft className="w-4 h-4" /> Back to Articles
-                        </Link>
-                    </Button>
-                </div>
-            </div>
-        );
-    }
+    loadArticle();
+  }, [slug]);
 
+  if (error) {
     return (
-        <div className="flex flex-col justify-center items-center">
-            <div className="prose dark:prose-invert max-w-6xl w-full bg-muted rounded-lg overflow-hidden p-6 sm:p-12 border shadow-sm">
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} skipHtml={false}>
-                    {content}
-                </ReactMarkdown>
-
-                {!loading && <Separator className="my-6 sm:my-12" />}
-                {!loading && <ArticleComments />}
-            </div>
-
-            <div className="relative w-full max-w-6xl mt-4">
-                <div className="absolute top-0 right-0">
-                    <Button
-                        asChild
-                        variant="ghost"
-                        size="default"
-                        className="gap-1 text-muted-foreground"
-                    >
-                        <Link to="/articles">
-                            <FaArrowLeft className="w-4 h-4" /> Back to Articles
-                        </Link>
-                    </Button>
-                </div>
-            </div>
+      <div className="flex justify-center">
+        <div className="text-center max-w-6xl w-full bg-muted rounded-lg space-y-4 p-6 sm:p-12 border shadow-sm">
+          <div className="text-4xl font-semibold">{metadata.title || "Error"}</div>
+          <p>{error}</p>
+          <Button asChild variant="outline" className="mt-2 gap-1">
+            <Link to="/articles">
+              <FaArrowLeft className="w-4 h-4" /> Back to Articles
+            </Link>
+          </Button>
         </div>
+      </div>
     );
+  }
+
+  return (
+    <div className="flex flex-col justify-center items-center">
+      <div className="prose dark:prose-invert max-w-6xl w-full bg-muted rounded-lg overflow-hidden p-6 sm:p-12 border shadow-sm">
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} skipHtml={false}>
+          {content}
+        </ReactMarkdown>
+
+        {!loading && <Separator className="my-6 sm:my-12" />}
+        {!loading && <ArticleComments />}
+      </div>
+
+      <div className="relative w-full max-w-6xl mt-4">
+        <div className="absolute top-0 right-0">
+          <Button asChild variant="ghost" size="default" className="gap-1 text-muted-foreground">
+            <Link to="/articles">
+              <FaArrowLeft className="w-4 h-4" /> Back to Articles
+            </Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 function ArticleComments() {
-    const location = useLocation();
-    const { theme } = useTheme();
+  const location = useLocation();
+  const { theme } = useTheme();
 
-    const giscusTheme: "light" | "dark_dimmed" = (() => {
-        if (theme === "dark") return "dark_dimmed";
-        if (theme === "light") return "light";
-        // fallback to system preference
-        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark_dimmed" : "light";
-    })();
+  const giscusTheme: "light" | "dark_dimmed" = (() => {
+    if (theme === "dark") return "dark_dimmed";
+    if (theme === "light") return "light";
+    // fallback to system preference
+    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark_dimmed" : "light";
+  })();
 
-    return (
-        <Giscus
-            repo="pm25/showlit" // FIXME: uses SITE.repoName
-            repoId="R_kgDONgMOyA"
-            category="General"
-            categoryId="DIC_kwDONgMOyM4Cq4Ga"
-            mapping="specific"
-            term={location.pathname}
-            strict="0"
-            reactionsEnabled="1"
-            emitMetadata="0"
-            inputPosition="top"
-            theme={giscusTheme}
-            lang="en"
-            loading="lazy"
-        />
-    );
+  return (
+    <Giscus
+      repo="pm25/showlit" // FIXME: uses SITE.repoName
+      repoId="R_kgDONgMOyA"
+      category="General"
+      categoryId="DIC_kwDONgMOyM4Cq4Ga"
+      mapping="specific"
+      term={location.pathname}
+      strict="0"
+      reactionsEnabled="1"
+      emitMetadata="0"
+      inputPosition="top"
+      theme={giscusTheme}
+      lang="en"
+      loading="lazy"
+    />
+  );
 }
