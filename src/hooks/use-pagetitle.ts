@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { SITE } from "@/data/SITE";
+import { site } from "@/data/site";
 
 export function usePageTitle(title: string) {
   useEffect(() => {
-    document.title = `${title} - ${SITE.name}`;
+    document.title = `${title} - ${site.name}`;
   }, [title]);
 }
