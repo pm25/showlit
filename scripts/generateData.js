@@ -3,6 +3,11 @@ import path from "path";
 import yaml from "js-yaml";
 import { toTS, ensureDirExists } from "./utils.js";
 
+const TYPE_MAP = {
+  publicationData: "PublicationDataType",
+};
+
+
 // ======================================
 // 1. Get YAML file from argument
 // ======================================
@@ -98,10 +103,20 @@ function writeTS(filename, variable, content) {
     importStatements += `import ${variableName} from "${filePath}";\n`;
   });
 
-  if (importStatements) importStatements += "\n";
+  // Determine types based on filename/variable name
+  const typeName = TYPE_MAP[variable];
+  let typeImport = "";
+  let typeAnnotation = "";
+  
+  if (typeName) {
+    typeImport = `import type { ${typeName} } from "@/types/${variable}";\n`;
+    typeAnnotation = `: ${typeName}`;
+  }
+
+  if (importStatements || typeImport) typeImport += '\n';
 
   // combine imports and TS content
-  const tsContent = `${importStatements}export const ${variable} = ${toTS(content)};\n`;
+  const tsContent = `${importStatements}${typeImport}export const ${variable}${typeAnnotation} = ${toTS(content)};`;
   fs.writeFileSync(path.join(outDir, filename), tsContent);
 }
 
@@ -109,7 +124,7 @@ function writeTS(filename, variable, content) {
 // 4. Write TS files
 // ======================================
 Object.entries(data).forEach(([key, value]) => {
-  if (key === "SITE" && value.repoUrl) {
+  if (key === "site" && value.repoUrl) {
       value.repoUrl = process.env.REPO_URL || value.repoUrl;  
       const repoName = value.repoUrl.replace(/\.git$/, "").split("/").pop() || "";
         value.repoName = repoName;
