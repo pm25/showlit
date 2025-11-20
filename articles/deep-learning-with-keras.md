@@ -1,4 +1,4 @@
-const e=`---
+---
 title: "Deep Learning with Keras"
 created_at: "2019-09-04"
 updated_at: "2025-05-20T21:00:00"
@@ -35,4 +35,3 @@ Explore the [Classification tutorial on Colab](https://colab.research.google.com
 ## Source Code
 
 Access the full tutorial repository on [GitHub](https://github.com/pm25/deep_learning_tutorial).
-`;export{e as default};
