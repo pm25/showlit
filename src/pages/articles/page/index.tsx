@@ -31,31 +31,34 @@ export default function Article() {
     useEffect(() => {
         if (!slug) return;
 
-        setLoading(true);
-        setError(null);
+        const loadArticle = async () => {
+            setLoading(true);
+            setError(null);
 
-        const path = `/src/data/articles/${slug}.md`;
+            const path = `/src/data/articles/${slug}.md`;
 
-        if (markdownFiles[path]) {
-            markdownFiles[path]()
-                .then((rawContent) => {
+            if (markdownFiles[path]) {
+                try {
+                    const rawContent = await markdownFiles[path]();
                     const { attributes, body } = parseFrontmatter(rawContent as string);
                     setContent(body);
                     setMetadata(attributes);
-                    setLoading(false);
-                })
-                .catch((err) => {
+                } catch (err) {
                     console.error(err);
                     setError("Failed to load the article.");
+                    setContent("");
                     setMetadata({ title: "Error" });
-                    setLoading(false);
-                });
-        } else {
-            setError(`The article "${slug}" could not be found.`);
-            setContent("");
-            setMetadata({ title: "Not Found" });
+                }
+            } else {
+                setError(`The article "${slug}" could not be found.`);
+                setContent("");
+                setMetadata({ title: "Not Found" });
+            }
+
             setLoading(false);
-        }
+        };
+
+        loadArticle();
     }, [slug]);
 
     if (error) {
@@ -116,7 +119,7 @@ function ArticleComments() {
 
     return (
         <Giscus
-            repo="pm25/showlit"
+            repo="pm25/showlit" // FIXME: uses SITE.repoName
             repoId="R_kgDONgMOyA"
             category="General"
             categoryId="DIC_kwDONgMOyM4Cq4Ga"
