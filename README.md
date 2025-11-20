@@ -23,7 +23,7 @@ author: Pin-Yen Huang
     ·
     <a href="https://github.com/pm25/showlit/issues/new?labels=bug&template=bug-report---.md">🐞 Report Bug</a>
     ·
-    <a href="https://github.com/pm25/showlit/logs">📄 Update Log</a>
+    <a href="./CHANGELOG.md">📄 Update Log</a>
   </p>
 </div>
 
