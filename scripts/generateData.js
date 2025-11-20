@@ -7,22 +7,21 @@ const TYPE_MAP = {
   publicationData: "PublicationDataType",
 };
 
-
 // ======================================
 // 1. Get YAML file from argument
 // ======================================
 const inputFile = process.argv[2]; // e.g., "config/profile.yaml"
 if (!inputFile) {
-    console.error("❌ Please provide the path to the YAML file.");
-    console.error("Usage: node generate-data.js config/profile.yaml");
-    process.exit(1);
+  console.error("❌ Please provide the path to the YAML file.");
+  console.error("Usage: node generate-data.js config/profile.yaml");
+  process.exit(1);
 }
 
 const yamlPath = path.join(process.cwd(), inputFile);
 
 if (!fs.existsSync(yamlPath)) {
-    console.error(`❌ ${inputFile} not found!`);
-    process.exit(1);
+  console.error(`❌ ${inputFile} not found!`);
+  process.exit(1);
 }
 
 // ======================================
@@ -47,7 +46,7 @@ function writeTS(filename, variable, content) {
   const imageImports = [];
 
   // convert file path to valid TS variable
-  const getVariableName = filePath => {
+  const getVariableName = (filePath) => {
     const baseName = path.basename(filePath, path.extname(filePath));
     return baseName.replace(/[\s\.\-]/g, "_");
   };
@@ -107,16 +106,18 @@ function writeTS(filename, variable, content) {
   const typeName = TYPE_MAP[variable];
   let typeImport = "";
   let typeAnnotation = "";
-  
+
   if (typeName) {
     typeImport = `import type { ${typeName} } from "@/types/${variable}";\n`;
     typeAnnotation = `: ${typeName}`;
   }
 
-  if (importStatements || typeImport) typeImport += '\n';
+  if (importStatements || typeImport) typeImport += "\n";
 
   // combine imports and TS content
-  const tsContent = `${importStatements}${typeImport}export const ${variable}${typeAnnotation} = ${toTS(content)};`;
+  const tsContent = `${importStatements}${typeImport}export const ${variable}${typeAnnotation} = ${toTS(
+    content
+  )};`;
   fs.writeFileSync(path.join(outDir, filename), tsContent);
 }
 
@@ -125,12 +126,27 @@ function writeTS(filename, variable, content) {
 // ======================================
 Object.entries(data).forEach(([key, value]) => {
   if (key === "site" && value.repoUrl) {
-      value.repoUrl = process.env.REPO_URL || value.repoUrl;  
-      const repoName = value.repoUrl.replace(/\.git$/, "").split("/").pop() || "";
-        value.repoName = repoName;
-        value.base = `/${repoName}/`;
-    }
-  
+    value.repoUrl = process.env.REPO_URL || value.repoUrl;
+    const repoName =
+      value.repoUrl
+        .replace(/\.git$/, "")
+        .split("/")
+        .pop() || "";
+    value.repoName = repoName;
+    value.base = `/${repoName}/`;
+  }
+
+  // check for items array with featured property
+  if (Array.isArray(value.items) && value.items.some((item) => "featured" in item)) {
+    const featuredValue = {
+      ...value,
+      items: value.items
+        .filter((item) => item.featured)
+        .map(({ featured, ...rest }) => rest),
+    };
+    writeTS(`${key}.featured.ts`, `${key}Featured`, featuredValue);
+  }
+
   writeTS(`${key}.ts`, key, value);
 });
 
