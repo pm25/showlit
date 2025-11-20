@@ -106,18 +106,13 @@ export default function Article() {
 function ArticleComments() {
     const location = useLocation();
     const { theme } = useTheme();
-    const [giscusTheme, setGiscusTheme] = useState<"light" | "dark_dimmed">("light");
 
-    useEffect(() => {
-        if (theme === "dark") {
-            setGiscusTheme("dark_dimmed");
-        } else if (theme === "light") {
-            setGiscusTheme("light");
-        } else {
-            const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-            setGiscusTheme(prefersDark ? "dark_dimmed" : "light");
-        }
-    }, [theme]);
+    const giscusTheme: "light" | "dark_dimmed" = (() => {
+        if (theme === "dark") return "dark_dimmed";
+        if (theme === "light") return "light";
+        // fallback to system preference
+        return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark_dimmed" : "light";
+    })();
 
     return (
         <Giscus
