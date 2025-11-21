@@ -169,13 +169,14 @@ Other configurable files include:
 
 ### 📝 Add Articles
 
-To add articles, create a folder and Markdown file inside [public/articles](public/articles) following this structure:
+To add a article, create a folder and Markdown file inside [public/articles](public/articles) following this structure:
 
 ```sh
+# 💡 the folder name and Markdown filename must be the same
 /public/articles/{slug}/{slug}.md
 ```
 
-> 💡 Note: The folder name and the Markdown filename must be identical.
+You can use [public/articles/template/template.md](public/articles/template/template.md) as a reference.
 
 When the site is built or deployed, any properly structured articles will be automatically included and indexed.
 
