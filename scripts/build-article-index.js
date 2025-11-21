@@ -31,17 +31,42 @@ function parseFrontmatter(content) {
   return { data, content: body };
 }
 
+// recursively get all .md files in a directory
+function getAllMarkdownFiles(dir) {
+  let results = [];
+  const list = fs.readdirSync(dir, { withFileTypes: true });
+
+  list.forEach((file) => {
+    const filePath = path.join(dir, file.name);
+    if (file.isDirectory()) {
+      results = results.concat(getAllMarkdownFiles(filePath));
+    } else if (file.isFile() && file.name.endsWith(".md")) {
+      results.push(filePath);
+    }
+  });
+
+  return results;
+}
+
 function generatePostsJson() {
-  const files = fs.readdirSync(articlesDir).filter(file => file.endsWith(".md"));
+  const files = getAllMarkdownFiles(articlesDir);
 
   const articles = {};
 
-  files.forEach(filename => {
-    const filePath = path.join(articlesDir, filename);
-    const fileContent = fs.readFileSync(filePath, "utf8");
+  files.forEach((filePath) => {
+    const relativePath = path.relative(articlesDir, filePath).replace(/\\/g, "/"); // normalize slashes
+    const parts = relativePath.split("/");
 
+    // Must be {slug}/{slug}.md
+    if (parts.length !== 2 || parts[1] !== `${parts[0]}.md`) {
+      console.warn(`⚠️ Skipping invalid file structure: ${relativePath}. Expected /{slug}/{slug}.md`);
+      return;
+    }
+
+    const slug = parts[0];
+
+    const fileContent = fs.readFileSync(filePath, "utf8");
     const { data } = parseFrontmatter(fileContent);
-    const slug = getSlug(filename);
 
     const defaults = {
       title: "Untitled",
@@ -54,7 +79,7 @@ function generatePostsJson() {
     };
 
     articles[slug] = {
-      path: path.relative(process.cwd(), path.join(articlesDir, filename)),
+      path: path.relative(process.cwd(), filePath).replace(/\\/g, "/"),
       ...defaults,
       ...data,
     };
@@ -70,7 +95,7 @@ function generatePostsJson() {
 
   ensureDirExists(outputPath);
   fs.writeFileSync(outputPath, JSON.stringify(sortedArticles, null, 4), "utf-8");
-  
+
   console.log(`✅ articles.json generated with ${Object.keys(sortedArticles).length} posts`);
 }
 
