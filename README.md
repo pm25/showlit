@@ -53,10 +53,10 @@ author: Pin-Yen Huang
 
 **Why Showlit?**
 
--   ⚡ **Quick Setup** – Get your site running in minutes.
--   🎨 **Customizable** – Easily adjust the design (basic react skills required).
--   🔧 **Built-in Features** – Includes a blog, automatic project fetching, and more.
--   👥 **Beginner-Friendly** – No advanced coding needed to get started.
+- ⚡ **Quick Setup** – Get your site running in minutes.
+- 🎨 **Customizable** – Easily adjust the design (basic react skills required).
+- 🔧 **Built-in Features** – Includes a blog, automatic project fetching, and more.
+- 👥 **Beginner-Friendly** – No advanced coding needed to get started.
 
 ✨ **Found this project useful?** Give it a ⭐ to support the project!
 
@@ -64,11 +64,11 @@ author: Pin-Yen Huang
 
 This project is primarily built using the following frameworks and libraries:
 
--   [![React][React.js]][React-url]
--   [![Vite][Vite]][Vite-url]
--   [![Tailwind CSS][Tailwind.css]][Tailwind-url]
--   [![Typescript][Typescript]][Typescript-url]
--   [![shadcn/ui][shadcn.ui]][shadcn-url]
+- [![React][React.js]][React-url]
+- [![Vite][Vite]][Vite-url]
+- [![Tailwind CSS][Tailwind.css]][Tailwind-url]
+- [![Typescript][Typescript]][Typescript-url]
+- [![shadcn/ui][shadcn.ui]][shadcn-url]
 
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
@@ -133,7 +133,7 @@ npm run deploy
 
 ### 💡 Notes
 
--   If you’re forking or cloning this repo as a template, it’s recommended to update the git remote:
+- If you’re forking or cloning this repo as a template, it’s recommended to update the git remote:
 
 ```sh
 git remote set-url origin https://github.com/<your-username>/<your-repo>.git
@@ -146,28 +146,30 @@ git remote -v # Confirm the changes
 
 ## Usage
 
-To customize the website with your own information, update the data files located in [src/data](src/data). The website will automatically reflect your changes.
+### ✏️ Customize Content
 
-For example, in [src/data/profile.ts](src/data/profile.ts), you can update the personal information with your owns:
+To customize the website with your own information, update the data files located in [config](config). Changes will be automatically reflected when you deploy the website.
 
-```ts
-export const UserInfo = {
-    name: "Pin-Yen Huang",
-    profile_url: "https://avatars.githubusercontent.com/u/33774054?v=4",
-    headline: "CLLab • National Taiwan University",
-    // ...other fields
-};
+For example, in [config/profile.yaml](config/profile.yaml), you can update the information with your owns:
+
+```yaml
+profile:
+  name: "Pin-Yen Huang"
+  headline: "Student @ National Taiwan University"
+  email: "pyhuang97@gmail.com"
+  profile_image: "https://github.com/pm25.png"
+  # ...other fields
 ```
 
-You can also customize the following files:
+Other configurable files include:
 
--   [src/data/profile.ts](src/data/profile.ts)
--   [src/data/education.ts](src/data/education.ts)
--   [src/data/work.ts](src/data/work.ts)
--   [src/data/publications.ts](src/data/publications.ts)
--   [src/data/talks.ts](src/data/talks.ts)
+- Website Information: [config/site.ts](config/site.ts)
+- Profile Information: [config/profile.ts](config/profile.ts)
+- Publications: [config/publications.ts](config/publications.ts)
 
-To add articles, simply place your markdown files inside the [src/data/articles](src/data/articles) folder. The site will automatically include them whenever you deploy.
+### 📝 Add Articles
+
+To add articles, simply place your markdown files inside the [public/articles](public/articles) folder. The site will automatically include them whenever you deploy the website.
 
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
@@ -193,9 +195,9 @@ Pin-Yen Huang - [pyhuang97@gmail.com](mailto:pyhuang97@gmail.com)
 
 I am deeply grateful for the following tools and resources that contributed to the development of this project:
 
--   [giscus](https://giscus.app)
--   [React Icons](https://react-icons.github.io/react-icons)
--   [Best README Template](https://github.com/othneildrew/Best-README-Template)
+- [giscus](https://giscus.app)
+- [React Icons](https://react-icons.github.io/react-icons)
+- [Best README Template](https://github.com/othneildrew/Best-README-Template)
 
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
