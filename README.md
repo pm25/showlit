@@ -148,7 +148,7 @@ git remote -v # Confirm the changes
 
 ### ✏️ Customize Content
 
-You can personalize the website by updating the configuration files located in the [config](config) folder. Any changes you make will be automatically applied when the site is deployed.
+You can personalize the website by updating the configuration files located in the [config](config) folder. Any changes will be automatically applied when the site is built or deployed.
 
 For example, in [config/profile.yaml](config/profile.yaml), you can update the information with your owns:
 
@@ -169,7 +169,15 @@ Other configurable files include:
 
 ### 📝 Add Articles
 
-To add articles, simply place your markdown files inside the [public/articles](public/articles) folder. The site will automatically include them whenever you deploy the website.
+To add articles, create a folder and Markdown file inside [public/articles](public/articles) following this structure:
+
+```sh
+/public/articles/{slug}/{slug}.md
+```
+
+> 💡 Note: The folder name and the Markdown filename must be identical.
+
+When the site is built or deployed, any properly structured articles will be automatically included and indexed.
 
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 

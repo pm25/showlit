@@ -57,7 +57,7 @@ function generatePostsJson() {
     const relativePath = path.relative(articlesDir, filePath).replace(/\\/g, "/"); // normalize slashes
     const parts = relativePath.split("/");
 
-    // Must be {slug}/{slug}.md
+    // must be {slug}/{slug}.md
     if (parts.length !== 2 || parts[1] !== `${parts[0]}.md`) {
       console.warn(`⚠️ Skipping invalid file structure: ${relativePath}. Expected /{slug}/{slug}.md`);
       return;
