@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, useLocation, Link } from "react-router";
 import ReactMarkdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
+import remarkGfm from "remark-gfm";
 import Giscus from "@giscus/react";
 import { FaArrowLeft } from "react-icons/fa6";
 
@@ -12,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { parseFrontmatter } from "@/utils/parseFrontmatter";
 import type { FrontMatter } from "@/utils/parseFrontmatter";
 
-const publicBase = import.meta.env.BASE_URL + "articles";
+import { resolveRelativePaths, publicBase } from "./resolveRelativePaths";
 
 export default function Article() {
   const { slug } = useParams<{ slug: string }>();
@@ -31,7 +32,7 @@ export default function Article() {
       setError(null);
 
       try {
-        const res = await fetch(`${publicBase}/${slug}.md`);
+        const res = await fetch(`${publicBase}/${slug}/${slug}.md`);
         const rawContent = await res.text();
 
         if (!res.ok) throw new Error("FETCH_ERROR");
@@ -41,8 +42,9 @@ export default function Article() {
 
         try {
           const { attributes, body } = parseFrontmatter(rawContent);
+          const content = resolveRelativePaths(body, slug);
           setMetadata(attributes);
-          setContent(body);
+          setContent(content);
         } catch (e) {
           console.error("Frontmatter parse error:", e);
           throw new Error("PARSE_ERROR");
@@ -93,7 +95,7 @@ export default function Article() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="prose dark:prose-invert max-w-6xl w-full bg-muted rounded-lg overflow-hidden p-6 sm:p-12 border shadow-sm">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} skipHtml={false}>
+        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} skipHtml={false}>
           {content}
         </ReactMarkdown>
 
