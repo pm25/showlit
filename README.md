@@ -148,7 +148,7 @@ git remote -v # Confirm the changes
 
 ### ✏️ Customize Content
 
-To customize the website with your own information, update the data files located in [config](config). Changes will be automatically reflected when you deploy the website.
+You can personalize the website by updating the configuration files located in the [config](config) folder. Any changes you make will be automatically applied when the site is deployed.
 
 For example, in [config/profile.yaml](config/profile.yaml), you can update the information with your owns:
 
@@ -163,9 +163,9 @@ profile:
 
 Other configurable files include:
 
-- Website Information: [config/site.ts](config/site.ts)
-- Profile Information: [config/profile.ts](config/profile.ts)
-- Publications: [config/publications.ts](config/publications.ts)
+- Website Information: [config/site.yaml](config/site.yaml)
+- Profile Information: [config/profile.yaml](config/profile.yaml)
+- Publications: [config/publications.yaml](config/publications.yaml)
 
 ### 📝 Add Articles
 
