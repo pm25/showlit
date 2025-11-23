@@ -92,28 +92,29 @@ See how ✨Showlit looks in both light and dark themes:
 
 There are two ways to use this template:
 
-1. Quick Setup (no local development required)
-2. Local Development + Manual Deployment
+1. 🚀 Quick Setup (no local development required)
+2. 🧑‍💻 Local Development + Manual Deployment
 
 ### 🚀 Quick Setup (Recommended)
 
-<!-- This option **doesn't require local development**. Just update the configuration files, commit, and push. GitHub Actions will automatically build and deploy your site. -->
+This option **does not require local development**. Just update the configuration files → commit → push. GitHub Actions will take care the rest.
 
-**1️⃣ Fork this repository**
+**1️⃣ Create your repository**
 
-Or click **"Use this template"** to create your own repository.
+- **Fork** this repository, or
+- Click **"Use this template"**
+  - If using the template option, be sure to **copy all branches**
 
-**2️⃣ Configure GitHub Pages deployment**
+**2️⃣ Enable GitHub Pages**
 
-Go to your **Repository Settings** → **Pages**
-Select:
+Go to your **Repository Settings** → **Pages**, then set:
 
 - **Branch:** gh-pages
 - **Folder:** /(root)
 
-Then click **Save**.
+Click **Save**.
 
-**3️⃣ Update config files in `/config`:**
+**3️⃣ Update configuration files in `/config`:**
 
 - [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
 - [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
@@ -121,17 +122,15 @@ Then click **Save**.
 
 **4️⃣ Commit and push changes to `main` branch**
 
-Ensure your changes are pushed (or merged) into the `main` branch.
-
-GitHub Actions will automatically:
+Once your changes are pushed (or merged) to `main` branch, GitHub Actions will automatically:
 
 - Build the project
 - Deploy to GitHub Pages
 - Publish your website 🎉
 
-Wait a few minutes, your website will be available at:
+After a few minutes, your website will be available at:
 
-```html
+```sh
 https://<your-github-username>.github.io/<your-repo-name>
 ```
 
@@ -142,7 +141,7 @@ This option is recommended if you want to **customize components**, **styles**, 
 #### 📌 Requirements
 
 - [Node.js](https://nodejs.org/) - version 20+
-- npm
+- npm (latest)
 
 Update npm to the latest version if needed:
 
@@ -152,16 +151,17 @@ npm install npm@latest -g
 
 #### 🛠️ Local Setup
 
-**1️⃣ Fork this repository**
+**1️⃣ Create your repository**
 
-Or click **"Use this template"** to create your own repository, then clone it locally:
+1. Fork or click "Use this template" to create your own repository
+2. then clone it locally:
 
 ```sh
 git clone https://github.com/<your-github-username>/<your-repo-name>.git
 cd <your-repo-name>
 ```
 
-**2️⃣ Configure GitHub Pages deployment**
+**2️⃣ Enable GitHub Pages**
 
 Go to your **Repository Settings** → **Pages**
 Select:
@@ -211,9 +211,9 @@ This will:
 - Push static assets to the `gh-pages` branch
 - Deploy your site on GitHub Pages 🎉
 
-Wait a few minutes, your website will be available at:
+After a few minutes, your website will be available at:
 
-```html
+```sh
 https://<your-github-username>.github.io/<your-repo-name>
 ```
 
