@@ -92,8 +92,8 @@ See how ✨Showlit looks in both light and dark themes:
 
 There are two ways to use this template:
 
-1️⃣ Quick Setup (no local development required)
-2️⃣ Local Development + Manual Deployment
+1. Quick Setup (no local development required)
+2. Local Development + Manual Deployment
 
 ### 🚀 Quick Setup (Recommended)
 
@@ -132,7 +132,7 @@ GitHub Actions will automatically:
 Wait a few minutes, your website will be available at:
 
 ```html
-https://<your-github-username>.github.io/<your-repo-name>/</your-repo-name></your-github-username>
+https://<your-github-username>.github.io/<your-repo-name>
 ```
 
 ### 🧑‍💻 Local Development & Manual Deployment
@@ -190,12 +190,6 @@ npm run dev
 Open [http://localhost:5173](http://localhost:5173) (or the URL shown in your terminal) in your browser.
 Your site should now be running locally.
 
-**5️⃣ Update config files in `/config`:**
-
-- [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
-- [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
-- [`publications.yaml`](/config/publications.yaml) — (optional) research publications list
-
 **💡Notes:** Changes to configs or new articles may require a fresh build to appear in the local preview. Run:
 
 ```sh
@@ -220,7 +214,7 @@ This will:
 Wait a few minutes, your website will be available at:
 
 ```html
-https://<your-github-username>.github.io/<your-repo-name>/</your-repo-name></your-github-username>
+https://<your-github-username>.github.io/<your-repo-name>
 ```
 
 #### 🔁 Switch Anytime
