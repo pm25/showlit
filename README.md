@@ -76,11 +76,11 @@ This project is primarily built using the following frameworks and libraries:
 
 See how ✨Showlit looks in both light and dark themes:
 
-### ☀️ Light Mode
+### 🌞 Light Mode
 
 ![Light Mode][screenshot-light]
 
-### 🌙 Dark Mode
+### 🌚 Dark Mode
 
 ![Dark Mode][screenshot-dark]
 
@@ -90,40 +90,120 @@ See how ✨Showlit looks in both light and dark themes:
 
 ## Getting Started
 
-Follow these steps to set up the project locally and deploy it to GitHub Pages.
+There are two ways to use this template:
 
-### ✅ Prerequisites
+1️⃣ Quick Setup (no local development required)
+2️⃣ Local Development + Manual Deployment
 
-Make sure you have [Node.js](https://nodejs.org/) and npm installed. You can update npm to the latest version using:
+### 🚀 Quick Setup (Recommended)
+
+<!-- This option **doesn't require local development**. Just update the configuration files, commit, and push. GitHub Actions will automatically build and deploy your site. -->
+
+**1️⃣ Fork this repository**
+
+Or click **"Use this template"** to create your own repository.
+
+**2️⃣ Configure GitHub Pages deployment**
+
+Go to your **Repository Settings** → **Pages**
+Select:
+
+- **Branch:** gh-pages
+- **Folder:** /(root)
+
+Then click **Save**.
+
+**3️⃣ Update config files in `/config`:**
+
+- [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
+- [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
+- [`publications.yaml`](/config/publications.yaml) — (optional) research publications list
+
+**4️⃣ Commit and push changes to `main` branch**
+
+Ensure your changes are pushed (or merged) into the `main` branch.
+
+GitHub Actions will automatically:
+
+- Build the project
+- Deploy to GitHub Pages
+- Publish your website 🎉
+
+Wait a few minutes, your website will be available at:
+
+```html
+https://<your-github-username>.github.io/<your-repo-name>/</your-repo-name></your-github-username>
+```
+
+### 🧑‍💻 Local Development & Manual Deployment
+
+This option is recommended if you want to **customize components**, **styles**, or **add new features**.
+
+#### 📌 Requirements
+
+- [Node.js](https://nodejs.org/) - version 20+
+- npm
+
+Update npm to the latest version if needed:
 
 ```sh
 npm install npm@latest -g
 ```
 
-### 🛠️ Installation
+#### 🛠️ Local Setup
 
-1. **Clone the repository**
+**1️⃣ Fork this repository**
+
+Or click **"Use this template"** to create your own repository, then clone it locally:
 
 ```sh
-git clone https://github.com/pm25/showlit.git
-cd showlit
+git clone https://github.com/<your-github-username>/<your-repo-name>.git
+cd <your-repo-name>
 ```
 
-2. **Install dependencies**
+**2️⃣ Configure GitHub Pages deployment**
+
+Go to your **Repository Settings** → **Pages**
+Select:
+
+- **Branch:** gh-pages
+- **Folder:** /(root)
+
+Then click **Save**.
+
+**3️⃣ Install dependencies**
+
+From the project folder, install all required packages:
 
 ```sh
 npm install
 ```
 
-3. **Start the development server**
+**4️⃣ Start the development server**
+
+Run:
 
 ```sh
 npm run dev
 ```
 
-This will start the Vite development server. Open [http://localhost:5173](http://localhost:5173) (or the URL shown in your terminal) to view it in the browser.
+Open [http://localhost:5173](http://localhost:5173) (or the URL shown in your terminal) in your browser.
+Your site should now be running locally.
 
-### 🚀 Deployment
+**5️⃣ Update config files in `/config`:**
+
+- [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
+- [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
+- [`publications.yaml`](/config/publications.yaml) — (optional) research publications list
+
+**💡Notes:** Changes to configs or new articles may require a fresh build to appear in the local preview. Run:
+
+```sh
+npm run build
+npm run dev
+```
+
+#### 📦 Manual Deployment
 
 To publish the site to GitHub Pages:
 
@@ -131,18 +211,30 @@ To publish the site to GitHub Pages:
 npm run deploy
 ```
 
-### 💡 Notes
+This will:
 
-- If you’re forking or cloning this repo as a template, it’s recommended to update the git remote:
+- Build your website for production
+- Push static assets to the `gh-pages` branch
+- Deploy your site on GitHub Pages 🎉
 
-```sh
-git remote set-url origin https://github.com/<your-username>/<your-repo>.git
-git remote -v # Confirm the changes
+Wait a few minutes, your website will be available at:
+
+```html
+https://<your-github-username>.github.io/<your-repo-name>/</your-repo-name></your-github-username>
 ```
+
+#### 🔁 Switch Anytime
+
+You can freely switch between:
+
+- Updating config files only (Quick Setup)
+- Full local development and customization
+
+Your workflow stays flexible. 💪
 
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
-<!-- USAGE EXAMPLES -->
+<!-- USAGE -->
 
 ## Usage
 
