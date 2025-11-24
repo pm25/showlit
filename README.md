@@ -95,9 +95,13 @@ There are two ways to use this template:
 1. 🚀 Quick Setup (no local development required)
 2. 🧑‍💻 Local Development + Manual Deployment
 
+---
+
 ### 🚀 Quick Setup (Recommended)
 
 This option **does not require local development**. Just update the configuration files → commit → push. GitHub Actions will take care the rest.
+
+---
 
 **1️⃣ Create your repository**
 
@@ -114,6 +118,8 @@ In the **Create a new repository** page:
 
 <img src="/public/articles/showlit-setup/create-repo.png" width="600" />&nbsp;
 
+---
+
 **2️⃣ Enable GitHub Pages**
 
 Go to your **Repository Settings** → **Pages**, then set:
@@ -123,11 +129,15 @@ Go to your **Repository Settings** → **Pages**, then set:
 
 Click **Save**.
 
+---
+
 **3️⃣ Update configuration files in `/config`:**
 
 - [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
 - [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
 - [`publications.yaml`](/config/publications.yaml) — (optional) research publications list
+
+---
 
 **4️⃣ Commit and push changes to `main` branch**
 
@@ -143,9 +153,13 @@ After a few minutes, your website will be available at:
 https://<your-github-username>.github.io/<your-repo-name>
 ```
 
+---
+
 ### 🧑‍💻 Local Development & Manual Deployment
 
 This option is recommended if you want to **customize components**, **styles**, or **add new features**.
+
+---
 
 #### 📌 Requirements
 
@@ -157,6 +171,8 @@ Update npm to the latest version if needed:
 ```sh
 npm install npm@latest -g
 ```
+
+---
 
 #### 🛠️ Local Setup
 
@@ -170,6 +186,8 @@ git clone https://github.com/<your-github-username>/<your-repo-name>.git
 cd <your-repo-name>
 ```
 
+---
+
 **2️⃣ Enable GitHub Pages**
 
 Go to your **Repository Settings** → **Pages**
@@ -180,6 +198,8 @@ Select:
 
 Then click **Save**.
 
+---
+
 **3️⃣ Install dependencies**
 
 From the project folder, install all required packages:
@@ -187,6 +207,8 @@ From the project folder, install all required packages:
 ```sh
 npm install
 ```
+
+---
 
 **4️⃣ Start the development server**
 
@@ -205,6 +227,8 @@ Your site should now be running locally.
 npm run build
 npm run dev
 ```
+
+---
 
 #### 📦 Manual Deployment
 
@@ -225,6 +249,8 @@ After a few minutes, your website will be available at:
 ```sh
 https://<your-github-username>.github.io/<your-repo-name>
 ```
+
+---
 
 #### 🔁 Switch Anytime
 
