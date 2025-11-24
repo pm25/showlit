@@ -50,11 +50,24 @@ Or using HTML for more control:
 
 You can create a table using standard Markdown syntax:
 
-<div style="max-width: 400px; overflow-x: auto;">
+<div style="max-width: 600px; overflow-x: auto;">
 
 | Header 1 | Header 2 | Header 3 |
 | :------- | :------: | -------: |
 | Left     |  Center  |    Right |
 | Data 1   |  Data 2  |   Data 3 |
 
+</div>
+
+## Section 5: Embedding a Slide
+
+You can embed Google Slides like this:
+
+<div class="relative w-full max-w-3xl aspect-video mx-auto overflow-hidden rounded-md my-6">
+	<iframe
+		class="absolute top-0 left-0 w-full h-full"
+		src="https://docs.google.com/presentation/d/e/2PACX-1vQNdJUjHCt1P8G7y1SI9NzWSL57-CytW0cAE7v4BxjB1Gn1l3r7R_1VaoPkmM7E_Xw-HeYokEeJQ_2_/embed?start=false&loop=false&delayms=10000"
+		allowfullscreen
+		title="Embedded Google Slides"
+	></iframe>
 </div>
