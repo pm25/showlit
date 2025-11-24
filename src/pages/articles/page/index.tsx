@@ -12,6 +12,7 @@ import { usePageTitle } from "@/hooks/use-pagetitle";
 import { Button } from "@/components/ui/button";
 import { parseFrontmatter } from "@/utils/parseFrontmatter";
 import type { FrontMatter } from "@/utils/parseFrontmatter";
+import { giscus } from "@/data/giscus";
 
 import { resolveRelativePaths, publicBase } from "./resolveRelativePaths";
 
@@ -129,10 +130,10 @@ function ArticleComments() {
 
   return (
     <Giscus
-      repo="pm25/showlit" // FIXME: uses SITE.repoName
-      repoId="R_kgDONgMOyA"
+      repo={giscus.repo}
+      repoId={giscus.repoId}
       category="General"
-      categoryId="DIC_kwDONgMOyM4Cq4Ga"
+      categoryId={giscus.categoryId}
       mapping="specific"
       term={location.pathname}
       strict="0"

@@ -5,6 +5,7 @@ import { toTS, ensureDirExists } from "./utils.js";
 
 const TYPE_MAP = {
   publications: "PublicationsType",
+  giscus: "GiscusProps",
 };
 
 // ======================================
