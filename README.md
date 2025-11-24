@@ -92,49 +92,44 @@ See how ✨Showlit looks in both light and dark themes:
 
 There are two ways to use this template:
 
-1. 🚀 Quick Setup (no local development required)
-2. 🧑‍💻 Local Development + Manual Deployment
+1. 🚀 [Quick Setup](https://pm25.github.io/showlit/articles/quick-setup) (no local development required)
+2. 🧑‍💻 [Local Development & Manual Deployment](https://pm25.github.io/showlit/articles/manual-setup)
+
+<p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
+
+### 🚀 Quick Setup (Simplified)
+
+This option **does not require local development**. Simply update the configuration files → commit → push. GitHub Actions will handle the build and deployment automatically.
+
+For **detailed instructions with screenshots**, see the [Quick Setup guide](https://pm25.github.io/showlit/articles/quick-setup).
 
 ---
 
-### 🚀 Quick Setup (Recommended)
-
-This option **does not require local development**. Just update the configuration files → commit → push. GitHub Actions will take care the rest.
-
----
-
-**1️⃣ Create your repository**
+**1️⃣ Create Your Repository**
 
 Click **"Use this template"** → **"Create a new repository"**.
 
-<img src="/public/articles/showlit-setup/use-template.png" width="250" />&nbsp;
-
-In the **Create a new repository** page:
+On the **Create a new repository** page:
 
 1. Enable **"Include all branches"**
-2. Choose a repository name
+2. Enter a repository name
 3. Set the visibility to **Public**
 4. Click **"Create repository"**
-
-<img src="/public/articles/showlit-setup/create-repo.png" width="600" />&nbsp;
 
 ---
 
 **2️⃣ Enable GitHub Pages**
 
-Go to your **Repository Settings** → **Pages**, then set:
+Go to your **Repository Settings** → **Pages**, then configure:
 
-1. Open **Settings**
-2. Select **Pages**
-3. **Branch:** gh-pages
-4. **Folder:** /(root)
-5. Click **Save**.
+- **Branch:** `gh-pages`
+- **Folder:** `/(root)`
 
-<img src="/public/articles/showlit-setup/enable-github-page.png" width="600" />&nbsp;
+Click **Save**.
 
 ---
 
-**3️⃣ Update configuration files in `/config`:**
+**3️⃣ Update Configuration Files**
 
 - [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
 - [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
@@ -142,7 +137,7 @@ Go to your **Repository Settings** → **Pages**, then set:
 
 ---
 
-**4️⃣ Commit and push changes to `main` branch**
+**4️⃣ Commit and Push Changes**
 
 Once your changes are pushed (or merged) to `main` branch, GitHub Actions will automatically:
 
@@ -155,114 +150,6 @@ After a few minutes, your website will be available at:
 ```sh
 https://<your-github-username>.github.io/<your-repo-name>
 ```
-
----
-
-### 🧑‍💻 Local Development & Manual Deployment
-
-This option is recommended if you want to **customize components**, **styles**, or **add new features**.
-
----
-
-#### 📌 Requirements
-
-- [Node.js](https://nodejs.org/) - version 20+
-- npm (latest)
-
-Update npm to the latest version if needed:
-
-```sh
-npm install npm@latest -g
-```
-
----
-
-#### 🛠️ Local Setup
-
-**1️⃣ Create your repository**
-
-1. Fork or click "Use this template" to create your own repository
-2. then clone it locally:
-
-```sh
-git clone https://github.com/<your-github-username>/<your-repo-name>.git
-cd <your-repo-name>
-```
-
----
-
-**2️⃣ Enable GitHub Pages**
-
-Go to your **Repository Settings** → **Pages**
-Select:
-
-- **Branch:** gh-pages
-- **Folder:** /(root)
-
-Then click **Save**.
-
----
-
-**3️⃣ Install dependencies**
-
-From the project folder, install all required packages:
-
-```sh
-npm install
-```
-
----
-
-**4️⃣ Start the development server**
-
-Run:
-
-```sh
-npm run dev
-```
-
-Open [http://localhost:5173](http://localhost:5173) (or the URL shown in your terminal) in your browser.
-Your site should now be running locally.
-
-**💡Notes:** Changes to configs or new articles may require a fresh build to appear in the local preview. Run:
-
-```sh
-npm run build
-npm run dev
-```
-
----
-
-#### 📦 Manual Deployment
-
-To publish the site to GitHub Pages:
-
-```sh
-npm run deploy
-```
-
-This will:
-
-- Build your website for production
-- Push static assets to the `gh-pages` branch
-- Deploy your site on GitHub Pages 🎉
-
-After a few minutes, your website will be available at:
-
-```sh
-https://<your-github-username>.github.io/<your-repo-name>
-```
-
----
-
-#### 🔁 Switch Anytime
-
-You can freely switch between:
-
-- Updating config files only (Quick Setup)
-- Full local development and customization
-
-Your workflow stays flexible. 💪
 
 <p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
