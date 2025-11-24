@@ -124,10 +124,13 @@ In the **Create a new repository** page:
 
 Go to your **Repository Settings** → **Pages**, then set:
 
-- **Branch:** gh-pages
-- **Folder:** /(root)
+1. Open **Settings**
+2. Select **Pages**
+3. **Branch:** gh-pages
+4. **Folder:** /(root)
+5. Click **Save**.
 
-Click **Save**.
+<img src="/public/articles/showlit-setup/enable-github-page.png" width="600" />&nbsp;
 
 ---
 
