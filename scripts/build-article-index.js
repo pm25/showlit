@@ -76,6 +76,7 @@ function generatePostsJson() {
       cover_image: "",
       author: "Anonymous",
       draft: false,
+      tags: [],
     };
 
     articles[slug] = {
