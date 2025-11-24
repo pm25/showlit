@@ -101,9 +101,18 @@ This option **does not require local development**. Just update the configuratio
 
 **1️⃣ Create your repository**
 
-- **Fork** this repository, or
-- Click **"Use this template"**
-  - If using the template option, be sure to **copy all branches**
+Click **"Use this template"** → **"Create a new repository"**.
+
+<img src="/public/articles/showlit-setup/use-template.png" width="250" />&nbsp;
+
+In the **Create a new repository** page:
+
+1. Enable **"Include all branches"**
+2. Choose a repository name
+3. Set the visibility to **Public**
+4. Click **"Create repository"**
+
+<img src="/public/articles/showlit-setup/create-repo.png" width="600" />&nbsp;
 
 **2️⃣ Enable GitHub Pages**
 
