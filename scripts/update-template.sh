@@ -14,10 +14,14 @@ mkdir -p "$BACKUP_DIR"
 
 # List of directories/files to update from template
 FILES_TO_UPDATE=(
-  "config"
+  # "config"
   "src"
   "scripts"
   "package.json"
+  "package-lock.json"
+  "README.md"
+  "CHANGELOG.md"
+  ".gitignore"
 )
 
 # Backup current files
