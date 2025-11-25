@@ -21,3 +21,5 @@ Information-Retrieval-with-Contrastive-Learning
 Deep-Learning-Projects
 research-figures
 General-Beamer-Theme
+Defender-of-the-Wild
+Regression-Datasets

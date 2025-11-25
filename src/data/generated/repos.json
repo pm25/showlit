@@ -1,4 +1,21 @@
 {
+  "example-project": {
+    "name": "example-project",
+    "display_name": "[project name]",
+    "description": "A sample repository used for demonstration purposes.",
+    "stargazers_count": 0,
+    "topics": [
+      "example",
+      "repository"
+    ],
+    "language": null,
+    "homepage": "",
+    "html_url": "https://github.com/pm25/example-project",
+    "created_at": "2025-11-25T01:10:00Z",
+    "updated_at": "2025-11-25T01:16:02Z",
+    "pushed_at": "2025-11-25T01:10:00Z",
+    "preview_image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg"
+  },
   "showlit": {
     "name": "showlit",
     "display_name": "",
@@ -18,8 +35,8 @@
     "homepage": "https://pm25.github.io/showlit/",
     "html_url": "https://github.com/pm25/showlit",
     "created_at": "2024-12-20T10:05:02Z",
-    "updated_at": "2025-11-19T05:46:14Z",
-    "pushed_at": "2025-11-19T18:36:02Z",
+    "updated_at": "2025-11-23T05:28:56Z",
+    "pushed_at": "2025-11-25T00:59:32Z",
     "preview_image": "https://pm25.github.io/showlit/images/full_logo.png"
   },
   "Semi-Supervised-Regression": {
@@ -39,24 +56,6 @@
     "updated_at": "2025-11-17T08:49:19Z",
     "pushed_at": "2025-08-22T01:38:11Z",
     "preview_image": "https://pm25.github.io/research-figures/rankup/figures/rankup-illustration.png"
-  },
-  "Regression-Datasets": {
-    "name": "Regression-Datasets",
-    "display_name": "",
-    "description": "🎛️ Regsets - A collection of diverse regression datasets, featuring PyTorch-like dataset classes that automatically download and load datasets",
-    "stargazers_count": 0,
-    "topics": [
-      "datasets",
-      "pytorch",
-      "regression"
-    ],
-    "language": "Python",
-    "homepage": "https://pypi.org/project/regsets",
-    "html_url": "https://github.com/pm25/Regression-Datasets",
-    "created_at": "2024-10-15T05:56:02Z",
-    "updated_at": "2025-11-18T16:42:30Z",
-    "pushed_at": "2025-11-04T18:25:30Z",
-    "preview_image": ""
   },
   "SimplePlus-BeamerTheme": {
     "name": "SimplePlus-BeamerTheme",
@@ -116,23 +115,6 @@
     "pushed_at": "2022-09-10T06:40:04Z",
     "preview_image": ""
   },
-  "Defender-of-the-Wild": {
-    "name": "Defender-of-the-Wild",
-    "display_name": "",
-    "description": "一個小型生態圈的遊戲",
-    "stargazers_count": 1,
-    "topics": [
-      "game",
-      "python"
-    ],
-    "language": "Python",
-    "homepage": "",
-    "html_url": "https://github.com/pm25/Defender-of-the-Wild",
-    "created_at": "2020-04-21T09:57:17Z",
-    "updated_at": "2025-05-30T01:55:01Z",
-    "pushed_at": "2020-06-09T04:33:43Z",
-    "preview_image": ""
-  },
   "pm25.github.io": {
     "name": "pm25.github.io",
     "display_name": "",
@@ -151,7 +133,7 @@
     "html_url": "https://github.com/pm25/pm25.github.io",
     "created_at": "2018-05-24T14:51:50Z",
     "updated_at": "2025-11-18T16:42:40Z",
-    "pushed_at": "2025-10-21T03:20:53Z",
+    "pushed_at": "2025-11-21T19:49:37Z",
     "preview_image": ""
   }
 }

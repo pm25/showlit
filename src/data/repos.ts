@@ -18,12 +18,12 @@ type AllRepoDataMap = Record<string, RepoData>;
 export const AllRepoData: AllRepoDataMap = AllRepoDataImport as AllRepoDataMap;
 
 export const featuredRepos = [
+    "example-project",
+    "example-project",
     "showlit",
-    "pm25.github.io",
     "SimplePlus-BeamerTheme",
     "SimpleDarkBlue-BeamerTheme",
     "Semi-Supervised-Regression",
-    "showlit",
 ] as (keyof typeof AllRepoData)[];
 
 export const FeaturedRepoData = featuredRepos.map((key) => {
