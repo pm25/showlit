@@ -14,14 +14,14 @@ export default function ProjectsSection() {
         Projects
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 px-2 sm:px-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
         {featuredReposArray.map((repoData, index) => (
           <ProjectCard key={index} repoData={repoData} />
         ))}
       </div>
 
       <div className="relative w-full">
-        <div className="absolute right-2 sm:right-6">
+        <div className="absolute right-0">
           <Button asChild variant="ghost" size="sm" className="gap-1 text-muted-foreground">
             <Link to="/projects">
               View all

@@ -18,11 +18,11 @@ export default function TalksSection() {
         Presentations / Talks
       </div>
 
-      <div className="px-2 sm:px-6">
+      <div>
         {talks.map((talk, index) => (
           <div
             key={index}
-            className={`flex flex-col gap-4 py-2 px-4 rounded-md ${
+            className={`flex flex-col gap-4 py-3 px-4 rounded-md ${
               talk.image ? "cursor-pointer hover:bg-muted" : ""
             }`}
             onClick={() => handleTalkClick(index)}

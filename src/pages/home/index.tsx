@@ -22,7 +22,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-1 flex-col items-center gap-16 my-4">
       {homepage.sections.map((sectionName) => (
-        <div key={sectionName} className="w-full max-w-5xl">
+        <div key={sectionName} className="w-full max-w-5xl px-2 md:px-8">
           {sectionComponents[sectionName]}
         </div>
       ))}

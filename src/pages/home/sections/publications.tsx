@@ -23,7 +23,7 @@ export default function PublicationsSection() {
         Publications
       </div>
 
-      <div className="px-2 sm:px-6 overflow-hidden">
+      <div className="overflow-hidden">
         <Table className="table-fixed w-full">
           <TableHeader>
             <TableRow>
@@ -77,7 +77,7 @@ export default function PublicationsSection() {
       </div>
 
       <div className="relative w-full">
-        <div className="absolute right-2 sm:right-6">
+        <div className="absolute right-0">
           <Button asChild variant="outline" size="sm" className="gap-1 text-muted-foreground">
             <Link to="/publications">
               View all
