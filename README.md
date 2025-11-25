@@ -92,8 +92,8 @@ See how ✨Showlit looks in both light and dark themes:
 
 There are two ways to use this template:
 
-1. 🚀 [Quick Setup](https://pm25.github.io/showlit/articles/quick-setup) - no local development required
-2. 🧑‍💻 [Local Development & Manual Deployment](https://pm25.github.io/showlit/articles/manual-setup)
+1. 🚀 [Quick Setup](https://pm25.github.io/showlit/#/articles/quick-setup) - no local development required
+2. 🧑‍💻 [Local Development & Manual Deployment](https://pm25.github.io/showlit/#/articles/manual-setup)
 
 ### 🚀 Quick Setup (Simplified)
 
