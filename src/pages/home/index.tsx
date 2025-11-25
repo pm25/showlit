@@ -20,9 +20,9 @@ export default function HomePage() {
   usePageTitle("About Me");
 
   return (
-    <div className="flex flex-1 flex-col items-center gap-12">
+    <div className="flex flex-1 flex-col items-center gap-16 my-4">
       {homepage.sections.map((sectionName) => (
-        <div key={sectionName} className="w-full max-w-5xl mt-4">
+        <div key={sectionName} className="w-full max-w-5xl">
           {sectionComponents[sectionName]}
         </div>
       ))}
