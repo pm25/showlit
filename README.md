@@ -27,10 +27,6 @@ author: Pin-Yen Huang
   </p>
 </div>
 
-<p align="center">
-  🚧 This project is still under construction! 🚧
-</p>
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
