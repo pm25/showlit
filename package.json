@@ -24,6 +24,7 @@
     "convert:config:sidebar": "node scripts/yaml-to-ts.js config/sidebar.yaml",
     "convert:config:movie": "node scripts/yaml-to-ts.js config/movie.yaml",
     "convert:config:music": "node scripts/yaml-to-ts.js config/music.yaml",
+    "convert:config:about": "node scripts/yaml-to-ts.js config/about.yaml",
     "convert:config": "npm-run-all convert:config:*"
   },
   "dependencies": {

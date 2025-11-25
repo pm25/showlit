@@ -129,7 +129,7 @@ talks:
 #     - name: "Showlit"
 #       description: "A personal showcase website generator."
 #       repo: "https://github.com/pm25/showlit"
-#       preview_image: "showlit.png"
+#       previewImage: "showlit.png"
 #       topics:
 #           - "React"
 #           - "GitHub Pages"

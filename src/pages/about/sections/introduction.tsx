@@ -7,7 +7,7 @@ import { profile } from "@/data/profile";
 
 export default function IntroductionSection() {
   return (
-    <div className="flex flex-col sm:flex-row items-center gap-8 md:gap-12 lg:gap-16 mx-auto">
+    <div className="flex flex-col sm:flex-row items-center justify-center gap-8 md:gap-12 lg:gap-16">
       <ProfileCard />
       <Biography />
     </div>
