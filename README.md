@@ -92,16 +92,14 @@ See how ✨Showlit looks in both light and dark themes:
 
 There are two ways to use this template:
 
-1. 🚀 [Quick Setup](https://pm25.github.io/showlit/articles/quick-setup) (no local development required)
+1. 🚀 [Quick Setup](https://pm25.github.io/showlit/articles/quick-setup) - no local development required
 2. 🧑‍💻 [Local Development & Manual Deployment](https://pm25.github.io/showlit/articles/manual-setup)
-
-<p align="right"><a href="#readme-top">⬆️ Back to top</a></p>
 
 ### 🚀 Quick Setup (Simplified)
 
 This option **does not require local development**. Simply update the configuration files → commit → push. GitHub Actions will handle the build and deployment automatically.
 
-For **detailed instructions with screenshots**, see the [Quick Setup guide](https://pm25.github.io/showlit/articles/quick-setup).
+Below is a **simplified guide**. For **detailed instructions with screenshots**, see the [Quick Setup guide](https://pm25.github.io/showlit/articles/quick-setup).
 
 ---
 
@@ -111,10 +109,10 @@ Click **"Use this template"** → **"Create a new repository"**.
 
 On the **Create a new repository** page:
 
-1. Enable **"Include all branches"**
-2. Enter a repository name
-3. Set the visibility to **Public**
-4. Click **"Create repository"**
+- Enable **"Include all branches"**
+- Enter a repository name
+- Set the visibility to **Public** (default is Public already)
+- Click **"Create repository"**
 
 ---
 
@@ -133,6 +131,8 @@ Click **Save**.
 
 - [`site.yaml`](/config/site.yaml) — website title, metadata, etc.
 - [`profile.yaml`](/config/profile.yaml) — your name, email, profile image, etc.
+- [`sidebar.yaml`](/config/sidebar.yaml) — sidebar layout
+- [`giscus.yaml`](/config/giscus.yaml) — Giscus (article comments) configuration
 - [`publications.yaml`](/config/publications.yaml) — (optional) research publications list
 
 ---
