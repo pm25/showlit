@@ -21,13 +21,6 @@ export const publicationsFeatured = {
       year: `[year]`,
       booktitle: `[Conference/Journal Name]`,
       link: `https://example.com/your-publication-link`
-    },
-    {
-      title: `[Your Publication Title Here]`,
-      authors: `[Your Name], Coauthor Name`,
-      year: `[year]`,
-      booktitle: `[Conference/Journal Name]`,
-      link: `https://example.com/your-publication-link`
     }
   ]
 };

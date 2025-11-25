@@ -33,22 +33,6 @@ export const publications: PublicationsType = {
       year: `[year]`,
       booktitle: `[Conference/Journal Name]`,
       link: `https://example.com/your-publication-link`,
-      featured: true
-    },
-    {
-      title: `[Your Publication Title Here]`,
-      authors: `[Your Name], Coauthor Name`,
-      year: `[year]`,
-      booktitle: `[Conference/Journal Name]`,
-      link: `https://example.com/your-publication-link`,
-      featured: false
-    },
-    {
-      title: `[Your Publication Title Here]`,
-      authors: `[Your Name], Coauthor Name`,
-      year: `[year]`,
-      booktitle: `[Conference/Journal Name]`,
-      link: `https://example.com/your-publication-link`,
       featured: false
     }
   ]
