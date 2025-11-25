@@ -45,7 +45,7 @@ const SpotifyEmbed = () => {
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
       loading="lazy"
       title="Spotify Playlist"
-      className="w-full h-[72vh]"
+      className="w-full h-[62vh]"
     ></iframe>
   );
 };
