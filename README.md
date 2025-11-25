@@ -176,6 +176,8 @@ Other configurable files include:
 
 - Website Information: [config/site.yaml](config/site.yaml)
 - Profile Information: [config/profile.yaml](config/profile.yaml)
+- Sidebar Layout: [config/sidebar.yaml](config/sidebar.yaml)
+- Giscus Comments: [config/giscus.yaml](config/giscus.yaml)
 - Publications: [config/publications.yaml](config/publications.yaml)
 
 ### 📝 Add Articles
