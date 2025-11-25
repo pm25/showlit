@@ -21,7 +21,7 @@ const allTags = Array.from(
   new Set(Object.values(ArticlesData).flatMap((article) => article.tags ?? []))
 ).sort();
 
-export default function Articles() {
+export default function ArticlesPage() {
   usePageTitle("Articles");
 
   const [searchParams] = useSearchParams();

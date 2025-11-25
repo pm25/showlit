@@ -4,7 +4,7 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { Button } from "@/components/ui/button";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 
-export default function NotFound() {
+export default function NotFoundPage() {
     usePageTitle("Page Not Found");
 
     return (

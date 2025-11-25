@@ -4,7 +4,7 @@ import { usePageTitle } from "@/hooks/use-pagetitle";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { movies } from "@/data/movies";
 
-export default function Movies() {
+export default function MoviesPage() {
   usePageTitle("Movies");
 
   return (

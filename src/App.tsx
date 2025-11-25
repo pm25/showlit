@@ -7,13 +7,13 @@ import { ScrollToTop } from "@/hooks/scroll-to-top";
 import { useGlobalMeta } from "./hooks/use-global-meta";
 
 const HomePage = loadLazy(() => import("@/pages/home"));
-const Movies = loadLazy(() => import("@/pages/movies"));
-const Music = loadLazy(() => import("@/pages/music"));
-const Projects = loadLazy(() => import("@/pages/projects"));
-const Publications = loadLazy(() => import("@/pages/publications"));
-const Articles = loadLazy(() => import("@/pages/articles"));
+const MoviesPage = loadLazy(() => import("@/pages/movies"));
+const MusicPage = loadLazy(() => import("@/pages/music"));
+const ProjectsPage = loadLazy(() => import("@/pages/projects"));
+const PublicationsPage = loadLazy(() => import("@/pages/publications"));
+const ArticlesPage = loadLazy(() => import("@/pages/articles"));
 const ArticlePage = loadLazy(() => import("@/pages/articles/page"));
-const NotFound = loadLazy(() => import("@/pages/notfound"));
+const NotFoundPage = loadLazy(() => import("@/pages/notfound"));
 
 export default function App() {
     useGlobalMeta();
@@ -25,13 +25,13 @@ export default function App() {
                 <Routes>
                     <Route path="/" element={<Layout />}>
                         <Route index element={<HomePage />} />
-                        <Route path="movies" element={<Movies />} />
-                        <Route path="music" element={<Music />} />
-                        <Route path="projects" element={<Projects />} />
-                        <Route path="publications" element={<Publications />} />
-                        <Route path="articles" element={<Articles />} />
+                        <Route path="movies" element={<MoviesPage />} />
+                        <Route path="music" element={<MusicPage />} />
+                        <Route path="projects" element={<ProjectsPage />} />
+                        <Route path="publications" element={<PublicationsPage />} />
+                        <Route path="articles" element={<ArticlesPage />} />
                         <Route path="/articles/:slug" element={<ArticlePage />} />
-                        <Route path="*" element={<NotFound />} />
+                        <Route path="*" element={<NotFoundPage />} />
                     </Route>
                 </Routes>
             </Router>

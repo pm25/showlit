@@ -22,7 +22,7 @@ const allTopics = Array.from(
   new Set(Object.values(repos).flatMap((repo) => repo.topics ?? []))
 ).sort();
 
-export default function Projects() {
+export default function ProjectsPage() {
   usePageTitle("Projects");
 
   const [searchParams] = useSearchParams();

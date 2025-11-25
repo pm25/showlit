@@ -13,7 +13,7 @@ import { usePageTitle } from "@/hooks/use-pagetitle";
 
 import { publications } from "@/data/publications";
 
-export default function Publications() {
+export default function PublicationsPage() {
   usePageTitle("Publications");
 
   return (

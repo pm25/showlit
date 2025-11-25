@@ -4,7 +4,7 @@ import { useTheme } from "@/components/theme-provider";
 import { usePageTitle } from "@/hooks/use-pagetitle";
 import { spotify } from "@/data/spotify";
 
-export default function Music() {
+export default function MusicPage() {
   usePageTitle("Music");
 
   return (
