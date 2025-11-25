@@ -5,35 +5,35 @@ sidebar:
     - title: About Me
       url: "/"
       icon:
-        name: User
-        package: lucide-react
+        name: LuUser
+        package: "react-icons/lu"
 
     - title: Projects
       url: "/projects"
       icon:
-        name: Wrench
-        package: lucide-react
+        name: LuWrench
+        package: "react-icons/lu"
 
     - title: Publications
       url: "/publications"
       icon:
-        name: LibraryBig
-        package: lucide-react
+        name: LuLibraryBig
+        package: "react-icons/lu"
 
     - title: Articles
       url: "/articles"
       icon:
-        name: Newspaper
-        package: lucide-react
+        name: LuNewspaper
+        package: "react-icons/lu"
 
     - title: Movies
       url: "/movies"
       icon:
-        name: Clapperboard
-        package: lucide-react
+        name: LuClapperboard
+        package: "react-icons/lu"
 
     - title: Music
       url: "/music"
       icon:
-        name: Music
-        package: lucide-react
+        name: LuMusic
+        package: "react-icons/lu"

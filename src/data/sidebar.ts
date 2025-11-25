@@ -1,4 +1,4 @@
-import { User, Wrench, LibraryBig, Newspaper, Clapperboard, Music } from "lucide-react";
+import { LuUser, LuWrench, LuLibraryBig, LuNewspaper, LuClapperboard, LuMusic } from "react-icons/lu";
 
 export const sidebar = {
   userName: `[Your Name]`,
@@ -7,32 +7,32 @@ export const sidebar = {
     {
       title: `About Me`,
       url: `/`,
-      icon: User
+      icon: LuUser
     },
     {
       title: `Projects`,
       url: `/projects`,
-      icon: Wrench
+      icon: LuWrench
     },
     {
       title: `Publications`,
       url: `/publications`,
-      icon: LibraryBig
+      icon: LuLibraryBig
     },
     {
       title: `Articles`,
       url: `/articles`,
-      icon: Newspaper
+      icon: LuNewspaper
     },
     {
       title: `Movies`,
       url: `/movies`,
-      icon: Clapperboard
+      icon: LuClapperboard
     },
     {
       title: `Music`,
       url: `/music`,
-      icon: Music
+      icon: LuMusic
     }
   ]
 };

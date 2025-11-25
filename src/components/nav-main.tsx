@@ -1,5 +1,6 @@
 import { useLocation, Link } from "react-router";
 import { ChevronLeft, type LucideIcon } from "lucide-react";
+import type { IconType } from "react-icons";
 
 import {
     SidebarGroup,
@@ -15,7 +16,7 @@ export function NavMain({
     items: {
         title: string;
         url: string;
-        icon?: LucideIcon;
+        icon?: LucideIcon | IconType;
     }[];
 }) {
     const location = useLocation();
