@@ -222,8 +222,8 @@ I am deeply grateful for the following tools and resources that contributed to t
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[screenshot-light]: preview/light-mode.webp
-[screenshot-dark]: preview/dark-mode.webp
+[screenshot-light]: preview/showlit-light.png
+[screenshot-dark]: preview/showlit-dark.png
 [React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
 [React-url]: https://react.dev
 [shadcn.ui]: https://img.shields.io/badge/shadcn/ui-000000?style=for-the-badge&logo=shadcn/ui&logoColor=white

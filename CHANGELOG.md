@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 <!-- ---
 
-## [Unreleased]
+## [version] - date
 
 ### Added
 
@@ -33,15 +33,3 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Official release of Showlit 🎉
 - Basic template and project structure
 - Quick Setup guide for easy onboarding
-
-### Fixed
-
-- N/A
-
-### Changed
-
-- N/A
-
-### Removed
-
-- N/A
