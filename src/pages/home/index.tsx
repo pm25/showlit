@@ -6,7 +6,7 @@ import PublicationsSection from "./sections/publications";
 import ProjectsSection from "./sections/projects";
 import TalksSection from "./sections/talks";
 
-import { about } from "@/data/about";
+import { homepage } from "@/data/homepage";
 
 const sectionComponents: Record<string, React.ReactNode> = {
   Introduction: <IntroductionSection />,
@@ -16,12 +16,12 @@ const sectionComponents: Record<string, React.ReactNode> = {
   Talks: <TalksSection />,
 };
 
-export default function About() {
+export default function HomePage() {
   usePageTitle("About Me");
 
   return (
     <div className="flex flex-1 flex-col items-center gap-12">
-      {about.sections.map((sectionName) => (
+      {homepage.sections.map((sectionName) => (
         <div key={sectionName} className="w-full max-w-5xl mt-4">
           {sectionComponents[sectionName]}
         </div>

@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import { ScrollToTop } from "@/hooks/scroll-to-top";
 import { useGlobalMeta } from "./hooks/use-global-meta";
 
-const About = loadLazy(() => import("@/pages/about"));
+const HomePage = loadLazy(() => import("@/pages/home"));
 const Movies = loadLazy(() => import("@/pages/movies"));
 const Music = loadLazy(() => import("@/pages/music"));
 const Projects = loadLazy(() => import("@/pages/projects"));
@@ -24,7 +24,7 @@ export default function App() {
                 <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Layout />}>
-                        <Route index element={<About />} />
+                        <Route index element={<HomePage />} />
                         <Route path="movies" element={<Movies />} />
                         <Route path="music" element={<Music />} />
                         <Route path="projects" element={<Projects />} />

@@ -1,4 +1,4 @@
-export const about = {
+export const homepage = {
   sections: [
     `Introduction`,
     `Experience`,
