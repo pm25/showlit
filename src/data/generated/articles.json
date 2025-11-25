@@ -3,47 +3,41 @@
         "path": "public/articles/manual-setup/manual-setup.md",
         "title": "Manual Setup Guide – Showlit",
         "created_at": "2025-11-24T14:00:00",
-        "updated_at": "2025-11-25T00:28:17.542Z",
         "summary": "Step-by-step guide for local development and manual deployment of the Showlit template.",
-        "cover_image": "/images/cover.jpg",
-        "author": "Pin-Yen Huang",
-        "draft": true,
+        "draft": false,
         "tags": [
             "setup",
             "manual",
             "showlit"
         ],
-        "hash": "186c33ed89f1cd87600fb1a79d92676c9f76d5fb29889c3a48407037f51f9364"
+        "updated_at": "2025-11-25T00:56:07.838Z",
+        "hash": "de5e873ee578278474b3b202aa69a7e0d0fd90b145a5c6e2be2a1285cef8aeae"
     },
     "quick-setup": {
         "path": "public/articles/quick-setup/quick-setup.md",
         "title": "Quick Setup Guide – Showlit",
         "created_at": "2025-11-24T14:00:00",
-        "updated_at": "2025-11-25T00:28:17.546Z",
         "summary": "Step-by-step guide to quickly set up your Showlit personal website without local development.",
-        "cover_image": "/images/cover.jpg",
-        "author": "Pin-Yen Huang",
         "draft": false,
         "tags": [
             "setup",
             "quickstart",
             "showlit"
         ],
-        "hash": "ad57cc917168952c6c7b19e7caf990ba5c5faafab161bcd0905fa9d67c3be3f0"
+        "updated_at": "2025-11-25T00:56:07.841Z",
+        "hash": "19c0fe9c22c3475769cf8055edc78d9330394a8899011aa6934a2c00c6d678d1"
     },
     "template": {
         "path": "public/articles/template/template.md",
-        "title": "[Your Post Title]",
+        "title": "[Your Article Title]",
         "created_at": "2025-05-20T14:30:00",
-        "updated_at": "2025-11-25T00:28:17.547Z",
         "summary": "A one-sentence summary of the post for previews or meta description.",
-        "cover_image": "/images/cover.jpg",
-        "author": "Pin-Yen Huang",
-        "draft": true,
+        "draft": false,
         "tags": [
             "tag1",
             "tag2"
         ],
-        "hash": "ee4d7980c70af3ca0b21b1a87fb4f76405ff4b74dd45dff31429fcc944e0e417"
+        "updated_at": "2025-11-25T00:58:17.495Z",
+        "hash": "e68383599cb7c935fe150b78fea2404b15e38a2124a23c05714aa2daee1c457c"
     }
 }

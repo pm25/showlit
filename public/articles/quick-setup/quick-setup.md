@@ -1,10 +1,7 @@
 ---
 title: "Quick Setup Guide – Showlit"
 summary: "Step-by-step guide to quickly set up your Showlit personal website without local development."
-tags: ["setup", "quickstart", "showlit"] # optional
-cover_image: "/images/cover.jpg" # optional
-author: "Pin-Yen Huang"
-draft: false
+tags: ["setup", "quickstart", "showlit"]
 ---
 
 # 🚀 Quick Setup Guide – Showlit

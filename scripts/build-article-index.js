@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import crypto, { hash } from "crypto";
+import crypto from "crypto";
 import yaml from "js-yaml";
 import { ensureDirExists } from "./utils.js";
 
@@ -83,8 +83,6 @@ function generatePostsJson() {
       title: "Untitled",
       created_at: now,
       summary: "",
-      cover_image: "",
-      author: "Anonymous",
       draft: false,
       tags: [],
     };

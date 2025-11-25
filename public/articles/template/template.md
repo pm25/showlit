@@ -1,15 +1,13 @@
 ---
-title: "[Your Post Title]"
+title: "[Your Article Title]"
 summary: "A one-sentence summary of the post for previews or meta description."
 tags: ["tag1", "tag2"] # optional
-cover_image: "/images/cover.jpg" # optional
-author: "Pin-Yen Huang"
-draft: true
+draft: false # optional — set to true to hide unfinished posts
 ---
 
-# Your Post Title
+# Your Article Title
 
-Below shows some example functions you can use.
+Below are some example elements you can use when writing your article.
 
 ## Section 1: Basics
 

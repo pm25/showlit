@@ -1,10 +1,7 @@
 ---
 title: "Manual Setup Guide – Showlit"
 summary: "Step-by-step guide for local development and manual deployment of the Showlit template."
-tags: ["setup", "manual", "showlit"] # optional
-cover_image: "/images/cover.jpg" # optional
-author: "Pin-Yen Huang"
-draft: true
+tags: ["setup", "manual", "showlit"]
 ---
 
 # 🧑‍💻 Local Development & Manual Deployment
