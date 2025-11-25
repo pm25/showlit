@@ -1,0 +1,36 @@
+projects:
+  items:
+    - id: "example-project"
+      displayName: "[project name]"
+      previewImage: https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg
+      featured: true
+
+    - id: "showlit"
+      displayName: "Showlit"
+      previewImage: https://pm25.github.io/showlit/images/full_logo.png
+      featured: true
+
+    - id: "Semi-Supervised-Regression"
+      displayName: "Semi-Supervised Regression"
+      previewImage: https://pm25.github.io/research-figures/rankup/figures/rankup-illustration.png
+      featured: true
+
+    - id: "SimplePlus-BeamerTheme"
+      displayName: "SimplePlus Beamer Theme"
+      previewImage: https://raw.githubusercontent.com/pm25/simpleplus-beamerTheme/master/preview/slide-1.webp
+      featured: true
+
+    - id: "SimpleDarkBlue-BeamerTheme"
+      displayName: "SimpleDarkBlue Beamer Theme"
+      previewImage: https://raw.githubusercontent.com/pm25/simpledarkblue-beamertheme/master/preview/slide-1.webp
+      featured: true
+
+    - id: "pm25.github.io"
+      displayName: "pm25.github.io"
+      previewImage: null
+      featured: true
+
+    - id: "flappy-bird"
+      displayName: "Flappy Bird"
+      previewImage: null
+      featured: false

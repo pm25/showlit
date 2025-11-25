@@ -1,112 +1,107 @@
 import fs from "fs";
 import path from "path";
+import yaml from "js-yaml";
 import { ensureDirExists } from "./utils.js";
 
-// load environment variables from .env file in local development
+// load environment variables from .env if not in github CI
 if (!process.env.CI) {
   const dotenv = await import("dotenv");
   dotenv.config();
 }
 
-// - local development: create a `.env` file in the project root with the following keys:
-//     GITHUB_REPOSITORY_OWNER=your-github-username
-//     GITHUB_TOKEN=your-personal-access-token
-//   the script will read these values via `dotenv`.
-//
-// - CI/CD (GitHub Actions): The script will automatically read them from the environment.
+// GitHub credentials:
+// - in CI/CD (GitHub Actions): read automatically from environment variables
+// - in local development: load from .env file if it exists
 const username = process.env.GITHUB_REPOSITORY_OWNER;
 const token = process.env.GITHUB_TOKEN;
 
 if (!username) {
   console.log("⚠️ GITHUB_USERNAME not set. Skipping fetch:repos");
-  process.exit(0); // exit successfully
+  process.exit(0);
 }
 
-const skipListPath = path.join(process.cwd(), "src", "data", "skip-repos.txt");
+const projectsYamlPath = path.join(process.cwd(), "config", "projects.yaml");
 const outputPath = path.join(process.cwd(), "src", "data", "generated", "repos.json");
 
-async function fetchAllRepos() {
-    let page = 1;
-    const perPage = 100;
-    const allRepos = [];
+function loadProjectsFromYaml() {
+  const raw = fs.readFileSync(projectsYamlPath, "utf-8");
+  const data = yaml.load(raw);
 
-    while (true) {
-        console.log(`Fetching page ${page}...`);
-        const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
+  const items = data?.projects?.items ?? [];
 
-        const headers = {
-            Accept: "application/vnd.github+json",
-        };
+  const keepIds = new Set(items.map((item) => item.id).filter(Boolean));
 
-        if (token) {
-            headers["Authorization"] = `token ${token}`;
-        } else {
-            console.warn("⚠️ No GitHub token found. Using public API (may be rate-limited).");
-        }
+  const projectsDict = {};
+  for (const item of items) {
+    if (!item.id) continue;
+    const { id, ...rest } = item;
+    projectsDict[id] = rest;
+  }
 
-        const res = await fetch(url, { headers });
-
-        if (!res.ok) {
-            throw new Error(`GitHub API responded with status ${res.status}: ${res.statusText}`);
-        }
-
-        const repos = await res.json();
-        allRepos.push(...repos);
-
-        if (repos.length < perPage) break;
-        page++;
-    }
-
-    return allRepos;
+  return { keepIds, projectsDict };
 }
 
-function getSkipList() {
-    if (!fs.existsSync(skipListPath)) return new Set();
-    const raw = fs.readFileSync(skipListPath, "utf-8");
-    return new Set(raw.split("\n").map((line) => line.trim()).filter(Boolean));
+async function fetchAllRepos() {
+  let page = 1;
+  const perPage = 100;
+  const allRepos = [];
+
+  while (true) {
+    console.log(`Fetching page ${page}...`);
+    const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
+
+    const headers = { Accept: "application/vnd.github+json" };
+    if (token) headers["Authorization"] = `token ${token}`;
+    else console.warn("⚠️ No GitHub token found. Using public API (may be rate-limited).");
+
+    const res = await fetch(url, { headers });
+
+    if (!res.ok) throw new Error(`GitHub API responded with status ${res.status}: ${res.statusText}`);
+
+    const repos = await res.json();
+    allRepos.push(...repos);
+
+    if (repos.length < perPage) break;
+    page++;
+  }
+
+  return allRepos;
 }
 
 async function fetchRepos() {
-    try {
-        // Load existing preview data (if available)
-        let existingData = {};
-        if (fs.existsSync(outputPath)) {
-            const raw = fs.readFileSync(outputPath, "utf-8");
-            existingData = JSON.parse(raw);
-        }
+  try {
+    const data = await fetchAllRepos();
+    const { keepIds, projectsDict } = loadProjectsFromYaml();
+    
+    const merged = {};
 
-        const data = await fetchAllRepos();
-        const skipList = getSkipList();
-        const merged = {};
+    data
+      .filter((repo) => !repo.fork && !repo.private && keepIds.has(repo.name))
+      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+      .forEach((repo) => {
+        merged[repo.name] = {
+          name: repo.name,
+          description: repo.description,
+          stargazers_count: repo.stargazers_count,
+          topics: repo.topics,
+          language: repo.language,
+          homepage: repo.homepage,
+          html_url: repo.html_url,
+          created_at: repo.created_at,
+          updated_at: repo.updated_at,
+          pushed_at: repo.pushed_at,
+          ...projectsDict[repo.name],
+        };
+      });
 
-        data.filter((repo) => !repo.fork && !repo.private && !skipList.has(repo.name))
-            .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
-            .forEach((repo) => {
-                const existing = existingData[repo.name] || {};
-                merged[repo.name] = {
-                    name: repo.name,
-                    display_name: existing.display_name || "",
-                    description: repo.description,
-                    stargazers_count: repo.stargazers_count,
-                    topics: repo.topics,
-                    language: repo.language,
-                    homepage: repo.homepage,
-                    html_url: repo.html_url,
-                    created_at: repo.created_at,
-                    updated_at: repo.updated_at,
-                    pushed_at: repo.pushed_at,
-                    preview_image: existing.preview_image || "",
-                };
-            });
+    ensureDirExists(outputPath);
+    fs.writeFileSync(outputPath, JSON.stringify(merged, null, 2));
 
-        ensureDirExists(outputPath);
-        fs.writeFileSync(outputPath, JSON.stringify(merged, null, 2));
-        
-        console.log(`✅ Repos written to ${outputPath}`);
-    } catch (error) {
-        console.error("❌ Failed to fetch repos:", error);
-        process.exit(1);
-    }
+    console.log(`✅ Repos written to ${outputPath}`);
+  } catch (error) {
+    console.error("❌ Failed to fetch repos:", error);
+    process.exit(1);
+  }
 }
 
 fetchRepos();

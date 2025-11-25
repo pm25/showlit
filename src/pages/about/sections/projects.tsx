@@ -4,7 +4,7 @@ import { FaWrench, FaGithub, FaGlobe, FaRegStar, FaArrowRight } from "react-icon
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
-import { FeaturedRepoData } from "@/data/repos";
+import { featuredReposArray } from "@/data/repos";
 
 export default function ProjectsSection() {
   return (
@@ -15,7 +15,7 @@ export default function ProjectsSection() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 px-2 sm:px-6">
-        {FeaturedRepoData.map((repoData, index) => (
+        {featuredReposArray.map((repoData, index) => (
           <ProjectCard key={index} repoData={repoData} />
         ))}
       </div>
@@ -34,7 +34,7 @@ export default function ProjectsSection() {
   );
 }
 
-function ProjectCard({ repoData }: { repoData: (typeof FeaturedRepoData)[number] }) {
+function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[number] }) {
   if (!repoData) {
     return (
       <Card className="rounded-lg overflow-hidden">
@@ -50,9 +50,9 @@ function ProjectCard({ repoData }: { repoData: (typeof FeaturedRepoData)[number]
       <div className="flex flex-col flex-grow">
         <a href={repoData.html_url} target="_blank" rel="noopener noreferrer" className="block">
           <div className="aspect-3/2 w-full overflow-hidden">
-            {repoData.preview_image ? (
+            {repoData.previewImage ? (
               <img
-                src={repoData.preview_image}
+                src={repoData.previewImage}
                 alt={repoData.name || "Project image"}
                 className="w-full h-full object-cover"
                 style={{ overflowClipMargin: "unset" }}
@@ -83,10 +83,10 @@ function ProjectCard({ repoData }: { repoData: (typeof FeaturedRepoData)[number]
                 aria-label="GitHub repository"
                 className="cursor-pointer hover:underline underline-offset-4"
               >
-                {repoData.display_name || repoData.name}
+                {repoData.displayName || repoData.name}
               </a>
             ) : (
-              repoData.display_name || repoData.name
+              repoData.displayName || repoData.name
             )}
           </div>
 

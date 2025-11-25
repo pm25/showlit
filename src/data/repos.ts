@@ -1,35 +1,11 @@
-import AllRepoDataImport from "@/data/generated/repos.json";
+import reposImport from "@/data/generated/repos.json";
+import type { RepoProps } from "@/types/repo";
 
-interface RepoData {
-    name: string;
-    display_name?: string;
-    html_url: string;
-    preview_image?: string;
-    description: string | null;
-    topics: string[] | null;
-    language: string | null;
-    stargazers_count: number | null;
-    homepage: string | null;
-    created_at: string;
-    pushed_at: string;
-}
+type RepoMap = Record<string, RepoProps>;
+export const repos = reposImport as RepoMap;
 
-type AllRepoDataMap = Record<string, RepoData>;
-export const AllRepoData: AllRepoDataMap = AllRepoDataImport as AllRepoDataMap;
+export const featuredRepos: RepoMap = Object.fromEntries(
+  Object.entries(repos).filter(([, repo]) => repo.featured === true)
+);
 
-export const featuredRepos = [
-    "example-project",
-    "example-project",
-    "showlit",
-    "SimplePlus-BeamerTheme",
-    "SimpleDarkBlue-BeamerTheme",
-    "Semi-Supervised-Regression",
-] as (keyof typeof AllRepoData)[];
-
-export const FeaturedRepoData = featuredRepos.map((key) => {
-  const repo = AllRepoData[key];
-  if (!repo) {
-    console.warn(`⚠️ Missing repo data for: ${key}`);
-  }
-  return repo;
-});
+export const featuredReposArray: RepoProps[] = Object.values(featuredRepos);
