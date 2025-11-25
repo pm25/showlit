@@ -15,7 +15,7 @@ profile:
   location: "[Your City, Country]" # FIXME: Not implemented yet
 
   # Profile image: URL or local file
-  profile_image: "https://github.com/pm25.png"
+  profileImage: "https://github.com/pm25.png"
 
   links:
     - name: "LinkedIn"

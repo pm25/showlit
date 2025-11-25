@@ -168,7 +168,7 @@ profile:
   name: "Pin-Yen Huang"
   headline: "Student @ National Taiwan University"
   email: "pyhuang97@gmail.com"
-  profile_image: "https://github.com/pm25.png"
+  profileImage: "https://github.com/pm25.png"
   # ...other fields
 ```
 

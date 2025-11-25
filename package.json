@@ -17,7 +17,7 @@
     "deploy:manual": "npm run build:manual && gh-pages -d dist",
     "fetch:repos": "node scripts/fetch-repos.js",
     "build:article-index": "node scripts/build-article-index.js",
-    "convert:config": "node scripts/yaml-to-ts.js config/site.yaml && node scripts/yaml-to-ts.js config/profile.yaml && node scripts/yaml-to-ts.js config/publications.yaml && node scripts/yaml-to-ts.js config/giscus.yaml"
+    "convert:config": "node scripts/yaml-to-ts.js config/site.yaml && node scripts/yaml-to-ts.js config/profile.yaml && node scripts/yaml-to-ts.js config/publications.yaml && node scripts/yaml-to-ts.js config/giscus.yaml && node scripts/yaml-to-ts.js config/sidebar.yaml"
   },
   "dependencies": {
     "@giscus/react": "^3.1.0",

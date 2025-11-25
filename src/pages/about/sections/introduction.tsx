@@ -18,7 +18,7 @@ function ProfileCard() {
   return (
     <div className="flex flex-col items-center gap-y-4 shrink-0">
       <img
-        src={profile.profile_image}
+        src={profile.profileImage}
         alt="Profile"
         className="w-60 h-auto rounded-lg object-cover"
       />

@@ -67,11 +67,7 @@ function writeTS(filename, variable, content) {
           obj[key] = value.name; // use raw variable
         }
         // handle local images
-        else if (
-          ["logo", "image", "profile_image", "preview_image"].includes(key) &&
-          typeof value === "string" &&
-          !/^https?:\/\//.test(value)
-        ) {
+        else if (/logo|icon|image/i.test(key) && typeof value === "string" && !/^https?:\/\//.test(value)) {
           let variableName;
           if (fileToVarMap.has(value)) {
             variableName = fileToVarMap.get(value);

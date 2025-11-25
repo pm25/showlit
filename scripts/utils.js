@@ -29,7 +29,7 @@ export function toTS(obj, indent = 0) {
       const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `"${key}"`;
 
        // treat image data type as raw variables if it's local file
-      if (["icon", "logo", "profile_image", "preview_image"].includes(key) && isLocalFile(value)) {
+      if (/logo|icon|image/i.test(key) && isLocalFile(value)) {
         // write icon value as raw variable (no quotes)
         return pad(indent + 2) + `${formattedKey}: ${value}`;
       }
