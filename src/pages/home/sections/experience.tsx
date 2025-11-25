@@ -9,7 +9,7 @@ import { workExperience } from "@/data/workExperience";
 export default function ExperienceSection() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <Card className="rounded-lg md:px-2">
+      <Card className="rounded-md md:px-2">
         <CardHeader>
           <CardTitle className="flex flex-row justify-center items-center gap-2 text-plus">
             <FaGraduationCap />
@@ -36,7 +36,7 @@ export default function ExperienceSection() {
         </ScrollArea>
       </Card>
 
-      <Card className="rounded-lg md:px-2">
+      <Card className="rounded-md md:px-2">
         <CardHeader>
           <CardTitle className="flex flex-row justify-center items-center gap-2 text-plus">
             <FaBriefcase />

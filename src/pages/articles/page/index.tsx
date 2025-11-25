@@ -80,7 +80,7 @@ export default function Article() {
   if (error) {
     return (
       <div className="flex justify-center">
-        <div className="text-center max-w-6xl w-full bg-muted rounded-lg space-y-4 p-6 sm:p-12 border shadow-sm">
+        <div className="text-center max-w-6xl w-full bg-muted rounded-md space-y-4 p-6 sm:p-12 border shadow-sm">
           <div className="text-4xl font-semibold">{metadata.title || "Error"}</div>
           <p>{error}</p>
           <Button asChild variant="outline" className="mt-2 gap-1">
@@ -95,7 +95,7 @@ export default function Article() {
 
   return (
     <div className="flex flex-col justify-center items-center">
-      <div className="prose dark:prose-invert max-w-6xl w-full bg-muted rounded-lg overflow-hidden p-6 sm:p-12 border shadow-sm">
+      <div className="prose dark:prose-invert max-w-6xl w-full bg-muted rounded-md overflow-hidden p-6 sm:p-12 border shadow-sm">
         <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} skipHtml={false}>
           {content}
         </ReactMarkdown>

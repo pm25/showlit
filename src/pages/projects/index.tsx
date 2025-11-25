@@ -179,7 +179,7 @@ function ProjectCard({
   } = repo;
 
   return (
-    <Card className="rounded-lg overflow-hidden gap-0 py-0 w-full">
+    <Card className="rounded-md overflow-hidden gap-0 py-0 w-full">
       <div className="flex flex-col lg:flex-row">
         <a href={html_url} target="_blank" rel="noopener noreferrer" className="block">
           <div className="aspect-3/2 w-full max-h-72 lg:max-w-75 lg:h-50 overflow-hidden">

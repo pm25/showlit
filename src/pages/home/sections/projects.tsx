@@ -37,7 +37,7 @@ export default function ProjectsSection() {
 function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[number] }) {
   if (!repoData) {
     return (
-      <Card className="rounded-lg overflow-hidden">
+      <Card className="rounded-md overflow-hidden">
         <div className="flex flex-col items-center justify-center p-4 w-full h-full bg-muted">
           <span className="text-xl font-semibold opacity-80">Project not found</span>
         </div>
@@ -46,7 +46,7 @@ function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[numbe
   }
 
   return (
-    <Card className="rounded-lg overflow-hidden gap-0 py-0 w-full flex flex-col h-full">
+    <Card className="rounded-md overflow-hidden gap-0 py-0 w-full flex flex-col h-full">
       <div className="flex flex-col flex-grow">
         <a href={repoData.html_url} target="_blank" rel="noopener noreferrer" className="block">
           <div className="aspect-3/2 w-full overflow-hidden">

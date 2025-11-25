@@ -22,7 +22,7 @@ export default function TalksSection() {
         {talks.map((talk, index) => (
           <div
             key={index}
-            className={`flex flex-col gap-4 py-3 px-4 rounded-md ${
+            className={`flex flex-col gap-4 py-3 px-4 rounded-sm ${
               talk.image ? "cursor-pointer hover:bg-muted" : ""
             }`}
             onClick={() => handleTalkClick(index)}
@@ -31,7 +31,7 @@ export default function TalksSection() {
               <img
                 src={talk.image}
                 alt={talk.title}
-                className="rounded-md w-full h-64 object-cover"
+                className="rounded-sm w-full h-64 object-cover"
                 loading="lazy"
               />
             )}

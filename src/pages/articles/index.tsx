@@ -165,7 +165,7 @@ function ArticleCard({
   const article = ArticlesData[articleName];
 
   return (
-    <Card className="rounded-lg overflow-hidden py-4 px-4 sm:px-8">
+    <Card className="rounded-md overflow-hidden py-4 px-4 sm:px-8">
       <div className="flex flex-col gap-2">
         <Button
           asChild
