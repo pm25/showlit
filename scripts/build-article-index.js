@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import crypto, { hash } from "crypto";
 import yaml from "js-yaml";
 import { ensureDirExists } from "./utils.js";
 
@@ -10,7 +11,6 @@ function getSlug(filename) {
   return filename.replace(/\.md$/, "");
 }
 
-// frontmatter extractor
 function parseFrontmatter(content) {
   const match = /^---\n([\s\S]*?)\n---\n?/.exec(content);
 
@@ -31,7 +31,6 @@ function parseFrontmatter(content) {
   return { data, content: body };
 }
 
-// recursively get all .md files in a directory
 function getAllMarkdownFiles(dir) {
   let results = [];
   const list = fs.readdirSync(dir, { withFileTypes: true });
@@ -48,30 +47,41 @@ function getAllMarkdownFiles(dir) {
   return results;
 }
 
+function hashContent(content) {
+  return crypto.createHash("sha256").update(content, "utf8").digest("hex");
+}
+
 function generatePostsJson() {
   const files = getAllMarkdownFiles(articlesDir);
+
+  const existingArticles = fs.existsSync(outputPath)
+    ? JSON.parse(fs.readFileSync(outputPath, "utf-8"))
+    : {};
 
   const articles = {};
 
   files.forEach((filePath) => {
-    const relativePath = path.relative(articlesDir, filePath).replace(/\\/g, "/"); // normalize slashes
+    const relativePath = path.relative(articlesDir, filePath).replace(/\\/g, "/");
     const parts = relativePath.split("/");
 
-    // must be {slug}/{slug}.md
     if (parts.length !== 2 || parts[1] !== `${parts[0]}.md`) {
-      console.warn(`⚠️ Skipping invalid file structure: ${relativePath}. Expected /{slug}/{slug}.md`);
+      console.warn(
+        `⚠️ Skipping invalid file structure: ${relativePath}. Expected /{slug}/{slug}.md`
+      );
       return;
     }
 
     const slug = parts[0];
-
     const fileContent = fs.readFileSync(filePath, "utf8");
     const { data } = parseFrontmatter(fileContent);
+    const fileHash = hashContent(fileContent);
+    
+    const prevArticle = existingArticles[slug];
+    const now = new Date().toISOString();
 
     const defaults = {
       title: "Untitled",
-      created_at: "",
-      updated_at: "",
+      created_at: now,
       summary: "",
       cover_image: "",
       author: "Anonymous",
@@ -79,10 +89,20 @@ function generatePostsJson() {
       tags: [],
     };
 
+    if (prevArticle) {
+      if (prevArticle.hash === fileHash) {
+        articles[slug] = prevArticle;
+        return; // no changes, skip
+      } else console.log(`📝 ${slug} has changed. Updating the article.`);
+    } else console.log(`➕ ${slug} is new. Using defaults/frontmatter.`);
+
     articles[slug] = {
       path: path.relative(process.cwd(), filePath).replace(/\\/g, "/"),
       ...defaults,
+      ...prevArticle,
       ...data,
+      updated_at: now,
+      hash: fileHash,
     };
   });
 

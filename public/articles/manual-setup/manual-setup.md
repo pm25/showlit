@@ -1,7 +1,5 @@
 ---
 title: "Manual Setup Guide – Showlit"
-created_at: "2025-11-24T14:00:00"
-updated_at: "2025-11-24T14:00:00"
 summary: "Step-by-step guide for local development and manual deployment of the Showlit template."
 tags: ["setup", "manual", "showlit"] # optional
 cover_image: "/images/cover.jpg" # optional

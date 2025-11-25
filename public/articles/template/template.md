@@ -1,7 +1,5 @@
 ---
 title: "[Your Post Title]"
-created_at: "2025-05-20T14:30:00"
-updated_at: "2025-05-20T16:15:00"
 summary: "A one-sentence summary of the post for previews or meta description."
 tags: ["tag1", "tag2"] # optional
 cover_image: "/images/cover.jpg" # optional

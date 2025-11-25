@@ -1,7 +1,5 @@
 ---
 title: "Quick Setup Guide – Showlit"
-created_at: "2025-11-24T14:00:00"
-updated_at: "2025-11-24T14:00:00"
 summary: "Step-by-step guide to quickly set up your Showlit personal website without local development."
 tags: ["setup", "quickstart", "showlit"] # optional
 cover_image: "/images/cover.jpg" # optional
