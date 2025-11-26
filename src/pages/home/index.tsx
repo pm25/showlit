@@ -5,6 +5,7 @@ import ExperienceSection from "./sections/experience";
 import PublicationsSection from "./sections/publications";
 import ProjectsSection from "./sections/projects";
 import TalksSection from "./sections/talks";
+import ServiceSection from "./sections/service";
 
 import { homepage } from "@/data/homepage";
 
@@ -14,6 +15,7 @@ const sectionComponents: Record<string, React.ReactNode> = {
   Publications: <PublicationsSection />,
   Projects: <ProjectsSection />,
   Talks: <TalksSection />,
+  Service: <ServiceSection />,
 };
 
 export default function HomePage() {

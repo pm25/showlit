@@ -4,6 +4,7 @@ export const homepage = {
     `Experience`,
     `Publications`,
     `Projects`,
-    `Talks`
+    `Talks`,
+    `Service`
   ]
 };
