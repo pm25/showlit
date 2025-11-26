@@ -1,6 +1,5 @@
 import { Link } from "react-router";
 import { FaArrowRight } from "react-icons/fa6";
-import { HiUsers, HiDocumentText } from "react-icons/hi2";
 import { IoLibrary } from "react-icons/io5";
 
 import { Button } from "@/components/ui/button";
@@ -44,8 +43,7 @@ export default function PublicationsSection() {
                     {pub.title}
                   </a>
 
-                  <div className="flex items-center text-sm text-muted-foreground gap-2 mt-1">
-                    <HiUsers className="shrink-0" />
+                  <div className="text-sm text-muted-foreground mt-1">
                     <span className="leading-4.5">
                       {pub.authors.split(", ").map((author, i) => (
                         <span
@@ -61,9 +59,8 @@ export default function PublicationsSection() {
                     </span>
                   </div>
 
-                  <div className="flex items-center text-sm leading-4.5 text-muted-foreground gap-2">
-                    <HiDocumentText className="shrink-0" />
-                    <span>{pub.booktitle}</span>
+                  <div className="text-sm italic leading-4.5 text-muted-foreground">
+                    {pub.booktitle}
                   </div>
                 </TableCell>
 
