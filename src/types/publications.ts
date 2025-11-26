@@ -2,7 +2,7 @@ export interface Publication {
   title: string;
   authors: string;
   year: number | string;
-  booktitle: string;
+  venue: string;
   link: string;
   featured: boolean;
 }

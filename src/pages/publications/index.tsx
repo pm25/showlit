@@ -1,4 +1,3 @@
-import { HiUsers, HiDocumentText } from "react-icons/hi2";
 import { IoLibrary } from "react-icons/io5";
 
 import {
@@ -45,24 +44,20 @@ export default function PublicationsPage() {
                       {pub.title}
                     </a>
 
-                    <div className="flex items-center text-sm text-muted-foreground gap-2 mt-1">
-                      <HiUsers className="shrink-0" />
-                      <span className="leading-4.5">
-                        {pub.authors.split(", ").map((author, i) => (
-                          <span
-                            key={i}
-                            className={author === publications.authorName ? "font-semibold" : ""}
-                          >
-                            {author}
-                            {i < pub.authors.split(", ").length - 1 && ", "}
-                          </span>
-                        ))}
-                      </span>
+                    <div className="text-sm leading-4.5 text-muted-foreground mt-1">
+                      {pub.authors.split(", ").map((author, i) => (
+                        <span
+                          key={i}
+                          className={author === publications.authorName ? "font-semibold" : ""}
+                        >
+                          {author}
+                          {i < pub.authors.split(", ").length - 1 && ", "}
+                        </span>
+                      ))}
                     </div>
 
-                    <div className="flex items-center text-sm leading-4.5 text-muted-foreground gap-2">
-                      <HiDocumentText className="shrink-0" />
-                      <span>{pub.booktitle}</span>
+                    <div className="text-sm italic leading-4.5 text-muted-foreground">
+                      {pub.venue}
                     </div>
                   </TableCell>
 

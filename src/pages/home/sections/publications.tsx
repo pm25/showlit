@@ -43,24 +43,22 @@ export default function PublicationsSection() {
                     {pub.title}
                   </a>
 
-                  <div className="text-sm text-muted-foreground mt-1">
-                    <span className="leading-4.5">
-                      {pub.authors.split(", ").map((author, i) => (
-                        <span
-                          key={i}
-                          className={
-                            author === publicationsFeatured.authorName ? "font-semibold" : ""
-                          }
-                        >
-                          {author}
-                          {i < pub.authors.split(", ").length - 1 && ", "}
-                        </span>
-                      ))}
-                    </span>
+                  <div className="text-sm leading-4.5 text-muted-foreground mt-1">
+                    {pub.authors.split(", ").map((author, i) => (
+                      <span
+                        key={i}
+                        className={
+                          author === publicationsFeatured.authorName ? "font-semibold" : ""
+                        }
+                      >
+                        {author}
+                        {i < pub.authors.split(", ").length - 1 && ", "}
+                      </span>
+                    ))}
                   </div>
 
                   <div className="text-sm italic leading-4.5 text-muted-foreground">
-                    {pub.booktitle}
+                    {pub.venue}
                   </div>
                 </TableCell>
 
