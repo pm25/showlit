@@ -182,7 +182,7 @@ function ArticleCard({
         </p>
 
         {article.tags && article.tags.length > 0 && (
-          <div className="flex flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1.5 mt-1">
             {article.tags.map((tag: string) => (
               <Button
                 key={tag}
