@@ -9,13 +9,17 @@ import ServiceSection from "./sections/service";
 
 import { homepage } from "@/data/homepage";
 
-const sectionComponents: Record<string, React.ReactNode> = {
-  Introduction: <IntroductionSection />,
-  Experience: <ExperienceSection />,
-  Publications: <PublicationsSection />,
-  Projects: <ProjectsSection />,
-  Talks: <TalksSection />,
-  Service: <ServiceSection />,
+interface SectionProps {
+  variant?: string;
+}
+
+const sectionComponents: Record<string, React.ComponentType<SectionProps>> = {
+  Introduction: IntroductionSection,
+  Experience: ExperienceSection,
+  Publications: PublicationsSection,
+  Projects: ProjectsSection,
+  Talks: TalksSection,
+  Service: ServiceSection,
 };
 
 export default function HomePage() {
@@ -23,11 +27,15 @@ export default function HomePage() {
 
   return (
     <div className="flex flex-1 flex-col items-center gap-24 my-4">
-      {homepage.sections.map((sectionName) => (
-        <div key={sectionName} className="w-full max-w-5xl px-2 md:px-8">
-          {sectionComponents[sectionName]}
-        </div>
-      ))}
+      {homepage.sections.map((section) => {
+        if (!section.enabled) return null;
+        const SectionComponent = sectionComponents[section.name];
+        return (
+          <div key={section.name} className="w-full max-w-5xl px-2 md:px-8">
+            <SectionComponent variant={section.variant} />
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -94,7 +94,7 @@ workExperience:
     logo: "/images/uiuc_logo.png"
 
 # # =====================================================
-# #  Presentations / Talks Section
+# # 🎤 Presentations / Talks Section
 # # =====================================================
 talks:
   - title: "[Your Talk Title Here]"
@@ -110,7 +110,7 @@ talks:
     image: "https://pm25.github.io/static/media/2019-9-4-workshop.b5d2675f.webp"
 
 # # =====================================================
-# # 🛠 Professional Service
+# # 🛡️ Professional Service
 # # =====================================================
 
 service:
@@ -137,30 +137,17 @@ service:
     organization: "React Ecosystem"
     date: null
     description: "Maintained components and fixed bugs."
+
 # # =====================================================
 # # 🛠 Skills Section
 # # =====================================================
-# skills:
-#     programming:
-#         - "C++"
-#         - "Python"
-#         - "JavaScript"
-#     technologies:
-#         - "React"
-#         - "TailwindCSS"
-#         - "Next.js"
-#         - "AWS"
-
-# # =====================================================
-# # 🌐 Featured Projects Section (Optional)
-# # =====================================================
-# projects:
-#     - name: "Showlit"
-#       description: "A personal showcase website generator."
-#       repo: "https://github.com/pm25/showlit"
-#       previewImage: "showlit.png"
-#       topics:
-#           - "React"
-#           - "GitHub Pages"
-#     # - name: ""
-#     #   description: ""
+skills:
+  programming:
+    - "C++"
+    - "Python"
+    - "JavaScript"
+  technologies:
+    - "React"
+    - "TailwindCSS"
+    - "Next.js"
+    - "AWS"
