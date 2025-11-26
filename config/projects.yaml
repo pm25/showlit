@@ -1,7 +1,7 @@
 projects:
   items:
     - id: "example-project"
-      displayName: "[project name]"
+      displayName: "[Project Name]"
       previewImage: https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg
       featured: true
 

@@ -4,7 +4,7 @@ export const profile = {
   name: `[Your Name]`,
   headline: `Student @ [Your University]`,
   email: `your-email@gmail.com`,
-  location: `[Your City, Country]`,
+  location: null,
   profileImage: `https://github.com/pm25.png`,
   links: [
     {

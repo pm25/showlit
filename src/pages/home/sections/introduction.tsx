@@ -1,4 +1,4 @@
-import { FaRegEnvelope } from "react-icons/fa6";
+import { FaRegEnvelope, FaLocationDot } from "react-icons/fa6";
 import { toast } from "sonner";
 
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
@@ -23,9 +23,17 @@ function ProfileCard() {
         className="w-60 h-auto rounded-lg object-cover"
       />
       <div className="flex flex-col items-center gap-y-2">
-        <p className="text-2xl font-semibold text-foreground">{profile.name}</p>
-        <p className="text-base font-medium text-muted-foreground">{profile.headline}</p>
-        <EmailCopy email={profile.email} />
+        {profile.name && <p className="text-2xl font-semibold text-foreground">{profile.name}</p>}
+        {profile.headline && (
+          <p className="text-base font-medium text-muted-foreground">{profile.headline}</p>
+        )}
+        {profile.email && <EmailCopy email={profile.email} />}
+        {profile.location && (
+          <p className="flex flex-row items-center gap-2 text-base font-medium text-muted-foreground">
+            <FaLocationDot className="w-4 h-4" />
+            {profile.location}
+          </p>
+        )}
         <TooltipProvider delayDuration={100}>
           <div className="flex flex-row flex-wrap justify-center gap-y-2 gap-x-4 py-2 text-foreground max-w-64">
             {profile.links.map((item, index) => (
