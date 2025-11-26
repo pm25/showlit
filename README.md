@@ -95,7 +95,7 @@ There are two ways to use this template:
 
 This option **does not require local development**. Simply update the configuration files → commit → push. GitHub Actions will handle the build and deployment automatically.
 
-Below is a **simplified guide**. For **detailed instructions with screenshots**, see the [Quick Setup guide](https://pm25.github.io/showlit/articles/quick-setup).
+Below is a **simplified guide**. For **detailed instructions with screenshots**, see the [Quick Setup guide](https://pm25.github.io/showlit/#/articles/quick-setup).
 
 ---
 
