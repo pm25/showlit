@@ -45,7 +45,7 @@ author: Pin-Yen Huang
 
 ## About The Template
 
-**✨Showlit** is a React-based website template that makes building a personal website easy. It offers modern UI components, useful built-in features, and flexible customization options. Showlit strikes a balance between simplicity and flexibility, letting you get started quickly while still tailoring your site to your style.
+**✨Showlit** is a React-based personal website template designed for quick setup and easy customization. It offers modern UI components, useful built-in features, and flexible customization options. Showlit strikes a balance between simplicity and flexibility, letting you get started quickly while still tailoring your site to your style.
 
 **Why Showlit?**
 
@@ -54,7 +54,7 @@ author: Pin-Yen Huang
 - 🔧 **Built-in Features** – Includes a blog, automatic project fetching, and more.
 - 👥 **Beginner-Friendly** – No advanced coding needed to get started.
 
-✨ **Found this project useful?** Give it a ⭐ to support the project!
+**Found this project useful?** Give it a ⭐ to support the project!
 
 ### 🛠️ Built With
 
