@@ -1,5 +1,6 @@
 export const talks = [
   {
+    category: `Misc`,
     title: `[Your Talk Title Here]`,
     location: `[Your Talk Location Here]`,
     date: `[Month Day, Year]`,
@@ -7,10 +8,19 @@ export const talks = [
     image: `https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg`
   },
   {
+    category: `Workshop`,
     title: `Deep Learning with Keras`,
     location: `University of Illinois Urbana-Champaign (UIUC), Prof. Stephen Boppart's Group`,
     date: `Sep 4, 2019`,
     link: `https://example.com/your-talk-link`,
     image: `https://pm25.github.io/static/media/2019-9-4-workshop.b5d2675f.webp`
+  },
+  {
+    category: `Workshop`,
+    title: `Practical Guide to PyTorch`,
+    location: `University`,
+    date: `Dec 5, 2022`,
+    link: `https://example.com/workshop-talk`,
+    image: null
   }
 ];
