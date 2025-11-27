@@ -1,4 +1,3 @@
-import { MdCoPresent } from "react-icons/md";
 import { FaUserCheck, FaRegCalendar } from "react-icons/fa6";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
@@ -28,7 +27,7 @@ export default function ServiceSection({ variant = "default" }: ServiceSectionPr
   return (
     <div className="space-y-6">
       <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
-        <MdCoPresent />
+        <FaUserCheck />
         Professional Service
       </div>
       <ServiceContent />
