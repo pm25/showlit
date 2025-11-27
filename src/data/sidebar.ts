@@ -6,32 +6,32 @@ export const sidebar = {
   sections: [
     {
       title: `About Me`,
-      url: `/`,
+      url: ``,
       icon: LuUser
     },
     {
       title: `Projects`,
-      url: `/projects`,
+      url: `projects`,
       icon: LuWrench
     },
     {
       title: `Publications`,
-      url: `/publications`,
+      url: `publications`,
       icon: LuLibraryBig
     },
     {
       title: `Articles`,
-      url: `/articles`,
+      url: `articles`,
       icon: LuNewspaper
     },
     {
       title: `Movies`,
-      url: `/movies`,
+      url: `movies`,
       icon: LuClapperboard
     },
     {
       title: `Music`,
-      url: `/music`,
+      url: `music`,
       icon: LuMusic
     }
   ]

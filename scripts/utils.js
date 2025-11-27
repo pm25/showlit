@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-// Ensure the directory for a given file path exists.
+// ensure the directory for a given file path exists.
 export function ensureDirExists(filePath) {
   const dir = path.dirname(filePath);
   if (!fs.existsSync(dir)) {
@@ -9,45 +9,28 @@ export function ensureDirExists(filePath) {
   }
 }
 
-// Check if a value represents a local file path (not an HTTP URL)
-export function isLocalFile(value) {
-  return typeof value === "string" && !/^https?:\/\//.test(value);
+// determine whether a string represents a URL, absolute path, or relative path.
+export function checkPathOrUrl(str) {
+  if (typeof str !== "string" || str.trim() === "") return "invalid";
+  try {
+    const url = new URL(str);
+    if (url.protocol === "http:" || url.protocol === "https:") return "url";
+  } catch (err) {} // not a valid URL, continue
+  if (path.isAbsolute(str)) return "absolute";
+  if (/^(\.\/|\.\.\/)/.test(str)) return "relative";
+  return "invalid";
 }
 
-// Convert a JavaScript object to a TypeScript-like string representation
-export function toTS(obj, indent = 0) {
-  const pad = level => " ".repeat(level);
+// check if a string represents a local file path (absolute or relative), not a URL.
+export function isLocalFile(str) {
+  const result = checkPathOrUrl(str);
+  return result === "absolute" || result === "relative";
+}
 
-  if (Array.isArray(obj)) {
-    if (obj.length === 0) return "[]";
-    const items = obj.map(i => pad(indent + 2) + toTS(i, indent + 2));
-    return `[\n${items.join(",\n")}\n${pad(indent)}]`;
-  } 
-  
-  if (obj && typeof obj === "object") {
-    const entries = Object.entries(obj).map(([key, value]) => {
-      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `"${key}"`;
-
-       // treat image data type as raw variables if it's local file
-      if (/logo|icon|image/i.test(key) && isLocalFile(value)) {
-        // write icon value as raw variable (no quotes)
-        return pad(indent + 2) + `${formattedKey}: ${value}`;
-      }
-
-      if (typeof value === "object" && value !== null) {
-        return pad(indent + 2) + `${formattedKey}: ${toTS(value, indent + 2)}`;
-      } 
-      
-      if (typeof value === "string") {
-        return pad(indent + 2) + `${formattedKey}: \`${value}\``;
-      } 
-      
-      return pad(indent + 2) + `${formattedKey}: ${value}`;
-    });
-
-    return `{\n${entries.join(",\n")}\n${pad(indent)}}`;
-  } 
-  
-  if (typeof obj === "string") return `\`${obj}\``;
-  return String(obj);
+// if the string is an absolute path, prepend a base path.
+export function addBasePathIfAbsolute(str, basePath) {
+  if (checkPathOrUrl(str) !== "absolute") return str;
+  const cleanedBase = basePath.endsWith("/") ? basePath.slice(0, -1) : basePath;
+  const normalized = str.startsWith("/") ? str : `/${str}`;
+  return `${cleanedBase}${normalized}`;
 }

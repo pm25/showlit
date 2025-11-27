@@ -3,37 +3,37 @@ sidebar:
   profileImage: https://github.com/shadcn.png
   sections:
     - title: About Me
-      url: "/"
+      url: ""
       icon:
         name: LuUser
         package: "react-icons/lu"
 
     - title: Projects
-      url: "/projects"
+      url: "projects"
       icon:
         name: LuWrench
         package: "react-icons/lu"
 
     - title: Publications
-      url: "/publications"
+      url: "publications"
       icon:
         name: LuLibraryBig
         package: "react-icons/lu"
 
     - title: Articles
-      url: "/articles"
+      url: "articles"
       icon:
         name: LuNewspaper
         package: "react-icons/lu"
 
     - title: Movies
-      url: "/movies"
+      url: "movies"
       icon:
         name: LuClapperboard
         package: "react-icons/lu"
 
     - title: Music
-      url: "/music"
+      url: "music"
       icon:
         name: LuMusic
         package: "react-icons/lu"

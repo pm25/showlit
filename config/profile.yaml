@@ -31,7 +31,7 @@ profile:
         package: "react-icons/fa6"
 
     - name: "Résumé"
-      url: "https://example.com/your-cv.pdf"
+      url: "/pdf/sample-resume.pdf"
       icon:
         name: "FaRegIdBadge"
         package: "react-icons/fa6"
