@@ -27,10 +27,10 @@ export default function TalksSection({ variant = "default" }: TalksSectionProps)
   }
 
   return (
-    <div>
+    <div className="space-y-6">
       <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
         <MdCoPresent />
-        Professional Service
+        Presentations / Talks
       </div>
       <TalksContent />
     </div>
@@ -45,7 +45,7 @@ function TalksContent() {
   };
 
   return (
-    <>
+    <div>
       {talks.map((talk, index) => (
         <div
           key={index}
@@ -74,6 +74,6 @@ function TalksContent() {
           </div>
         </div>
       ))}
-    </>
+    </div>
   );
 }
