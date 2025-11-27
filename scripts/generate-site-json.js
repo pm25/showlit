@@ -38,12 +38,16 @@ let site = { ...data.site };
 // 3. Auto-generate repoName & base
 // ======================================
 
-if (site.repoUrl) {
-  // If user provides REPO_URL, override
-  site.repoUrl = process.env.REPO_URL || site.repoUrl;
+if (process.env.GITHUB_REPOSITORY) {
+  site.repoUrl = `https://github.com/${process.env.GITHUB_REPOSITORY}`;
+}
 
+if (site.repoUrl) {
   const repoName =
-    site.repoUrl.replace(/\.git$/, "").split("/").pop() || "";
+    site.repoUrl
+      .replace(/\.git$/, "")
+      .split("/")
+      .pop() || "";
 
   site.repoName = repoName;
   site.base = `/${repoName}/`;
@@ -64,4 +68,5 @@ const outputPath = path.join(outDir, "site.json");
 fs.writeFileSync(outputPath, JSON.stringify(site, null, 2), "utf8");
 
 console.log(`📄 Generated: src/data/generated/site.json`);
+console.log(site);
 console.log("✅ Site JSON generation complete!");
