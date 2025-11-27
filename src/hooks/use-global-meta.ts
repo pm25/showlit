@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { site } from "@/data/site";
+
+import site from "@/data/generated/site.json";
 
 export function useGlobalMeta() {
   useEffect(() => {
