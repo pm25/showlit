@@ -10,6 +10,8 @@ interface TalksSectionProps {
   variant?: string;
 }
 
+const TITLE = "Presentations / Talks";
+
 export default function TalksSection({ variant = "default" }: TalksSectionProps) {
   if (variant === "card") {
     return (
@@ -17,7 +19,7 @@ export default function TalksSection({ variant = "default" }: TalksSectionProps)
         <CardHeader>
           <CardTitle className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
             <MdCoPresent />
-            Presentations / Talks
+            {TITLE}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -31,7 +33,7 @@ export default function TalksSection({ variant = "default" }: TalksSectionProps)
     <div className="space-y-6">
       <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
         <MdCoPresent />
-        Presentations / Talks
+        {TITLE}
       </div>
       <TalksContent />
     </div>
