@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdCoPresent } from "react-icons/md";
-import { FaRegCalendar } from "react-icons/fa6";
+import { FaRegCalendar, FaRegImage } from "react-icons/fa6";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { talks } from "@/data/talks";
@@ -59,24 +60,55 @@ function TalksContent() {
           <div className="text-sm text-muted-foreground font-medium mb-1">{category}</div>
           {items.map((item, index) => {
             const key = `${category}-${index}`;
+            const isClickable = !!item.image;
+
             return (
               <div
                 key={key}
-                className={`flex flex-col py-1.5 px-4 rounded-sm hover:bg-muted ${
-                  item.image ? "cursor-pointer" : ""
+                className={`flex flex-col py-2 px-4 rounded-sm hover:bg-muted ${
+                  isClickable ? "cursor-pointer" : "cursor-default"
                 }`}
-                onClick={() => handleTalkClick(key)}
+                onClick={() => isClickable && handleTalkClick(key)}
               >
                 {selectedTalk === key && item.image && (
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="rounded-sm w-full h-64 object-cover"
+                    className="rounded-sm w-full h-64 object-cover mb-2"
                     loading="lazy"
                   />
                 )}
                 <div className="flex flex-col gap-0.5">
-                  <div className="font-semibold">{item.title}</div>
+                  <div className="flex flex-row font-semibold justify-between items-center">
+                    <div className="flex items-center flex-grow">
+                      {item.link ? (
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-base font-semibold hover:underline underline-offset-4"
+                          // 2. CRITICAL FIX: Stop propagation to prevent this link click from
+                          // triggering the parent div's onClick (which toggles the image)
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {item.title}
+                        </a>
+                      ) : (
+                        <span className="text-base">{item.title}</span>
+                      )}
+                      {item.link && (
+                        <FaExternalLinkAlt className="w-3 h-3 ml-2 text-muted-foreground shrink-0" />
+                      )}
+
+                      {item.image && (
+                        <FaRegImage
+                          className={`w-3 h-3 ml-2 shrink-0 ${
+                            selectedTalk === key ? "text-blue-500" : "text-muted-foreground"
+                          }`}
+                        />
+                      )}
+                    </div>
+                  </div>
                   <div className="flex flex-row justify-between text-sm text-muted-foreground">
                     {item.location && <span>{item.location}</span>}
                     {item.date && (
