@@ -17,7 +17,7 @@ export default function MusicPage() {
           </div>
 
           <p className="text-center text-lg text-muted-foreground leading-relaxed italic opacity-80">
-            Some of my favorite songs and playlists.
+            Some of my favorite songs and playlists
           </p>
         </div>
 

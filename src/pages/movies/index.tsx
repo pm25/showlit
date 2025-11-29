@@ -17,7 +17,7 @@ export default function MoviesPage() {
           </div>
 
           <p className="text-center text-lg text-muted-foreground leading-relaxed italic opacity-80">
-            These are some of my favorite movies
+            Some of my favorite movies
           </p>
         </div>
 
