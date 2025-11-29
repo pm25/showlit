@@ -78,46 +78,46 @@ function TalksContent() {
                     loading="lazy"
                   />
                 )}
-                <div className="flex flex-col gap-0.5">
-                  <div className="flex flex-row font-semibold justify-between items-center">
-                    <div className="flex items-center flex-grow">
-                      {item.link ? (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-base font-semibold hover:underline underline-offset-4"
-                          // 2. CRITICAL FIX: Stop propagation to prevent this link click from
-                          // triggering the parent div's onClick (which toggles the image)
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {item.title}
-                        </a>
-                      ) : (
-                        <span className="text-base">{item.title}</span>
-                      )}
-                      {item.link && (
-                        <FaExternalLinkAlt className="w-3 h-3 ml-2 text-muted-foreground shrink-0" />
-                      )}
-
-                      {item.image && (
-                        <FaRegImage
-                          className={`w-3 h-3 ml-2 shrink-0 ${
-                            selectedTalk === key ? "text-blue-500" : "text-muted-foreground"
-                          }`}
-                        />
-                      )}
-                    </div>
-                  </div>
-                  <div className="flex flex-row justify-between text-sm text-muted-foreground">
-                    {item.location && <span>{item.location}</span>}
-                    {item.date && (
-                      <p className="flex flex-row gap-1 items-center shrink-0">
-                        <FaRegCalendar />
-                        {item.date}
-                      </p>
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col">
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-base font-semibold hover:underline underline-offset-4"
+                      >
+                        {item.title}
+                      </a>
+                    ) : (
+                      <span className="text-base font-semibold">{item.title}</span>
                     )}
                   </div>
+
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                    {item.image && <FaRegImage />}
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="hover:text-foreground"
+                      >
+                        <FaExternalLinkAlt />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-row justify-between text-sm text-muted-foreground">
+                  {item.location && <span>{item.location}</span>}
+                  {item.date && (
+                    <p className="flex flex-row gap-1 items-center shrink-0">
+                      <FaRegCalendar />
+                      {item.date}
+                    </p>
+                  )}
                 </div>
               </div>
             );

@@ -18,7 +18,7 @@ export const talks = [
   {
     category: `Workshop`,
     title: `Practical Guide to PyTorch`,
-    location: `University`,
+    location: `ABC University`,
     date: `Dec 5, 2022`,
     link: `https://example.com/workshop-talk`,
     image: null
