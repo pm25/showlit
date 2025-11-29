@@ -96,7 +96,9 @@ function TalksContent() {
                   </div>
 
                   <div className="flex items-center gap-2 text-muted-foreground text-sm">
-                    {item.image && <FaRegImage />}
+                    {item.image && (
+                      <FaRegImage className={`${selectedTalk === key ? "text-foreground" : ""}`} />
+                    )}
                     {item.link && (
                       <a
                         href={item.link}
