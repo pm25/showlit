@@ -113,7 +113,7 @@ function TalksContent() {
                   </div>
                 </div>
                 <div className="flex flex-row justify-between text-sm text-muted-foreground">
-                  {item.location && <span>{item.location}</span>}
+                  {item.organization && <span>{item.organization}</span>}
                   {item.date && (
                     <p className="flex flex-row gap-1 items-center shrink-0">
                       <FaRegCalendar />
