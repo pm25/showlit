@@ -1,0 +1,130 @@
+import { useState } from "react";
+import { FaUserCheck, FaRegCalendar, FaRegImage } from "react-icons/fa6";
+import { FaExternalLinkAlt } from "react-icons/fa";
+
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { services } from "@/data/services";
+
+interface ServiceSectionProps {
+  variant?: string;
+}
+
+export default function ServicesSection({ variant = "default" }: ServiceSectionProps) {
+  if (variant === "card") {
+    return (
+      <Card className="rounded-md md:px-2">
+        <CardHeader>
+          <CardTitle className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
+            <FaUserCheck />
+            Professional Service
+          </CardTitle>
+        </CardHeader>
+        <CardContent>
+          <ServicesContent />
+        </CardContent>
+      </Card>
+    );
+  }
+
+  return (
+    <div className="space-y-6">
+      <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
+        <FaUserCheck />
+        Professional Service
+      </div>
+      <ServicesContent />
+    </div>
+  );
+}
+
+function ServicesContent() {
+  const [selectedTalk, setSelectedTalk] = useState<string | null>(null);
+
+  const handleTalkClick = (id: string) => {
+    setSelectedTalk((prev) => (prev === id ? null : id));
+  };
+
+  // group services by category
+  const groupedServices = services.reduce<Record<string, typeof services>>((acc, item) => {
+    const cat = item.category || "Other";
+    if (!acc[cat]) acc[cat] = [];
+    acc[cat].push(item);
+    return acc;
+  }, {});
+
+  return (
+    <div className="space-y-4">
+      {Object.entries(groupedServices).map(([category, items]) => (
+        <div key={category}>
+          <div className="text-sm text-muted-foreground font-medium mb-1">{category}</div>
+          {items.map((item, index) => {
+            const key = `${category}-${index}`;
+            const isClickable = !!item.image;
+
+            return (
+              <div
+                key={key}
+                className={`flex flex-col py-2 px-4 rounded-sm hover:bg-muted ${
+                  isClickable ? "cursor-pointer" : "cursor-default"
+                }`}
+                onClick={() => isClickable && handleTalkClick(key)}
+              >
+                {selectedTalk === key && item.image && (
+                  <img
+                    src={item.image}
+                    alt={item.role}
+                    className="rounded-sm w-full h-64 object-cover mb-2"
+                    loading="lazy"
+                  />
+                )}
+                <div className="flex items-center justify-between">
+                  <div className="flex flex-col">
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-base font-semibold hover:underline underline-offset-4"
+                      >
+                        {item.role}
+                      </a>
+                    ) : (
+                      <span className="text-base font-semibold">{item.role}</span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center gap-2 text-muted-foreground text-sm">
+                    {item.image && (
+                      <FaRegImage className={`${selectedTalk === key ? "text-foreground" : ""}`} />
+                    )}
+                    {item.link && (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="hover:text-foreground"
+                      >
+                        <FaExternalLinkAlt />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <div className="flex flex-row justify-between text-sm text-muted-foreground">
+                  {item.organization && <span>{item.organization}</span>}
+                  {item.date && (
+                    <p className="flex flex-row gap-1 items-center shrink-0">
+                      <FaRegCalendar />
+                      {item.date}
+                    </p>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      ))}
+    </div>
+  );
+}
