@@ -9,6 +9,8 @@ interface ServiceSectionProps {
   variant?: string;
 }
 
+const TITLE = "Professional Services";
+
 export default function ServicesSection({ variant = "default" }: ServiceSectionProps) {
   if (variant === "card") {
     return (
@@ -16,7 +18,7 @@ export default function ServicesSection({ variant = "default" }: ServiceSectionP
         <CardHeader>
           <CardTitle className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
             <FaUserCheck />
-            Professional Service
+            {TITLE}
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -30,7 +32,7 @@ export default function ServicesSection({ variant = "default" }: ServiceSectionP
     <div className="space-y-6">
       <div className="flex flex-row justify-center items-center gap-2 text-plus font-semibold">
         <FaUserCheck />
-        Professional Service
+        {TITLE}
       </div>
       <ServicesContent />
     </div>
@@ -38,10 +40,10 @@ export default function ServicesSection({ variant = "default" }: ServiceSectionP
 }
 
 function ServicesContent() {
-  const [selectedTalk, setSelectedTalk] = useState<string | null>(null);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
 
-  const handleTalkClick = (id: string) => {
-    setSelectedTalk((prev) => (prev === id ? null : id));
+  const handleServiceClick = (id: string) => {
+    setSelectedService((prev) => (prev === id ? null : id));
   };
 
   // group services by category
@@ -67,9 +69,9 @@ function ServicesContent() {
                 className={`flex flex-col py-2 px-4 rounded-sm hover:bg-muted ${
                   isClickable ? "cursor-pointer" : "cursor-default"
                 }`}
-                onClick={() => isClickable && handleTalkClick(key)}
+                onClick={() => isClickable && handleServiceClick(key)}
               >
-                {selectedTalk === key && item.image && (
+                {selectedService === key && item.image && (
                   <img
                     src={item.image}
                     alt={item.role}
@@ -96,7 +98,9 @@ function ServicesContent() {
 
                   <div className="flex items-center gap-2 text-muted-foreground text-sm">
                     {item.image && (
-                      <FaRegImage className={`${selectedTalk === key ? "text-foreground" : ""}`} />
+                      <FaRegImage
+                        className={`${selectedService === key ? "text-foreground" : ""}`}
+                      />
                     )}
                     {item.link && (
                       <a
