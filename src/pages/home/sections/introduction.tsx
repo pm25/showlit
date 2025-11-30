@@ -21,6 +21,7 @@ function ProfileCard() {
         src={profile.profileImage}
         alt="Profile"
         className="w-60 h-auto rounded-lg object-cover"
+        loading="lazy"
       />
       <div className="flex flex-col items-center gap-y-2">
         {profile.name && <p className="text-2xl font-semibold text-foreground">{profile.name}</p>}

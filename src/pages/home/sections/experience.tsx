@@ -24,6 +24,7 @@ export default function ExperienceSection() {
                   src={edu.logo}
                   alt={`${edu.school} logo`}
                   className="w-12 h-12 object-contain rounded"
+                  loading="lazy"
                 />
                 <div>
                   <div className="font-semibold">{edu.school}</div>
@@ -51,6 +52,7 @@ export default function ExperienceSection() {
                   src={job.logo}
                   alt={`${job.company} logo`}
                   className="w-12 h-12 object-contain rounded"
+                  loading="lazy"
                 />
                 <div>
                   <div className="font-semibold">{job.company}</div>

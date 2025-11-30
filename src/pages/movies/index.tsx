@@ -28,6 +28,7 @@ export default function MoviesPage() {
                 src={movie.posterImage}
                 alt={movie.title}
                 className="aspect-2/3 w-full object-cover"
+                loading="lazy"
               />
               <div className="py-6">
                 <CardHeader>
