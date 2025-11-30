@@ -6,6 +6,7 @@ import PublicationsSection from "./sections/publications";
 import ProjectsSection from "./sections/projects";
 import TalksSection from "./sections/talks";
 import ServicesSection from "./sections/services";
+import SkillsSection from "./sections/skills";
 
 import { homepage } from "@/data/homepage";
 
@@ -19,7 +20,8 @@ const sectionComponents: Record<string, React.ComponentType<SectionProps>> = {
   Publications: PublicationsSection,
   Projects: ProjectsSection,
   Talks: TalksSection,
-  Service: ServicesSection,
+  Services: ServicesSection,
+  Skills: SkillsSection,
 };
 
 export default function HomePage() {

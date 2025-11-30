@@ -20,6 +20,10 @@ homepage:
       variant: default # default | card
       enabled: true
 
-    - name: Service
+    - name: Services
+      variant: default # default | card
+      enabled: true
+
+    - name: Skills
       variant: default # default | card
       enabled: true
