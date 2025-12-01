@@ -69,7 +69,7 @@ function ServicesContent() {
               <div key={key} className="flex flex-col py-2 px-4 rounded-sm hover:bg-muted/80 group">
                 {openPreview === key && hasPreview && (
                   <img
-                    src={item.image}
+                    src={item.image!}
                     alt={item.role}
                     className="rounded-md shadow-sm w-full h-64 object-cover mb-2"
                     loading="lazy"
