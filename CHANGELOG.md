@@ -26,6 +26,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [1.1.0] - 2025-12-01
+
+### Added
+
+- Skills and professional services sections on the homepage.
+
+### Changed
+
+- Improved UI and UX design.
+- Added docstrings for configuration files.
+
 ## [1.0.0] - 2025-11-24
 
 ### Added
