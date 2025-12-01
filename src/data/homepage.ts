@@ -21,17 +21,17 @@ export const homepage = {
       enabled: true
     },
     {
+      name: `Skills`,
+      variant: `default`,
+      enabled: true
+    },
+    {
       name: `Talks`,
       variant: `default`,
       enabled: true
     },
     {
       name: `Services`,
-      variant: `default`,
-      enabled: true
-    },
-    {
-      name: `Skills`,
       variant: `default`,
       enabled: true
     }

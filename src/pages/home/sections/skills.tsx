@@ -13,6 +13,11 @@ const CATEGORIES = ["All", ...Object.keys(skills)];
 
 export default function SkillsSection() {
   const [active, setActive] = useState("All");
+  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
+
+  const toggleExpand = (key: string) => {
+    setExpanded((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const allSkills = useMemo(() => {
     return Object.entries(skills).flatMap(([category, items]) =>
@@ -56,30 +61,62 @@ export default function SkillsSection() {
           </p>
         </div>
 
-        <ScrollArea className="w-full max-h-92 px-4">
+        <ScrollArea className="w-full max-h-96 px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3 flex-1">
-            {filtered.map((skill) => (
-              <Card key={`${skill.category}-${skill.name}`} className="py-4 rounded-md">
-                <CardHeader className="pb-2">
-                  <CardTitle className="flex flex-row items-center gap-2">
-                    {skill.logo && (
-                      <img
-                        src={skill.logo}
-                        alt={`${skill.name} logo`}
-                        className="w-6 h-6 object-contain rounded"
-                        loading="lazy"
-                      />
+            {filtered.map((skill) => {
+              const key = `${skill.category}-${skill.name}`;
+              const isExpanded = expanded[key];
+
+              return (
+                <Card
+                  key={key}
+                  className="py-4 rounded-md gap-2 h-full flex flex-col justify-between"
+                >
+                  <CardHeader>
+                    <CardTitle className="flex flex-row items-center gap-2">
+                      {skill.logo && (
+                        <img
+                          src={skill.logo}
+                          alt={`${skill.name} logo`}
+                          className="w-6 h-6 object-contain rounded"
+                          loading="lazy"
+                        />
+                      )}
+                      {skill.name}
+                    </CardTitle>
+
+                    {skill.proficiency && (
+                      <p className="text-xs text-muted-foreground mt-1">{skill.proficiency}</p>
                     )}
-                    {skill.name}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <Badge variant="secondary" className="text-xs">
-                    {skill.category}
-                  </Badge>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardHeader>
+
+                  <CardContent className="pt-1 flex flex-col gap-3 flex-1">
+                    {isExpanded && skill.description && (
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {skill.description}
+                      </p>
+                    )}
+
+                    <div className="flex flex-row items-center justify-between">
+                      <Badge variant="secondary" className="text-xs w-fit">
+                        {skill.category}
+                      </Badge>
+
+                      {skill.description && (
+                        <div className="flex items-center">
+                          <button
+                            onClick={() => toggleExpand(key)}
+                            className="text-xs leading-none underline underline-offset-2 text-muted-foreground hover:text-foreground cursor-pointer"
+                          >
+                            {isExpanded ? "Less" : "More"}
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </ScrollArea>
       </div>
