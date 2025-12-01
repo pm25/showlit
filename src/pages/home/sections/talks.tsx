@@ -94,7 +94,7 @@ function TalksContent() {
                   </div>
 
                   <div
-                    className={`flex items-center gap-1 sm:gap-2 ${
+                    className={`flex items-center gap-1 ${
                       openPreview === key ? "opacity-100" : "opacity-0 group-hover:opacity-100"
                     }`}
                   >
@@ -103,12 +103,12 @@ function TalksContent() {
                         asChild
                         size="sm"
                         variant="outline"
-                        className="flex flex-row items-center cursor-pointer gap-1"
+                        className="flex flex-row items-center cursor-pointer gap-1 h-6"
                         title="Open link"
                       >
                         <a href={item.link} target="_blank" rel="noopener noreferrer">
                           <FaExternalLinkAlt />
-                          <span className="hidden sm:inline">Link</span>
+                          <span className="hidden md:inline">Link</span>
                         </a>
                       </Button>
                     )}
@@ -117,12 +117,12 @@ function TalksContent() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="flex flex-row items-center cursor-pointer gap-1"
+                        className="flex flex-row items-center cursor-pointer gap-1 h-6"
                         onClick={() => togglePreview(key)}
                         title="Show preview"
                       >
                         <FaRegImage />
-                        <span className="hidden sm:inline">Preview</span>
+                        <span className="hidden md:inline">Preview</span>
                       </Button>
                     )}
                   </div>
