@@ -1,6 +1,13 @@
+# =====================================================
+# Sidebar Layout Configuration
+#
+# - The order of sections below determines their display order in the sidebar.
+# - To remove a page from the sidebar, simply delete the corresponding item.
+# =====================================================
+
 sidebar:
-  userName: "[Your Name]"
-  profileImage: https://github.com/shadcn.png
+  userName: "[Your Name]" # Name displayed at the top of the sidebar
+  profileImage: https://github.com/shadcn.png # Profile image URL
   sections:
     - title: About Me
       url: ""

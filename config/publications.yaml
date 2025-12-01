@@ -1,3 +1,22 @@
+# =====================================================
+# Publications data displayed on the Publications page.
+#
+# `authorName`:
+#   - Fill in *your* name exactly as it appears in author lists.
+#   - Your name will be highlighted automatically in all publication entries.
+#
+# `items`:
+#   - Each item represents one publication.
+#   - `title`: Full title of the publication.
+#   - `authors`: List of authors as a single string, separated by commas.
+#   - `year`: Publication year.
+#   - `venue`: Conference or journal name.
+#   - `link`: URL to the paper (ArXiv, DOI, PDF, etc.).
+#   - `featured`:
+#       true  → shown on homepage (highlighted)
+#       false → shown only on Publications page
+# =====================================================
+
 publications:
   authorName: "Pin-Yen Huang" # Your name here (to highlight your name in publications)
 

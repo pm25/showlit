@@ -1,2 +1,11 @@
+# =====================================================
+# Music data displayed on the Music page.
+#
+# Steps to configure:
+# 1. Go to the Spotify playlist you want to feature (ensure it is public).
+# 2. Copy the playlist ID from the playlist URL.
+# 3. Paste the ID below to display the playlist on your site.
+# =====================================================
+
 spotify:
-  playlistId: 37i9dQZF1DWWQRwui0ExPn
+  playlistId: 37i9dQZF1DWWQRwui0ExPn # public Spotify playlist ID (from: https://open.spotify.com/playlist/<playlist-id>)

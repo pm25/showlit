@@ -1,3 +1,8 @@
+# =====================================================
+# Website Configuration
+# This section contains general information about your website.
+# =====================================================
+
 site:
   name: "Showlit"
   repoUrl: "https://github.com/pm25/showlit"

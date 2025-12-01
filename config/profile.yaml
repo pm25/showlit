@@ -1,4 +1,6 @@
 # =====================================================
+# Data displayed on the Home (About Me) page.
+#
 # 💡 Tip for Images / Logo:
 # You can use either:
 # 1. A full URL (e.g., https://example.com/logo.png)
@@ -8,13 +10,12 @@
 # =====================================================
 # 👤 Personal Information
 # =====================================================
+
 profile:
   name: "[Your Name]"
   headline: "Student @ [Your University]"
   email: "your-email@gmail.com"
   location: null
-
-  # Profile image: URL or local file
   profileImage: "https://github.com/pm25.png"
 
   links:
@@ -58,6 +59,7 @@ profile:
 # # =====================================================
 # # 🎓 Education Section
 # # =====================================================
+
 education:
   - degree: "Ph.D. in [Field]"
     school: "[University Name]"
@@ -77,6 +79,7 @@ education:
 # # =====================================================
 # # 💼 Work Experience Section
 # # =====================================================
+
 workExperience:
   - title: "[Job Title]"
     company: "[Company Name]"
@@ -96,6 +99,7 @@ workExperience:
 # # =====================================================
 # # 🎤 Presentations / Talks Section
 # # =====================================================
+
 talks:
   - category: "Misc"
     title: "[Your Talk Title Here]"
@@ -154,6 +158,7 @@ services:
 # # =====================================================
 # # 🛠️ Skills Section
 # # =====================================================
+
 skills:
   Programming:
     - name: "[Name]"

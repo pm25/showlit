@@ -1,3 +1,11 @@
+# =====================================================
+# Layout configuration for the Home (About Me) page
+#
+# - The order of sections below determines their display order on the page.
+# - Set `enabled: false` to hide a section from the page.
+# - `variant` controls the style/layout of the section (if applicable).
+# =====================================================
+
 homepage:
   sections:
     - name: Introduction

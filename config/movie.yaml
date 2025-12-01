@@ -1,3 +1,12 @@
+# =====================================================
+# Movie data displayed on the Movie page.
+#
+# Each entry includes:
+# - `title`: The movie's title.
+# - `posterImage`: URL to the movie poster image.
+# - `note`: A short personal note or description about the movie.
+# =====================================================
+
 movies:
   - title: "[Movie Title]"
     posterImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Example_en.svg/1280px-Example_en.svg.png"

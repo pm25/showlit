@@ -1,5 +1,23 @@
+# =====================================================
+# Configuration settings for Giscus (comments & reactions on article pages)
+#
+# Setup Steps:
+# 1. Visit https://giscus.app and go to **Configuration → Repository**.
+# 2. Select your GitHub repository where discussions will be created.
+# 3. In **Discussion Category**, choose **General**.
+# 4. Keep all other settings as default.
+# 5. Scroll to the **Enable Giscus** section and copy the generated values.
+# 6. Paste them below to activate Giscus on your site.
+#
+# Each field maps directly to the HTML attributes used by Giscus:
+#   repo        → data-repo
+#   repoId      → data-repo-id
+#   category    → data-category
+#   categoryId  → data-category-id
+# =====================================================
+
 giscus:
-  repo: "pm25/showlit"
-  repoId: "R_kgDONgMOyA"
-  category: "General"
-  categoryId: "DIC_kwDONgMOyM4Cq4Ga"
+  repo: "pm25/showlit" # data-repo
+  repoId: "R_kgDONgMOyA" # data-repo-id
+  category: "General" # data-category
+  categoryId: "DIC_kwDONgMOyM4Cq4Ga" # data-category-id
