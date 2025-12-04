@@ -13,7 +13,9 @@ interface TalksSectionProps {
 
 const TITLE = "Presentations / Talks";
 
-export default function TalksSection({ variant = "default" }: TalksSectionProps) {
+export default function TalksSection({
+  variant = "default",
+}: TalksSectionProps) {
   if (variant === "card") {
     return (
       <Card className="rounded-md md:px-2">
@@ -49,25 +51,33 @@ function TalksContent() {
   };
 
   // group talks by category
-  const groupedTalks = talks.reduce<Record<string, typeof talks>>((acc, item) => {
-    const cat = item.category || "Other";
-    if (!acc[cat]) acc[cat] = [];
-    acc[cat].push(item);
-    return acc;
-  }, {});
+  const groupedTalks = talks.reduce<Record<string, typeof talks>>(
+    (acc, item) => {
+      const cat = item.category || "Other";
+      if (!acc[cat]) acc[cat] = [];
+      acc[cat].push(item);
+      return acc;
+    },
+    {},
+  );
 
   return (
     <div className="space-y-4">
       {Object.entries(groupedTalks).map(([category, items]) => (
         <div key={category}>
-          <div className="text-sm text-muted-foreground font-medium mb-1">{category}</div>
+          <div className="text-sm text-muted-foreground font-medium mb-1">
+            {category}
+          </div>
 
           {items.map((item, index) => {
             const key = `${category}-${index}`;
             const hasPreview = !!item.image;
 
             return (
-              <div key={key} className="flex flex-col py-2 px-4 rounded-sm hover:bg-muted/80 group">
+              <div
+                key={key}
+                className="flex flex-col py-2 px-4 rounded-sm hover:bg-muted/80 group"
+              >
                 {openPreview === key && hasPreview && (
                   <img
                     src={item.image!}
@@ -89,13 +99,17 @@ function TalksContent() {
                         {item.title}
                       </a>
                     ) : (
-                      <span className="text-base font-semibold">{item.title}</span>
+                      <span className="text-base font-semibold">
+                        {item.title}
+                      </span>
                     )}
                   </div>
 
                   <div
                     className={`flex items-center gap-1 ${
-                      openPreview === key ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                      openPreview === key
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
                     }`}
                   >
                     {item.link && (
@@ -106,7 +120,11 @@ function TalksContent() {
                         className="flex flex-row items-center cursor-pointer gap-1 h-6"
                         title="Open link"
                       >
-                        <a href={item.link} target="_blank" rel="noopener noreferrer">
+                        <a
+                          href={item.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           <FaExternalLinkAlt />
                           <span className="hidden md:inline">Link</span>
                         </a>

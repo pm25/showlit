@@ -19,7 +19,7 @@ const validSorts = ["stars", "updated", "created"] as const;
 type SortByType = (typeof validSorts)[number];
 
 const allTopics = Array.from(
-  new Set(Object.values(repos).flatMap((repo) => repo.topics ?? []))
+  new Set(Object.values(repos).flatMap((repo) => repo.topics ?? [])),
 ).sort();
 
 export default function ProjectsPage() {
@@ -31,7 +31,8 @@ export default function ProjectsPage() {
   const topic = searchParams.get("topic");
   const sort = searchParams.get("sort");
 
-  const topicFilter: string = topic && allTopics.includes(topic) ? topic : "all";
+  const topicFilter: string =
+    topic && allTopics.includes(topic) ? topic : "all";
   const sortBy: SortByType = validSorts.find((s) => s === sort) ?? "updated";
 
   const updateTopicFilter = (newTopic: string) => {
@@ -51,7 +52,8 @@ export default function ProjectsPage() {
     .filter((project_name) => {
       const project = repos[project_name];
       const topics = (project.topics ?? []) as string[];
-      const matchesTopic = topicFilter === "all" || topics.includes(topicFilter);
+      const matchesTopic =
+        topicFilter === "all" || topics.includes(topicFilter);
       return matchesTopic;
     })
     .sort((a, b) => {
@@ -61,9 +63,15 @@ export default function ProjectsPage() {
       if (sortBy === "stars") {
         return (bData.stargazers_count ?? 0) - (aData.stargazers_count ?? 0);
       } else if (sortBy === "created") {
-        return new Date(bData.created_at).getTime() - new Date(aData.created_at).getTime();
+        return (
+          new Date(bData.created_at).getTime() -
+          new Date(aData.created_at).getTime()
+        );
       } else {
-        return new Date(bData.pushed_at).getTime() - new Date(aData.pushed_at).getTime();
+        return (
+          new Date(bData.pushed_at).getTime() -
+          new Date(aData.pushed_at).getTime()
+        );
       }
     });
 
@@ -76,7 +84,10 @@ export default function ProjectsPage() {
         </div>
 
         <div className="flex justify-between flex-wrap gap-2 items-center mx-2 sm:mx-6 my-1 relative -top-2">
-          <TopicFilter topicFilter={topicFilter} setTopicFilter={updateTopicFilter} />
+          <TopicFilter
+            topicFilter={topicFilter}
+            setTopicFilter={updateTopicFilter}
+          />
           <SortSelector sortBy={sortBy} setSortBy={updateSortBy} />
         </div>
 
@@ -181,7 +192,12 @@ function ProjectCard({
   return (
     <Card className="rounded-md overflow-hidden gap-0 py-0 w-full">
       <div className="flex flex-col lg:flex-row">
-        <a href={html_url} target="_blank" rel="noopener noreferrer" className="block">
+        <a
+          href={html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
           <div className="aspect-3/2 w-full max-h-72 lg:max-w-75 lg:h-50 overflow-hidden">
             {previewImage ? (
               <img

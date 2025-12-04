@@ -21,7 +21,13 @@ if (!username) {
 }
 
 const projectsYamlPath = path.join(process.cwd(), "config", "projects.yaml");
-const outputPath = path.join(process.cwd(), "src", "data", "generated", "repos.json");
+const outputPath = path.join(
+  process.cwd(),
+  "src",
+  "data",
+  "generated",
+  "repos.json",
+);
 
 function loadProjectsFromYaml() {
   const raw = fs.readFileSync(projectsYamlPath, "utf-8");
@@ -52,11 +58,17 @@ async function fetchAllRepos() {
 
     const headers = { Accept: "application/vnd.github+json" };
     if (token) headers["Authorization"] = `token ${token}`;
-    else console.warn("⚠️ No GitHub token found. Using public API (may be rate-limited).");
+    else
+      console.warn(
+        "⚠️ No GitHub token found. Using public API (may be rate-limited).",
+      );
 
     const res = await fetch(url, { headers });
 
-    if (!res.ok) throw new Error(`GitHub API responded with status ${res.status}: ${res.statusText}`);
+    if (!res.ok)
+      throw new Error(
+        `GitHub API responded with status ${res.status}: ${res.statusText}`,
+      );
 
     const repos = await res.json();
     allRepos.push(...repos);
@@ -72,12 +84,15 @@ async function fetchRepos() {
   try {
     const data = await fetchAllRepos();
     const { keepIds, projectsDict } = loadProjectsFromYaml();
-    
+
     const merged = {};
 
     data
       .filter((repo) => !repo.fork && !repo.private && keepIds.has(repo.name))
-      .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+      .sort(
+        (a, b) =>
+          new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
+      )
       .forEach((repo) => {
         merged[repo.name] = {
           name: repo.name,

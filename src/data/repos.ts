@@ -5,7 +5,7 @@ type RepoMap = Record<string, RepoProps>;
 export const repos = reposImport as RepoMap;
 
 export const featuredRepos: RepoMap = Object.fromEntries(
-  Object.entries(repos).filter(([, repo]) => repo.featured === true)
+  Object.entries(repos).filter(([, repo]) => repo.featured === true),
 );
 
 export const featuredReposArray: RepoProps[] = Object.values(featuredRepos);

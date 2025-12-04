@@ -38,7 +38,10 @@ export default function Article() {
 
         if (!res.ok) throw new Error("FETCH_ERROR");
         // detect GitHub Pages fallback to index.html
-        if (rawContent.startsWith("<!DOCTYPE html>") || rawContent.includes('<div id="'))
+        if (
+          rawContent.startsWith("<!DOCTYPE html>") ||
+          rawContent.includes('<div id="')
+        )
           throw new Error("NOT_FOUND");
 
         try {
@@ -81,7 +84,9 @@ export default function Article() {
     return (
       <div className="flex justify-center">
         <div className="text-center max-w-6xl w-full bg-muted rounded-md space-y-4 p-6 sm:p-12 border shadow-sm">
-          <div className="text-4xl font-semibold">{metadata.title || "Error"}</div>
+          <div className="text-4xl font-semibold">
+            {metadata.title || "Error"}
+          </div>
           <p>{error}</p>
           <Button asChild variant="outline" className="mt-2 gap-1">
             <Link to="/articles">
@@ -96,7 +101,11 @@ export default function Article() {
   return (
     <div className="flex flex-col justify-center items-center">
       <div className="prose dark:prose-invert max-w-6xl w-full bg-muted rounded-md overflow-hidden p-6 sm:p-12 border shadow-sm">
-        <ReactMarkdown rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]} skipHtml={false}>
+        <ReactMarkdown
+          rehypePlugins={[rehypeRaw]}
+          remarkPlugins={[remarkGfm]}
+          skipHtml={false}
+        >
           {content}
         </ReactMarkdown>
 
@@ -106,7 +115,12 @@ export default function Article() {
 
       <div className="relative w-full max-w-6xl mt-4">
         <div className="absolute top-0 right-0">
-          <Button asChild variant="ghost" size="default" className="gap-1 text-muted-foreground">
+          <Button
+            asChild
+            variant="ghost"
+            size="default"
+            className="gap-1 text-muted-foreground"
+          >
             <Link to="/articles">
               <FaArrowLeft className="w-4 h-4" /> Back to Articles
             </Link>
@@ -125,7 +139,9 @@ function ArticleComments() {
     if (theme === "dark") return "dark_dimmed";
     if (theme === "light") return "light";
     // fallback to system preference
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark_dimmed" : "light";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark_dimmed"
+      : "light";
   })();
 
   return (

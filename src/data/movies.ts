@@ -2,21 +2,21 @@ export const movies = [
   {
     title: `[Movie Title]`,
     posterImage: `https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Example_en.svg/1280px-Example_en.svg.png`,
-    note: `[Movie Description]`
+    note: `[Movie Description]`,
   },
   {
     title: `The Shawshank Redemption`,
     posterImage: `https://media.themoviedb.org/t/p/w440_and_h660_face/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg`,
-    note: `A timeless story of hope and perseverance that reminds me to stay resilient, no matter the odds.`
+    note: `A timeless story of hope and perseverance that reminds me to stay resilient, no matter the odds.`,
   },
   {
     title: `Interstellar`,
     posterImage: `https://image.tmdb.org/t/p/original/mS4EvhsrT0SQZOlWrQEzWI5KiUa.jpg`,
-    note: `Blends science, love, and human ambition in a way that sparks my curiosity about the universe and our place in it.`
+    note: `Blends science, love, and human ambition in a way that sparks my curiosity about the universe and our place in it.`,
   },
   {
     title: `La La Land`,
     posterImage: `https://image.tmdb.org/t/p/original/pfr9dwWqANfF6XohNZ1ANtcXSq2.jpg`,
-    note: `A beautiful reminder of dreams, sacrifice, and the bittersweet balance between passion and reality.`
-  }
+    note: `A beautiful reminder of dreams, sacrifice, and the bittersweet balance between passion and reality.`,
+  },
 ];

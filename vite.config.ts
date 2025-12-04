@@ -7,12 +7,12 @@ import site from "./src/data/generated/site.json";
 
 // https://vite.dev/config/
 export default defineConfig({
-    base: site.base,
-    plugins: [react(), tailwindcss()],
-    resolve: {
-        alias: {
-            "@": path.resolve(__dirname, "./src"),
-            "/src": path.resolve(__dirname, "src")
-        },
+  base: site.base,
+  plugins: [react(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+      "/src": path.resolve(__dirname, "src"),
     },
+  },
 });

@@ -1,7 +1,12 @@
 import { FaRegEnvelope, FaLocationDot } from "react-icons/fa6";
 import { toast } from "sonner";
 
-import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 import { profile } from "@/data/profile";
 
@@ -24,9 +29,15 @@ function ProfileCard() {
         loading="lazy"
       />
       <div className="flex flex-col items-center gap-y-2">
-        {profile.name && <p className="text-2xl font-semibold text-foreground">{profile.name}</p>}
+        {profile.name && (
+          <p className="text-2xl font-semibold text-foreground">
+            {profile.name}
+          </p>
+        )}
         {profile.headline && (
-          <p className="text-base font-medium text-muted-foreground">{profile.headline}</p>
+          <p className="text-base font-medium text-muted-foreground">
+            {profile.headline}
+          </p>
         )}
         {profile.email && <EmailCopy email={profile.email} />}
         {profile.location && (

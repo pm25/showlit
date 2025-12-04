@@ -7,32 +7,32 @@ export const sidebar = {
     {
       title: `About Me`,
       url: ``,
-      icon: LuUser
+      icon: LuUser,
     },
     {
       title: `Projects`,
       url: `projects`,
-      icon: LuWrench
+      icon: LuWrench,
     },
     {
       title: `Publications`,
       url: `publications`,
-      icon: LuLibraryBig
+      icon: LuLibraryBig,
     },
     {
       title: `Articles`,
       url: `articles`,
-      icon: LuNewspaper
+      icon: LuNewspaper,
     },
     {
       title: `Movies`,
       url: `movies`,
-      icon: LuClapperboard
+      icon: LuClapperboard,
     },
     {
       title: `Music`,
       url: `music`,
-      icon: LuMusic
-    }
-  ]
+      icon: LuMusic,
+    },
+  ],
 };

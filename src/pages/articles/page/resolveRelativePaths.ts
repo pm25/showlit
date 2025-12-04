@@ -6,14 +6,8 @@ export function resolveRelativePaths(content: string, slug: string) {
   return (
     content
       // markdown links
-      .replace(
-        /(\]|\))\(\.\/([^)\s]+)\)/g,
-        (_match, prefix, file) => `${prefix}(${basePath}/${file})`
-      )
+      .replace(/(\]|\))\(\.\/([^)\s]+)\)/g, (_match, prefix, file) => `${prefix}(${basePath}/${file})`)
       // HTML attributes: src/href"
-      .replace(
-        /(src|href)=["']\.\/([^"']+)["']/g,
-        (_match, attr, file) => `${attr}="${basePath}/${file}"`
-      )
+      .replace(/(src|href)=["']\.\/([^"']+)["']/g, (_match, attr, file) => `${attr}="${basePath}/${file}"`)
   );
 }

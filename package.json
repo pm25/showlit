@@ -9,6 +9,7 @@
     "prebuild": "npm run build:site-json && npm-run-all --parallel fetch:repos build:article-index convert:config",
     "build:manual": "tsc -b && vite build",
     "prebuild:manual": "npm run build:site-json && npm-run-all --parallel fetch:repos build:article-index",
+    "format": "prettier --write 'src/**/*.ts'",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

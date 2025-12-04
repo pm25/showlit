@@ -34,7 +34,9 @@ const SpotifyEmbed = () => {
     if (theme === "dark") return "0";
     if (theme === "light") return "1";
     // fallback to system preference
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "0" : "1";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "0"
+      : "1";
   })();
 
   return (

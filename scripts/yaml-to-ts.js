@@ -9,7 +9,13 @@ const TYPE_MAP = {
   giscus: "GiscusProps",
 };
 
-const sitePath = path.join(process.cwd(), "src", "data", "generated", "site.json");
+const sitePath = path.join(
+  process.cwd(),
+  "src",
+  "data",
+  "generated",
+  "site.json",
+);
 const site = JSON.parse(fs.readFileSync(sitePath, "utf8"));
 
 // function that convert a JavaScript object to a TypeScript-like string representation
@@ -24,7 +30,9 @@ export function toTS(obj, indent = 0) {
 
   if (obj && typeof obj === "object") {
     const entries = Object.entries(obj).map(([key, value]) => {
-      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key) ? key : `"${key}"`;
+      const formattedKey = /^[a-zA-Z_$][a-zA-Z0-9_$]*$/.test(key)
+        ? key
+        : `"${key}"`;
 
       if (typeof value === "object" && value !== null) {
         return pad(indent + 2) + `${formattedKey}: ${toTS(value, indent + 2)}`;
@@ -34,7 +42,7 @@ export function toTS(obj, indent = 0) {
         return pad(indent + 2) + `${formattedKey}: ${value}`; // write icon value as raw variable (no quotes)
       }
 
-      if (typeof value === "string") {        
+      if (typeof value === "string") {
         const finalValue = addBasePathIfAbsolute(value.trim(), site.base);
         return pad(indent + 2) + `${formattedKey}: \`${finalValue}\``;
       }
@@ -88,8 +96,7 @@ function writeTS(filename, variable, content) {
           }
           packageIconsMap.get(value.package).add(value.name);
           obj[key] = value.name; // use raw variable
-        }
-        else if (typeof value === "object" && value !== null) {
+        } else if (typeof value === "object" && value !== null) {
           collectAssets(value);
         }
       });
@@ -117,7 +124,7 @@ function writeTS(filename, variable, content) {
 
   // combine imports and TS content
   const tsContent = `${importStatements}${typeImport}export const ${variable}${typeAnnotation} = ${toTS(
-    content
+    content,
   )};`;
   fs.writeFileSync(path.join(outDir, filename), tsContent);
 }
@@ -125,10 +132,15 @@ function writeTS(filename, variable, content) {
 // 5. Write TS files
 Object.entries(data).forEach(([key, value]) => {
   // check for items array with featured property
-  if (Array.isArray(value.items) && value.items.some((item) => "featured" in item)) {
+  if (
+    Array.isArray(value.items) &&
+    value.items.some((item) => "featured" in item)
+  ) {
     const featuredValue = {
       ...value,
-      items: value.items.filter((item) => item.featured).map(({ featured, ...rest }) => rest),
+      items: value.items
+        .filter((item) => item.featured)
+        .map(({ featured, ...rest }) => rest),
     };
     writeTS(`${key}.featured.ts`, `${key}Featured`, featuredValue);
   }

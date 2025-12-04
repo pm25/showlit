@@ -16,25 +16,25 @@ const ArticlePage = loadLazy(() => import("@/pages/articles/page"));
 const NotFoundPage = loadLazy(() => import("@/pages/notfound"));
 
 export default function App() {
-    useGlobalMeta();
+  useGlobalMeta();
 
-    return (
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-            <Router>
-                <ScrollToTop />
-                <Routes>
-                    <Route path="/" element={<Layout />}>
-                        <Route index element={<HomePage />} />
-                        <Route path="movies" element={<MoviesPage />} />
-                        <Route path="music" element={<MusicPage />} />
-                        <Route path="projects" element={<ProjectsPage />} />
-                        <Route path="publications" element={<PublicationsPage />} />
-                        <Route path="articles" element={<ArticlesPage />} />
-                        <Route path="/articles/:slug" element={<ArticlePage />} />
-                        <Route path="*" element={<NotFoundPage />} />
-                    </Route>
-                </Routes>
-            </Router>
-        </ThemeProvider>
-    );
+  return (
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<HomePage />} />
+            <Route path="movies" element={<MoviesPage />} />
+            <Route path="music" element={<MusicPage />} />
+            <Route path="projects" element={<ProjectsPage />} />
+            <Route path="publications" element={<PublicationsPage />} />
+            <Route path="articles" element={<ArticlesPage />} />
+            <Route path="/articles/:slug" element={<ArticlePage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ThemeProvider>
+  );
 }

@@ -5,7 +5,13 @@ import yaml from "js-yaml";
 import { ensureDirExists } from "./utils.js";
 
 const articlesDir = path.join(process.cwd(), "public", "articles");
-const outputPath = path.join(process.cwd(), "src", "data", "generated", "articles.json");
+const outputPath = path.join(
+  process.cwd(),
+  "src",
+  "data",
+  "generated",
+  "articles.json",
+);
 
 function getSlug(filename) {
   return filename.replace(/\.md$/, "");
@@ -61,12 +67,14 @@ function generatePostsJson() {
   const articles = {};
 
   files.forEach((filePath) => {
-    const relativePath = path.relative(articlesDir, filePath).replace(/\\/g, "/");
+    const relativePath = path
+      .relative(articlesDir, filePath)
+      .replace(/\\/g, "/");
     const parts = relativePath.split("/");
 
     if (parts.length !== 2 || parts[1] !== `${parts[0]}.md`) {
       console.warn(
-        `⚠️ Skipping invalid file structure: ${relativePath}. Expected /{slug}/{slug}.md`
+        `⚠️ Skipping invalid file structure: ${relativePath}. Expected /{slug}/{slug}.md`,
       );
       return;
     }
@@ -75,7 +83,7 @@ function generatePostsJson() {
     const fileContent = fs.readFileSync(filePath, "utf8");
     const { data } = parseFrontmatter(fileContent);
     const fileHash = hashContent(fileContent);
-    
+
     const prevArticle = existingArticles[slug];
     const now = new Date().toISOString();
 
@@ -113,9 +121,15 @@ function generatePostsJson() {
   const sortedArticles = Object.fromEntries(sortedEntries);
 
   ensureDirExists(outputPath);
-  fs.writeFileSync(outputPath, JSON.stringify(sortedArticles, null, 4), "utf-8");
+  fs.writeFileSync(
+    outputPath,
+    JSON.stringify(sortedArticles, null, 4),
+    "utf-8",
+  );
 
-  console.log(`✅ articles.json generated with ${Object.keys(sortedArticles).length} posts`);
+  console.log(
+    `✅ articles.json generated with ${Object.keys(sortedArticles).length} posts`,
+  );
 }
 
 generatePostsJson();

@@ -27,7 +27,9 @@ export default function PublicationsPage() {
           <Table className="table-fixed w-full">
             <TableHeader>
               <TableRow>
-                <TableHead className="w-[calc(100%-50px)]">Publication</TableHead>
+                <TableHead className="w-[calc(100%-50px)]">
+                  Publication
+                </TableHead>
                 <TableHead className="w-[46px] text-right">Year</TableHead>
               </TableRow>
             </TableHeader>
@@ -48,7 +50,11 @@ export default function PublicationsPage() {
                       {pub.authors.split(", ").map((author, i) => (
                         <span
                           key={i}
-                          className={author === publications.authorName ? "font-semibold" : ""}
+                          className={
+                            author === publications.authorName
+                              ? "font-semibold"
+                              : ""
+                          }
                         >
                           {author}
                           {i < pub.authors.split(", ").length - 1 && ", "}

@@ -18,7 +18,7 @@ const validSorts = ["updated", "created"] as const;
 type SortByType = (typeof validSorts)[number];
 
 const allTags = Array.from(
-  new Set(Object.values(ArticlesData).flatMap((article) => article.tags ?? []))
+  new Set(Object.values(ArticlesData).flatMap((article) => article.tags ?? [])),
 ).sort();
 
 export default function ArticlesPage() {
@@ -46,7 +46,9 @@ export default function ArticlesPage() {
     navigate({ search: params.toString() }, { replace: true });
   };
 
-  const filteredArticles = (Object.keys(ArticlesData) as (keyof typeof ArticlesData)[])
+  const filteredArticles = (
+    Object.keys(ArticlesData) as (keyof typeof ArticlesData)[]
+  )
     .filter((article_name) => {
       const article = ArticlesData[article_name];
       if (article.draft === true) return false;
@@ -59,9 +61,15 @@ export default function ArticlesPage() {
       const bData = ArticlesData[b];
 
       if (sortBy === "created") {
-        return new Date(bData.created_at).getTime() - new Date(aData.created_at).getTime();
+        return (
+          new Date(bData.created_at).getTime() -
+          new Date(aData.created_at).getTime()
+        );
       } else {
-        return new Date(bData.updated_at).getTime() - new Date(aData.updated_at).getTime();
+        return (
+          new Date(bData.updated_at).getTime() -
+          new Date(aData.updated_at).getTime()
+        );
       }
     });
 
@@ -172,7 +180,10 @@ function ArticleCard({
           variant="link"
           className="p-0 h-7 text-base font-semibold text-left justify-start"
         >
-          <Link to={`/articles/${articleName}`} aria-label={`Read full article: ${article.title}`}>
+          <Link
+            to={`/articles/${articleName}`}
+            aria-label={`Read full article: ${article.title}`}
+          >
             {article.title}
           </Link>
         </Button>
@@ -204,7 +215,11 @@ function ArticleCard({
               <> • Updated {formatDate(article.updated_at)}</>
             )}
           </span>
-          <Button asChild variant="link" className="p-0 text-primary underline text-sm h-7.5">
+          <Button
+            asChild
+            variant="link"
+            className="p-0 text-primary underline text-sm h-7.5"
+          >
             <Link
               to={`/articles/${articleName}`}
               aria-label={`Read full article: ${article.title}`}

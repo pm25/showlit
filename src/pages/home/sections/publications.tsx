@@ -48,7 +48,9 @@ export default function PublicationsSection() {
                       <span
                         key={i}
                         className={
-                          author === publicationsFeatured.authorName ? "font-semibold" : ""
+                          author === publicationsFeatured.authorName
+                            ? "font-semibold"
+                            : ""
                         }
                       >
                         {author}
@@ -73,7 +75,12 @@ export default function PublicationsSection() {
 
       <div className="relative w-full">
         <div className="absolute right-0">
-          <Button asChild variant="outline" size="sm" className="gap-1 text-muted-foreground">
+          <Button
+            asChild
+            variant="outline"
+            size="sm"
+            className="gap-1 text-muted-foreground"
+          >
             <Link to="/publications">
               View all
               <FaArrowRight className="w-4 h-4" />

@@ -9,7 +9,7 @@ export const publications: PublicationsType = {
       year: `[Year]`,
       venue: `[Conference / Journal Name]`,
       link: `https://example.com/your-publication-link`,
-      featured: true
+      featured: true,
     },
     {
       title: `RankUp: Boosting Semi-Supervised Regression with an Auxiliary Ranking Classifier`,
@@ -17,7 +17,7 @@ export const publications: PublicationsType = {
       year: 2024,
       venue: `38th Conference on Neural Information Processing Systems (NeurIPS 2024)`,
       link: `https://arxiv.org/abs/2410.22124`,
-      featured: true
+      featured: true,
     },
     {
       title: `An Enhanced Mondrian Anonymization Model based on Self-Organizing Map`,
@@ -25,7 +25,7 @@ export const publications: PublicationsType = {
       year: 2020,
       venue: `15th Asia Joint Conference on Information Security (AsiaJCIS 2020)`,
       link: `https://ieeexplore.ieee.org/abstract/document/9194139`,
-      featured: true
+      featured: true,
     },
     {
       title: `[Publication Title]`,
@@ -33,7 +33,7 @@ export const publications: PublicationsType = {
       year: `[Year]`,
       venue: `[Conference / Journal Name]`,
       link: `https://example.com/your-publication-link`,
-      featured: false
-    }
-  ]
+      featured: false,
+    },
+  ],
 };

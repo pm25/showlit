@@ -5,7 +5,7 @@ export const services = [
     organization: `[Organization]`,
     date: `[Year]`,
     link: `https://example.com/workshop-talk`,
-    image: `https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg`
+    image: `https://upload.wikimedia.org/wikipedia/commons/8/8f/Example_image.svg`,
   },
   {
     category: `Research`,
@@ -13,7 +13,7 @@ export const services = [
     organization: `TPAMI 2024, NeurIPS 2025`,
     date: `2024-2025`,
     link: null,
-    image: null
+    image: null,
   },
   {
     category: `Research`,
@@ -21,7 +21,7 @@ export const services = [
     organization: `CVPR 2022`,
     date: `2022`,
     link: null,
-    image: null
+    image: null,
   },
   {
     category: `Teaching`,
@@ -29,6 +29,6 @@ export const services = [
     organization: `National Taiwan University - Data Structures & Algorithms`,
     date: `2021`,
     link: null,
-    image: null
-  }
+    image: null,
+  },
 ];

@@ -3,10 +3,7 @@
     "name": "example-project",
     "description": "A sample repository used for demonstration purposes.",
     "stargazers_count": 0,
-    "topics": [
-      "example",
-      "repository"
-    ],
+    "topics": ["example", "repository"],
     "language": null,
     "homepage": "",
     "html_url": "https://github.com/pm25/example-project",
@@ -45,11 +42,7 @@
     "name": "Semi-Supervised-Regression",
     "description": "🎋 NeurIPS 2024: Official repository for the paper 'RankUp: Boosting Semi-Supervised Regression with an Auxiliary Ranking Classifier'",
     "stargazers_count": 14,
-    "topics": [
-      "pytorch",
-      "regression",
-      "semi-supervised-learning"
-    ],
+    "topics": ["pytorch", "regression", "semi-supervised-learning"],
     "language": "Python",
     "homepage": "",
     "html_url": "https://github.com/pm25/Semi-Supervised-Regression",
@@ -106,11 +99,7 @@
     "name": "flappy-bird",
     "description": "🐤 Flappy Bird clone, developed with JavaScript.",
     "stargazers_count": 2,
-    "topics": [
-      "game",
-      "javascript",
-      "website"
-    ],
+    "topics": ["game", "javascript", "website"],
     "language": "JavaScript",
     "homepage": "https://pm25.github.io/Flappy-Bird/",
     "html_url": "https://github.com/pm25/flappy-bird",

@@ -1,5 +1,11 @@
 import { Link } from "react-router";
-import { FaWrench, FaGithub, FaGlobe, FaRegStar, FaArrowRight } from "react-icons/fa6";
+import {
+  FaWrench,
+  FaGithub,
+  FaGlobe,
+  FaRegStar,
+  FaArrowRight,
+} from "react-icons/fa6";
 
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -22,7 +28,12 @@ export default function ProjectsSection() {
 
       <div className="relative w-full">
         <div className="absolute right-0">
-          <Button asChild variant="ghost" size="sm" className="gap-1 text-muted-foreground">
+          <Button
+            asChild
+            variant="ghost"
+            size="sm"
+            className="gap-1 text-muted-foreground"
+          >
             <Link to="/projects">
               View all
               <FaArrowRight className="w-4 h-4" />
@@ -34,12 +45,18 @@ export default function ProjectsSection() {
   );
 }
 
-function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[number] }) {
+function ProjectCard({
+  repoData,
+}: {
+  repoData: (typeof featuredReposArray)[number];
+}) {
   if (!repoData) {
     return (
       <Card className="rounded-md overflow-hidden">
         <div className="flex flex-col items-center justify-center p-4 w-full h-full bg-muted">
-          <span className="text-xl font-semibold opacity-80">Project not found</span>
+          <span className="text-xl font-semibold opacity-80">
+            Project not found
+          </span>
         </div>
       </Card>
     );
@@ -48,7 +65,12 @@ function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[numbe
   return (
     <Card className="rounded-md overflow-hidden gap-0 py-0 w-full flex flex-col h-full">
       <div className="flex flex-col flex-grow">
-        <a href={repoData.html_url} target="_blank" rel="noopener noreferrer" className="block">
+        <a
+          href={repoData.html_url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
           <div className="aspect-3/2 w-full overflow-hidden">
             {repoData.previewImage ? (
               <img
@@ -104,7 +126,9 @@ function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[numbe
                   size="sm"
                   className="rounded-sm font-normal px-2 h-7 text-sm"
                 >
-                  <Link to={`/projects?topic=${encodeURIComponent(topic)}`}>{topic}</Link>
+                  <Link to={`/projects?topic=${encodeURIComponent(topic)}`}>
+                    {topic}
+                  </Link>
                 </Button>
               ))}
             </div>
@@ -112,7 +136,9 @@ function ProjectCard({ repoData }: { repoData: (typeof featuredReposArray)[numbe
 
           <div className="flex flex-row items-center justify-between text-muted-foreground mt-auto pt-2">
             <div className="flex items-center gap-2">
-              <p className="text-sm">Language: {repoData.language || "Unknown"}</p>
+              <p className="text-sm">
+                Language: {repoData.language || "Unknown"}
+              </p>
               {repoData.stargazers_count !== null && (
                 <a
                   href={`${repoData.html_url}/stargazers`}

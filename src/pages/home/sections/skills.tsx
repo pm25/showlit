@@ -24,11 +24,14 @@ export default function SkillsSection() {
       items.map((item) => ({
         ...item,
         category,
-      }))
+      })),
     );
   }, []);
 
-  const filtered = active === "All" ? allSkills : allSkills.filter((s) => s.category === active);
+  const filtered =
+    active === "All"
+      ? allSkills
+      : allSkills.filter((s) => s.category === active);
 
   return (
     <div className="space-y-6">
@@ -39,7 +42,9 @@ export default function SkillsSection() {
 
       <div className="flex flex-row gap-4">
         <div className="w-52 flex flex-col gap-1">
-          <span className="text-sm font-medium text-muted-foreground mb-2">Categories</span>
+          <span className="text-sm font-medium text-muted-foreground mb-2">
+            Categories
+          </span>
 
           {CATEGORIES.map((cat) => (
             <button
@@ -47,7 +52,9 @@ export default function SkillsSection() {
               onClick={() => setActive(cat)}
               className={cn(
                 "px-3 py-2 rounded-sm text-left cursor-pointer",
-                active === cat ? "bg-primary text-primary-foreground" : "hover:bg-muted"
+                active === cat
+                  ? "bg-primary text-primary-foreground"
+                  : "hover:bg-muted",
               )}
             >
               {cat}
@@ -57,7 +64,8 @@ export default function SkillsSection() {
           <Separator className="my-4" />
 
           <p className="text-sm leading-relaxed text-muted-foreground">
-            Filter skills by category to explore my technical and research background.
+            Filter skills by category to explore my technical and research
+            background.
           </p>
         </div>
 
@@ -86,7 +94,9 @@ export default function SkillsSection() {
                     </CardTitle>
 
                     {skill.proficiency && (
-                      <p className="text-xs text-muted-foreground mt-1">{skill.proficiency}</p>
+                      <p className="text-xs text-muted-foreground mt-1">
+                        {skill.proficiency}
+                      </p>
                     )}
                   </CardHeader>
 

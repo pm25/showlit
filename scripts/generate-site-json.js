@@ -52,7 +52,9 @@ if (site.repoUrl) {
   site.repoName = repoName;
   site.base = repoName.endsWith(".github.io") ? "/" : `/${repoName}/`;
 } else {
-  console.warn("⚠️ No repoUrl found in site.yaml. Skipping repoName/base generation.");
+  console.warn(
+    "⚠️ No repoUrl found in site.yaml. Skipping repoName/base generation.",
+  );
 }
 
 // ======================================

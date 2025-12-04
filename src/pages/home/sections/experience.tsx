@@ -28,7 +28,9 @@ export default function ExperienceSection() {
                 />
                 <div>
                   <div className="font-semibold">{edu.school}</div>
-                  <div className="text-sm text-muted-foreground">{edu.years}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {edu.years}
+                  </div>
                   <div className="text-sm">{edu.degree}</div>
                 </div>
               </div>
@@ -56,7 +58,9 @@ export default function ExperienceSection() {
                 />
                 <div>
                   <div className="font-semibold">{job.company}</div>
-                  <div className="text-sm text-muted-foreground">{job.years}</div>
+                  <div className="text-sm text-muted-foreground">
+                    {job.years}
+                  </div>
                   <div className="text-sm">{job.title}</div>
                 </div>
               </div>
