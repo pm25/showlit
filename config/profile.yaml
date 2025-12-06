@@ -113,7 +113,7 @@ talks:
     organization: "University of Illinois Urbana-Champaign (UIUC)"
     date: "Sep 4, 2019"
     link: null
-    image: "https://pm25.github.io/static/media/2019-9-4-workshop.b5d2675f.webp"
+    image: "https://pm25.github.io/images/uiuc-workshop.webp"
 
   - category: "Workshop"
     title: "Practical Guide to PyTorch"
